@@ -1,15 +1,22 @@
 import arcpy
 from arcpy import env
+import re
+import os
+import zipfile
+import shutil
 
 # file resources
 
 f_countries   = ("E:/Dropbox/privat/prosjekter/qdgc/world_countries/ne_110m_admin_0_countries.shp")
-f_qdgc        = ("E:/Dropbox/privat/prosjekter/qdgc/world_0_5.shp")
+f_qdgc        = ("E:/Dropbox/privat/prosjekter/qdgc/world_0_125.shp")
+f_readme_tpl  = ("C:/Users/RAGLAR/Desktop/GitHub/qdgc/templates/readme.tpl")
+d_output      = ("C:/temp/")
+
 
 
 # Tell the system which level of QDGC we are working at
 
-qdgc_level    = 1
+qdgc_level    = "03"
 
 # Workspace
 env.workspace = "C:/temp"
@@ -29,6 +36,7 @@ for country_one in countries_list:
 	current_id       = country_one.getValue("FID")
 	country_name     = str(country_one.getValue("SUBUNIT"))
 	country_code     = str(country_one.getValue("ISO_A3"))
+	country_code     = country_code.lower()
 	
 	if country_code<>"-99":
 
@@ -66,7 +74,12 @@ for country_one in countries_list:
 		
 		arcpy.SelectLayerByLocation_management("fl_qdgc","intersect","fl_countrybuffer")
 		
-		output_qdgc_raw = "qdgc_%s_%s.shp" % (qdgc_level,country_code)
+		#make folder based on country code
+		full_country_export_path = ("%s%s") % (d_output,country_code)
+		if not os.path.exists(full_country_export_path):
+			os.makedirs(full_country_export_path)
+		
+		output_qdgc_raw = "%s%s/qdgc_%s_%s.shp" % (d_output,country_code,qdgc_level,country_code)
 		
 		arcpy.CopyFeatures_management("fl_qdgc", output_qdgc_raw)
 		
@@ -74,14 +87,24 @@ for country_one in countries_list:
 		arcpy.Delete_management("fl_countrybuffer")
 		arcpy.Delete_management(output_country_frame_buffer)
 		
-		#Kjør lonlat2qdgc
+		#Kopier template til destinasjonsfolder
+		f_readme_txt = ('%s/readme_qdgc_%s_%s.txt') % (full_country_export_path,qdgc_level,country_code)
 		
-		#Beregn
+		infile = open(f_readme_tpl)
+		outfile = open(f_readme_txt, 'a')
 		
-		#Lagre under navn fra landliste
+		for line in infile:
+			line = line.replace("GIVE_LEVEL", qdgc_level)
+			line = line.replace("GIVE_NAME", country_name)
+			line = line.replace("GIVE_CODE", country_code)
+			outfile.write(line)
 		
-		#Legg til readme.txt
+		infile.close()
 		
-		#Pakk sammen (7z)?
+		outfile.close()
+		
+		
+		#Pakk sammen
 
 #Report finished
+print "Ok"
