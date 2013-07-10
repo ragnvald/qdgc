@@ -53,7 +53,7 @@ FILE
     lonlat2qdgc.exe 
     
 INSTALL
-    This is a compiled Python 2.5 program. To run it you are 
+    This is a compiled Python 2.7 program. To run it you are 
     advised to place the file lonlat2qdgc.exe in a separate
     folder. C:\bin\lonlat2qdgc\ would be swell. Then open
     the command line tool in windows and run the file
