@@ -5,18 +5,8 @@ Information on the distribution of animal populations is essential for conservat
 
 This project supports the production and distribution of QDGC files. You will find tools and relevant templates in the following folders:
 
-- **tools**
-- **templates**
-
-
-**tools**
-
-Python scripts to produce shapefiles in the quarter_degree_grid_cells folder.
-
-
-**templates**
-
-Folder containing different templates.
+- **tools** (Python scripts to produce shapefiles in the quarter_degree_grid_cells folder.)
+- **templates** Folder containing different templates.
 
 
 
