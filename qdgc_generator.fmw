@@ -14,7 +14,7 @@
 #    
 #! PASSWORD=""
 #! ATTR_TYPE_ENCODING="SDF"
-#! VIEW_POSITION="-1106 -231"
+#! VIEW_POSITION="-906 3"
 #! SHOW_INFO_NODES="true"
 #! FME_STROKE_MAX_DEVIATION="0"
 #! BEGIN_PYTHON=""
@@ -24,7 +24,7 @@
 #! MAX_LOG_FEATURES="200"
 #! END_TCL=""
 #! FME_BUILD_NUM="14433"
-#! ZOOM_SCALE="74"
+#! ZOOM_SCALE="88"
 #! CATEGORY=""
 #! REDIRECT_TERMINATORS="NONE"
 #! LEGAL_TERMS_CONDITIONS=""
@@ -38,7 +38,7 @@
 #! SOURCE_ROUTING_FILE=""
 #! DESTINATION_ROUTING_FILE=""
 #! DESTINATION="NONE"
-#! LAST_SAVE_DATE="2014-11-27T01:17:07"
+#! LAST_SAVE_DATE="2014-11-27T17:48:23"
 #! FME_IMPLICIT_CSMAP_REPROJECTION_MODE="Auto"
 #! WORKSPACE_VERSION="1"
 #! SOURCE="NONE"
@@ -48,7 +48,7 @@
 #! LOG_FILE=""
 #! REQUIREMENTS=""
 #! BEGIN_TCL=""
-#! DOC_EXTENTS="3684 2082"
+#! DOC_EXTENTS="3684 2118"
 #! FME_DOCUMENT_GUID="fe07558e-d9e7-4931-9e7d-172aea79c099"
 #! SHOW_ANNOTATIONS="true"
 #! IGNORE_READER_FAILURE="No"
@@ -1298,10 +1298,421 @@
 #! <XFORM_PARM PARM_NAME="AreaMult" PARM_VALUE="0.000001"/>
 #! </TRANSFORMER>
 #! <TRANSFORMER
-#! IDENTIFIER="25"
+#! IDENTIFIER="14"
+#! TYPE="AttributeCreator"
+#! VERSION="5"
+#! POSITION="-835 -1008"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="qdgc" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="att_create_qdgc"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="qdgc,FME_NULL_VALUE"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="33"
+#! TYPE="AttributeCreator"
+#! VERSION="5"
+#! POSITION="-828 -1242"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="qdgc" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="qdgc_cellsize" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="att_create_qdgc_cellsize"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="qdgc_cellsize,0.25"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="31"
+#! TYPE="AttributeCreator"
+#! VERSION="5"
+#! POSITION="2191 190"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <XFORM_ATTR ATTR_NAME="code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="qdgc" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="qdgc_cellsize" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="qdgc_level" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="lon" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="lat" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="z_vaste" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="areakm2" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="filename" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="att_create_qdgc_2"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="filename,qdgc_&lt;at&gt;Value&lt;openparen&gt;qdgc_level&lt;closeparen&gt;_&lt;at&gt;Value&lt;openparen&gt;code&lt;closeparen&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="41"
+#! TYPE="AttributeRenamer"
+#! VERSION="2"
+#! POSITION="-837 -374"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="scalerank" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="featurecla" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="labelrank" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="sovereignt" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="sov_a3" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="adm0_dif" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="level" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="admin" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="adm0_a3" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="geou_dif" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="geounit" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="gu_a3" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="su_dif" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="subunit" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="su_a3" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="brk_diff" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="name_long" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="brk_a3" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="brk_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="brk_group" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="abbrev" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="postal" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="formal_en" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="formal_fr" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="note_adm0" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="note_brk" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="name_sort" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="name_alt" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="mapcolor7" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="mapcolor8" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="mapcolor9" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="mapcolor13" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="pop_est" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="gdp_md_est" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="pop_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="lastcensus" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="gdp_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="economy" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="income_grp" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="wikipedia" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="fips_10" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="iso_a2" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="iso_n3" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="un_a3" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="wb_a2" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="wb_a3" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="woe_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="adm0_a3_is" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="adm0_a3_us" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="adm0_a3_un" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="adm0_a3_wb" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="continent" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="region_un" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="subregion" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="region_wb" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="name_len" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="long_len" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="abbrev_len" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="tiny" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="homepart" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeRenamer"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="iso_a3,code,&quot;&quot;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="39"
+#! TYPE="StringPadder"
+#! VERSION="3"
+#! POSITION="1509 -285"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <XFORM_ATTR ATTR_NAME="code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="qdgc" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="qdgc_cellsize" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="qdgc_level" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="lon" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="lat" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="z_vaste" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="areakm2" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="WIDTH" PARM_VALUE="2"/>
+#! <XFORM_PARM PARM_NAME="SRC_ATTRS" PARM_VALUE="qdgc_level"/>
+#! <XFORM_PARM PARM_NAME="SIDE" PARM_VALUE="Left"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="StringPadder"/>
+#! <XFORM_PARM PARM_NAME="PADCHAR" PARM_VALUE="0"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="BLANK_ATTRIBUTE" PARM_VALUE="Yes"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="36"
+#! TYPE="AttributeCreator"
+#! VERSION="5"
+#! POSITION="-811 -1469"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="qdgc" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="qdgc_cellsize" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="qdgc_level" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="att_create_qdgc_level"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="qdgc_level,2"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="48"
+#! TYPE="StringCaseChanger"
+#! VERSION="5"
+#! POSITION="-831 -783"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="StringCaseChanger"/>
+#! <XFORM_PARM PARM_NAME="ATTRCHOICE" PARM_VALUE="Selected Attributes"/>
+#! <XFORM_PARM PARM_NAME="CHANGE_TYPE" PARM_VALUE="lowercase"/>
+#! <XFORM_PARM PARM_NAME="ATTRLIST" PARM_VALUE="code"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ATTRS_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="51"
+#! TYPE="AttributeClassifier"
+#! VERSION="1"
+#! POSITION="-840 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="PASSED"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="scalerank" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="featurecla" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="labelrank" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="sovereignt" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="sov_a3" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="adm0_dif" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="level" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="admin" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="adm0_a3" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="geou_dif" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="geounit" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="gu_a3" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="su_dif" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="subunit" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="su_a3" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="brk_diff" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="name_long" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="brk_a3" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="brk_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="brk_group" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="abbrev" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="postal" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="formal_en" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="formal_fr" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="note_adm0" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="note_brk" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="name_sort" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="name_alt" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="mapcolor7" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="mapcolor8" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="mapcolor9" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="mapcolor13" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="pop_est" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="gdp_md_est" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="pop_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="lastcensus" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="gdp_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="economy" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="income_grp" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="wikipedia" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="fips_10" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="iso_a2" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="iso_a3" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="iso_n3" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="un_a3" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="wb_a2" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="wb_a3" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="woe_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="adm0_a3_is" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="adm0_a3_us" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="adm0_a3_un" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="adm0_a3_wb" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="continent" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="region_un" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="subregion" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="region_wb" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="name_len" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="long_len" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="abbrev_len" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="tiny" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="homepart" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="FAILED"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="scalerank" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="featurecla" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="labelrank" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="sovereignt" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="sov_a3" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="adm0_dif" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="level" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="type" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="admin" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="adm0_a3" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="geou_dif" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="geounit" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="gu_a3" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="su_dif" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="subunit" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="su_a3" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="brk_diff" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="name_long" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="brk_a3" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="brk_name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="brk_group" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="abbrev" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="postal" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="formal_en" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="formal_fr" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="note_adm0" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="note_brk" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="name_sort" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="name_alt" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="mapcolor7" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="mapcolor8" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="mapcolor9" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="mapcolor13" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="pop_est" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="gdp_md_est" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="pop_year" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="lastcensus" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="gdp_year" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="economy" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="income_grp" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="wikipedia" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="fips_10" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="iso_a2" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="iso_a3" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="iso_n3" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="un_a3" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="wb_a2" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="wb_a3" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="woe_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="adm0_a3_is" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="adm0_a3_us" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="adm0_a3_un" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="adm0_a3_wb" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="continent" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="region_un" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="subregion" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="region_wb" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="name_len" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="long_len" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="abbrev_len" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="tiny" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="homepart" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_PARM PARM_NAME="SRC_ATTR" PARM_VALUE="iso_a3"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeClassifier"/>
+#! <XFORM_PARM PARM_NAME="CLASS" PARM_VALUE="ASCII"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="53"
+#! TYPE="AttributeRemover"
+#! VERSION="0"
+#! POSITION="149 -189"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="qdgc" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="qdgc_cellsize" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="qdgc_level" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="LIST_ATTRS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="REMOVE_ATTRS" PARM_VALUE="name"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeRemover_3"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="63"
+#! TYPE="PythonCaller"
+#! VERSION="1"
+#! POSITION="2158 -1081"
+#! ORDER="8"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <XFORM_ATTR ATTR_NAME="code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="qdgc" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="qdgc_cellsize" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="qdgc_level" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="lon" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="lat" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="z_vaste" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="areakm2" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="PYTHONSOURCE" PARM_VALUE="#*******************************************************************&lt;lf&gt;#&lt;space&gt;Longitude&lt;solidus&gt;Latitude&lt;space&gt;to&lt;space&gt;Quarter&lt;space&gt;Degree&lt;space&gt;Grid&lt;space&gt;Cell&lt;space&gt;standard&lt;space&gt;conversion&lt;space&gt;&lt;lf&gt;#&lt;space&gt;utility&lt;space&gt;&lt;space&gt;&lt;lf&gt;#&lt;lf&gt;#&lt;space&gt;The&lt;space&gt;utility&lt;space&gt;will&lt;space&gt;accept&lt;space&gt;the&lt;space&gt;path&lt;space&gt;of&lt;space&gt;a&lt;space&gt;.dbf-file&lt;space&gt;as&lt;space&gt;an&lt;space&gt;argument.&lt;space&gt;By&lt;lf&gt;#&lt;space&gt;setting&lt;space&gt;the&lt;space&gt;QDGC&lt;space&gt;level&lt;space&gt;the&lt;space&gt;script&lt;space&gt;will&lt;space&gt;use&lt;space&gt;the&lt;space&gt;LON&lt;solidus&gt;LAT&lt;space&gt;values&lt;space&gt;to&lt;space&gt;&lt;lf&gt;#&lt;space&gt;produce&lt;space&gt;a&lt;space&gt;QDGC&lt;space&gt;string&lt;space&gt;value&lt;space&gt;which&lt;space&gt;is&lt;space&gt;inserted&lt;space&gt;into&lt;space&gt;the&lt;space&gt;QDGC&lt;space&gt;column&lt;lf&gt;#&lt;space&gt;of&lt;space&gt;the&lt;space&gt;.dbf-file.&lt;lf&gt;#&lt;lf&gt;#&lt;space&gt;Delivered&lt;space&gt;as-is.&lt;space&gt;If&lt;space&gt;it&lt;space&gt;works&lt;space&gt;-&lt;space&gt;fine&lt;space&gt;for&lt;space&gt;you.&lt;space&gt;If&lt;space&gt;it&lt;space&gt;fails&lt;space&gt;-&lt;space&gt;too&lt;space&gt;bad.&lt;space&gt;&lt;lf&gt;#&lt;space&gt;No&lt;space&gt;are&lt;space&gt;given&lt;space&gt;guarantees&lt;space&gt;whatsoever.&lt;space&gt;If&lt;space&gt;you&lt;space&gt;use&lt;space&gt;this&lt;space&gt;program&lt;space&gt;for&lt;space&gt;&lt;lf&gt;#&lt;space&gt;illegal&lt;space&gt;purposes&lt;space&gt;-&lt;space&gt;don&lt;apos&gt;t&lt;space&gt;blame&lt;space&gt;me.&lt;lf&gt;#&lt;space&gt;&lt;lf&gt;#&lt;space&gt;License&lt;space&gt;type&lt;space&gt;is&lt;space&gt;Gnu&lt;space&gt;GPL.&lt;space&gt;Copy&lt;comma&gt;&lt;space&gt;distribute&lt;space&gt;and&lt;space&gt;change&lt;space&gt;freely.&lt;space&gt;Keep&lt;lf&gt;#&lt;space&gt;the&lt;space&gt;author&lt;space&gt;in&lt;space&gt;mind&lt;space&gt;for&lt;space&gt;crediting.&lt;space&gt;Come&lt;space&gt;to&lt;space&gt;think&lt;space&gt;of&lt;space&gt;it&lt;comma&gt;&lt;space&gt;use&lt;space&gt;this&lt;space&gt;&lt;lf&gt;#&lt;space&gt;reference:&lt;lf&gt;#&lt;lf&gt;#&lt;space&gt;R.&lt;space&gt;Larsen&lt;comma&gt;&lt;space&gt;T.&lt;space&gt;Holmern&lt;comma&gt;&lt;space&gt;S.&lt;space&gt;D.&lt;space&gt;Prager&lt;comma&gt;&lt;space&gt;H.&lt;space&gt;Maliti&lt;space&gt;and&lt;space&gt;E.&lt;space&gt;Roskaft&lt;space&gt;&lt;lf&gt;#&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;openparen&gt;2009&lt;closeparen&gt;&lt;space&gt;Using&lt;space&gt;the&lt;space&gt;extended&lt;space&gt;quarter&lt;space&gt;degree&lt;space&gt;grid&lt;space&gt;cell&lt;space&gt;system&lt;space&gt;&lt;lf&gt;#&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;to&lt;space&gt;unify&lt;space&gt;mapping&lt;space&gt;and&lt;space&gt;sharing&lt;space&gt;of&lt;space&gt;biodiversity&lt;space&gt;data&lt;comma&gt;&lt;space&gt;African&lt;lf&gt;#&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;Journal&lt;space&gt;of&lt;space&gt;Ecology.&lt;space&gt;Volume&lt;space&gt;47&lt;comma&gt;&lt;space&gt;Issue&lt;space&gt;3&lt;space&gt;&lt;comma&gt;&lt;space&gt;Pages&lt;space&gt;382&lt;space&gt;-&lt;space&gt;392&lt;lf&gt;#&lt;lf&gt;#&lt;space&gt;Author&lt;space&gt;Ragnvald&lt;space&gt;Larsen&lt;comma&gt;&lt;space&gt;Dept&lt;space&gt;of&lt;space&gt;Biology&lt;comma&gt;&lt;space&gt;NTNU&lt;space&gt;&lt;openparen&gt;www.bio.ntnu.no&lt;closeparen&gt;&lt;lf&gt;#&lt;space&gt;ragnvald&lt;openparen&gt;at&lt;closeparen&gt;mindland.com&lt;lf&gt;#&lt;lf&gt;#&lt;space&gt;Version&lt;space&gt;0.6&lt;space&gt;&lt;openparen&gt;01.12.2009&lt;closeparen&gt;&lt;lf&gt;&lt;lf&gt;&lt;lf&gt;#Math&lt;space&gt;is&lt;space&gt;used&lt;space&gt;in&lt;space&gt;this&lt;space&gt;one&lt;lf&gt;import&lt;space&gt;math&lt;lf&gt;import&lt;space&gt;fmeobjects&lt;lf&gt;&lt;lf&gt;&lt;lf&gt;#*******************************************************************&lt;lf&gt;#&lt;space&gt;Numerical&lt;space&gt;representation&lt;space&gt;of&lt;space&gt;lat-lon&lt;lf&gt;#&lt;lf&gt;#&lt;space&gt;Input:&lt;space&gt;Longitude&lt;comma&gt;&lt;space&gt;Latitude&lt;lf&gt;#&lt;space&gt;38.98754324&lt;solidus&gt;-9.87548764&lt;lf&gt;#&lt;lf&gt;#&lt;space&gt;Output:&lt;space&gt;Absolute&lt;space&gt;referense&lt;space&gt;to&lt;space&gt;degree&lt;space&gt;square&lt;lf&gt;#&lt;space&gt;E038S09?&lt;lf&gt;#&lt;lf&gt;def&lt;space&gt;get_lonlat&lt;openparen&gt;lon_value&lt;comma&gt;lat_value&lt;closeparen&gt;:&lt;lf&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#Put&lt;space&gt;character&lt;space&gt;in&lt;space&gt;front&lt;space&gt;of&lt;space&gt;longitudal&lt;space&gt;value&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;lon_value&lt;space&gt;&lt;lt&gt;&lt;space&gt;0:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;square&lt;space&gt;=&lt;space&gt;&lt;apos&gt;W&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;else:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;square&lt;space&gt;=&lt;space&gt;&lt;apos&gt;E&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#Find&lt;space&gt;absolute&lt;space&gt;value&lt;space&gt;for&lt;space&gt;longitude&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lon_string=str&lt;openparen&gt;int&lt;openparen&gt;abs&lt;openparen&gt;lon_value&lt;closeparen&gt;&lt;closeparen&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;lf&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#The&lt;space&gt;longitudal&lt;space&gt;value&lt;space&gt;of&lt;space&gt;the&lt;space&gt;square&lt;space&gt;is&lt;space&gt;printed&lt;space&gt;with&lt;space&gt;three&lt;space&gt;decimals&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;square&lt;space&gt;=&lt;space&gt;square&lt;space&gt;+&lt;space&gt;&lt;openparen&gt;lon_string&lt;closeparen&gt;.zfill&lt;openparen&gt;3&lt;closeparen&gt;&lt;lf&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#Put&lt;space&gt;character&lt;space&gt;in&lt;space&gt;front&lt;space&gt;of&lt;space&gt;latitudal&lt;space&gt;value&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;&lt;space&gt;lat_value&lt;space&gt;&lt;lt&gt;&lt;space&gt;0&lt;space&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;square&lt;space&gt;=&lt;space&gt;square&lt;space&gt;+&lt;space&gt;&lt;apos&gt;S&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;else:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;square&lt;space&gt;=&lt;space&gt;square&lt;space&gt;+&lt;space&gt;&lt;apos&gt;N&lt;apos&gt;&lt;lf&gt;&lt;lf&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#find&lt;space&gt;absolute&lt;space&gt;value&lt;space&gt;for&lt;space&gt;latitude&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lat_string=str&lt;openparen&gt;int&lt;openparen&gt;abs&lt;openparen&gt;lat_value&lt;closeparen&gt;&lt;closeparen&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#find&lt;space&gt;int&lt;space&gt;lat.&lt;space&gt;Remember&lt;space&gt;that&lt;space&gt;latitudes&lt;space&gt;absolute&lt;space&gt;values&lt;space&gt;never&lt;space&gt;excceed&lt;space&gt;90&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;square&lt;space&gt;=&lt;space&gt;square&lt;space&gt;+&lt;space&gt;&lt;openparen&gt;lat_string&lt;closeparen&gt;.zfill&lt;openparen&gt;2&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;return&lt;space&gt;square&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;#*******************************************************************&lt;lf&gt;#&lt;space&gt;RQDGC&lt;space&gt;-&lt;space&gt;recursive&lt;space&gt;quarter&lt;space&gt;degree&lt;space&gt;grid&lt;space&gt;cell&lt;lf&gt;#&lt;lf&gt;#&lt;space&gt;Input:&lt;space&gt;Latitude&lt;comma&gt;&lt;space&gt;Longitude&lt;comma&gt;&lt;space&gt;depth&lt;space&gt;in&lt;space&gt;powers&lt;space&gt;of&lt;space&gt;two&lt;comma&gt;&lt;space&gt;starting&lt;space&gt;string&lt;lf&gt;#&lt;space&gt;-9.87548764&lt;comma&gt;&lt;space&gt;38.98754324&lt;comma&gt;&lt;space&gt;5&lt;comma&gt;&lt;space&gt;&lt;quote&gt;&lt;quote&gt;&lt;lf&gt;#&lt;lf&gt;#&lt;space&gt;Output:&lt;space&gt;DDDBB&lt;lf&gt;#&lt;lf&gt;#&lt;space&gt;Obs!:&lt;space&gt;This&lt;space&gt;function&lt;space&gt;places&lt;space&gt;origo&lt;space&gt;in&lt;space&gt;the&lt;space&gt;cell&lt;space&gt;in&lt;space&gt;the&lt;space&gt;upper&lt;space&gt;left&lt;lf&gt;#&lt;space&gt;in&lt;space&gt;the&lt;space&gt;southern&lt;space&gt;hemisphere&lt;space&gt;and&lt;space&gt;in&lt;space&gt;the&lt;space&gt;lower&lt;space&gt;left&lt;space&gt;corner&lt;lf&gt;#&lt;space&gt;in&lt;space&gt;the&lt;space&gt;norther&lt;space&gt;hemisphere.&lt;space&gt;Is&lt;space&gt;this&lt;space&gt;ok?&lt;lf&gt;def&lt;space&gt;get_recursive_qdgc&lt;openparen&gt;lon_value&lt;comma&gt;lat_value&lt;comma&gt;depth&lt;comma&gt;square&lt;closeparen&gt;:&lt;lf&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#remove&lt;space&gt;all&lt;space&gt;but&lt;space&gt;the&lt;space&gt;decimals&lt;space&gt;&lt;openparen&gt;eg:&lt;space&gt;30.54&lt;space&gt;-&lt;gt&gt;&lt;space&gt;0.54&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#this&lt;space&gt;also&lt;space&gt;takes&lt;space&gt;care&lt;space&gt;of&lt;space&gt;values&lt;space&gt;below&lt;space&gt;zero&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;&lt;space&gt;lon_value&lt;space&gt;&lt;gt&gt;1&lt;space&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lon_value&lt;space&gt;=&lt;space&gt;lon_value&lt;space&gt;-&lt;space&gt;math.floor&lt;openparen&gt;lon_value&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;elif&lt;space&gt;&lt;openparen&gt;lon_value&lt;lt&gt;-1&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lon_value&lt;space&gt;=&lt;space&gt;lon_value&lt;space&gt;+&lt;space&gt;abs&lt;openparen&gt;math.ceil&lt;openparen&gt;lon_value&lt;closeparen&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#remove&lt;space&gt;all&lt;space&gt;but&lt;space&gt;the&lt;space&gt;decimals&lt;space&gt;&lt;openparen&gt;eg:&lt;space&gt;30.54&lt;space&gt;-&lt;gt&gt;&lt;space&gt;0.54&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#this&lt;space&gt;also&lt;space&gt;takes&lt;space&gt;care&lt;space&gt;of&lt;space&gt;values&lt;space&gt;below&lt;space&gt;zero&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;&lt;space&gt;&lt;openparen&gt;lat_value&lt;space&gt;&lt;gt&gt;&lt;space&gt;1&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lat_value&lt;space&gt;=&lt;space&gt;lat_value&lt;space&gt;-&lt;space&gt;math.floor&lt;openparen&gt;lat_value&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;elif&lt;space&gt;&lt;openparen&gt;lat_value&lt;lt&gt;-1&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lat_value&lt;space&gt;=&lt;space&gt;lat_value&lt;space&gt;+&lt;space&gt;abs&lt;openparen&gt;math.ceil&lt;openparen&gt;lat_value&lt;closeparen&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;lf&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#check&lt;space&gt;which&lt;space&gt;of&lt;space&gt;the&lt;space&gt;4&lt;space&gt;squares&lt;space&gt;the&lt;space&gt;value&lt;space&gt;fals&lt;space&gt;within&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#Q1&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;&lt;openparen&gt;&lt;openparen&gt;lon_value&lt;gt&gt;=0&lt;closeparen&gt;&lt;space&gt;and&lt;space&gt;&lt;openparen&gt;lat_value&lt;gt&gt;=0&lt;closeparen&gt;&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#upper&lt;space&gt;left&lt;space&gt;-&lt;space&gt;A&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;&lt;openparen&gt;&lt;openparen&gt;lon_value&lt;space&gt;&lt;lt&gt;0.5&lt;closeparen&gt;&lt;space&gt;and&lt;space&gt;&lt;openparen&gt;lat_value&lt;gt&gt;=0.5&lt;closeparen&gt;&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;square&lt;space&gt;=&lt;space&gt;&lt;space&gt;square&lt;space&gt;+&lt;space&gt;&lt;apos&gt;A&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lon_value=lon_value*2&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lat_value=&lt;openparen&gt;lat_value-0.5&lt;closeparen&gt;*2&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#upper&lt;space&gt;right&lt;space&gt;-&lt;space&gt;B&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;elif&lt;space&gt;&lt;openparen&gt;&lt;openparen&gt;lon_value&lt;gt&gt;=0.5&lt;closeparen&gt;&lt;space&gt;and&lt;space&gt;&lt;openparen&gt;lat_value&lt;gt&gt;=0.5&lt;closeparen&gt;&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;square&lt;space&gt;=&lt;space&gt;square&lt;space&gt;+&lt;space&gt;&lt;apos&gt;B&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lon_value=&lt;openparen&gt;lon_value-0.5&lt;closeparen&gt;*2&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lat_value=&lt;openparen&gt;lat_value-0.5&lt;closeparen&gt;*2&lt;lf&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#lower&lt;space&gt;left&lt;space&gt;-&lt;space&gt;C&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;elif&lt;space&gt;&lt;openparen&gt;&lt;openparen&gt;lon_value&lt;lt&gt;0.5&lt;closeparen&gt;&lt;space&gt;and&lt;space&gt;&lt;openparen&gt;lat_value&lt;lt&gt;0.5&lt;closeparen&gt;&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;square&lt;space&gt;=&lt;space&gt;square&lt;space&gt;+&lt;space&gt;&lt;apos&gt;C&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#both&lt;space&gt;values&lt;space&gt;are&lt;space&gt;doubled&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lat_value=lat_value*2&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lon_value=lon_value*2&lt;lf&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#lower&lt;space&gt;right&lt;space&gt;-&lt;space&gt;D&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;elif&lt;space&gt;&lt;openparen&gt;&lt;openparen&gt;lon_value&lt;gt&gt;=0.5&lt;closeparen&gt;&lt;space&gt;and&lt;space&gt;&lt;openparen&gt;lat_value&lt;lt&gt;0.5&lt;closeparen&gt;&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;square&lt;space&gt;=&lt;space&gt;&lt;space&gt;square&lt;space&gt;+&lt;space&gt;&lt;apos&gt;D&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lon_value=&lt;openparen&gt;lon_value-0.5&lt;closeparen&gt;*2&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lat_value=lat_value*2&lt;lf&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;Q2&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;elif&lt;space&gt;&lt;openparen&gt;&lt;openparen&gt;lon_value&lt;gt&gt;=0&lt;closeparen&gt;&lt;space&gt;and&lt;space&gt;&lt;openparen&gt;lat_value&lt;lt&gt;=0&lt;closeparen&gt;&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;upper&lt;space&gt;left&lt;space&gt;-&lt;space&gt;A&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;&lt;openparen&gt;&lt;openparen&gt;lon_value&lt;space&gt;&lt;lt&gt;0.5&lt;closeparen&gt;&lt;space&gt;and&lt;space&gt;&lt;openparen&gt;lat_value&lt;gt&gt;-0.5&lt;closeparen&gt;&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;square&lt;space&gt;=&lt;space&gt;square&lt;space&gt;+&lt;space&gt;&lt;apos&gt;A&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lon_value=lon_value*2&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lat_value=lat_value*2&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#upper&lt;space&gt;right&lt;space&gt;-&lt;space&gt;B&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;elif&lt;space&gt;&lt;openparen&gt;&lt;openparen&gt;lon_value&lt;gt&gt;=0.5&lt;closeparen&gt;&lt;space&gt;and&lt;space&gt;&lt;openparen&gt;lat_value&lt;gt&gt;-0.5&lt;closeparen&gt;&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;square&lt;space&gt;=&lt;space&gt;square&lt;space&gt;+&lt;space&gt;&lt;apos&gt;B&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lon_value=&lt;openparen&gt;lon_value-0.5&lt;closeparen&gt;*2&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lat_value=lat_value*2&lt;lf&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#lower&lt;space&gt;left&lt;space&gt;-&lt;space&gt;C&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;elif&lt;space&gt;&lt;openparen&gt;&lt;openparen&gt;lon_value&lt;lt&gt;0.5&lt;closeparen&gt;&lt;space&gt;and&lt;space&gt;&lt;openparen&gt;lat_value&lt;lt&gt;=-0.5&lt;closeparen&gt;&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;square&lt;space&gt;=&lt;space&gt;square&lt;space&gt;+&lt;space&gt;&lt;apos&gt;C&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lon_value=lon_value*2&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lat_value=&lt;openparen&gt;lat_value+0.5&lt;closeparen&gt;*2&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#lower&lt;space&gt;right&lt;space&gt;-&lt;space&gt;D&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;elif&lt;space&gt;&lt;openparen&gt;&lt;openparen&gt;lon_value&lt;gt&gt;=0.5&lt;closeparen&gt;&lt;space&gt;and&lt;space&gt;&lt;openparen&gt;lat_value&lt;lt&gt;=-0.5&lt;closeparen&gt;&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;square&lt;space&gt;=&lt;space&gt;square&lt;space&gt;+&lt;space&gt;&lt;apos&gt;D&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lon_value=&lt;openparen&gt;lon_value-0.5&lt;closeparen&gt;*2&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lat_value=&lt;openparen&gt;lat_value+0.5&lt;closeparen&gt;*2&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;Q3&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;elif&lt;space&gt;&lt;openparen&gt;&lt;openparen&gt;lon_value&lt;lt&gt;=0&lt;closeparen&gt;&lt;space&gt;and&lt;space&gt;&lt;openparen&gt;lat_value&lt;lt&gt;=0&lt;closeparen&gt;&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#upper&lt;space&gt;left&lt;space&gt;-&lt;space&gt;A&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;&lt;openparen&gt;&lt;openparen&gt;lon_value&lt;lt&gt;=-0.5&lt;closeparen&gt;&lt;space&gt;and&lt;space&gt;&lt;openparen&gt;lat_value&lt;gt&gt;-0.5&lt;closeparen&gt;&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;square&lt;space&gt;=&lt;space&gt;square&lt;space&gt;+&lt;space&gt;&lt;apos&gt;A&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lon_value=&lt;openparen&gt;lon_value+0.5&lt;closeparen&gt;*2&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lat_value=lat_value*2&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#upper&lt;space&gt;right&lt;space&gt;-&lt;space&gt;B&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;elif&lt;space&gt;&lt;openparen&gt;&lt;openparen&gt;lon_value&lt;gt&gt;-0.5&lt;closeparen&gt;&lt;space&gt;and&lt;space&gt;&lt;openparen&gt;lat_value&lt;gt&gt;-0.5&lt;closeparen&gt;&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;square&lt;space&gt;=&lt;space&gt;square&lt;space&gt;+&lt;space&gt;&lt;apos&gt;B&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lon_value=lon_value*2&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lat_value=lat_value*2&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#lower&lt;space&gt;left&lt;space&gt;-&lt;space&gt;C&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;elif&lt;space&gt;&lt;openparen&gt;&lt;openparen&gt;lon_value&lt;lt&gt;=-0.5&lt;closeparen&gt;&lt;space&gt;and&lt;space&gt;&lt;openparen&gt;lat_value&lt;lt&gt;=-0.5&lt;closeparen&gt;&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;square&lt;space&gt;=&lt;space&gt;square&lt;space&gt;+&lt;space&gt;&lt;apos&gt;C&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lon_value=&lt;openparen&gt;lon_value+0.5&lt;closeparen&gt;*2&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lat_value=&lt;openparen&gt;lat_value+0.5&lt;closeparen&gt;*2&lt;lf&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#lower&lt;space&gt;right&lt;space&gt;-&lt;space&gt;D&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;elif&lt;space&gt;&lt;openparen&gt;&lt;openparen&gt;lon_value&lt;gt&gt;-0.5&lt;closeparen&gt;&lt;space&gt;and&lt;space&gt;&lt;openparen&gt;lat_value&lt;lt&gt;=-0.5&lt;closeparen&gt;&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;square&lt;space&gt;=&lt;space&gt;square&lt;space&gt;+&lt;space&gt;&lt;apos&gt;D&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lon_value=lon_value*2&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lat_value=&lt;openparen&gt;lat_value+0.5&lt;closeparen&gt;*2&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;Q4&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;elif&lt;space&gt;&lt;openparen&gt;&lt;openparen&gt;lon_value&lt;lt&gt;=0&lt;closeparen&gt;&lt;space&gt;and&lt;space&gt;&lt;openparen&gt;lat_value&lt;gt&gt;=0&lt;closeparen&gt;&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#upper&lt;space&gt;left&lt;space&gt;-&lt;space&gt;A&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;&lt;openparen&gt;&lt;openparen&gt;lon_value&lt;space&gt;&lt;lt&gt;=-0.5&lt;closeparen&gt;&lt;space&gt;and&lt;space&gt;&lt;openparen&gt;lat_value&lt;gt&gt;=0.5&lt;closeparen&gt;&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;square&lt;space&gt;=&lt;space&gt;square&lt;space&gt;+&lt;space&gt;&lt;apos&gt;A&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lon_value=&lt;openparen&gt;lon_value+0.5&lt;closeparen&gt;*2&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lat_value=&lt;openparen&gt;lat_value-0.5&lt;closeparen&gt;*2&lt;lf&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#upper&lt;space&gt;right&lt;space&gt;-&lt;space&gt;B&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;elif&lt;space&gt;&lt;openparen&gt;&lt;openparen&gt;lon_value&lt;gt&gt;-0.5&lt;closeparen&gt;&lt;space&gt;and&lt;space&gt;&lt;openparen&gt;lat_value&lt;gt&gt;=0.5&lt;closeparen&gt;&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;square&lt;space&gt;=&lt;space&gt;square&lt;space&gt;+&lt;space&gt;&lt;apos&gt;B&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lon_value=lon_value*2&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lat_value=&lt;openparen&gt;lat_value-0.5&lt;closeparen&gt;*2&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#lower&lt;space&gt;left&lt;space&gt;-&lt;space&gt;C&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;elif&lt;space&gt;&lt;openparen&gt;&lt;openparen&gt;lon_value&lt;lt&gt;=-0.5&lt;closeparen&gt;&lt;space&gt;and&lt;space&gt;&lt;openparen&gt;lat_value&lt;lt&gt;0.5&lt;closeparen&gt;&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;square&lt;space&gt;=&lt;space&gt;square&lt;space&gt;+&lt;space&gt;&lt;apos&gt;C&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lon_value=&lt;openparen&gt;lon_value+0.5&lt;closeparen&gt;*2&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lat_value=&lt;openparen&gt;lat_value&lt;closeparen&gt;*2&lt;lf&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#lower&lt;space&gt;right&lt;space&gt;-&lt;space&gt;D&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;elif&lt;space&gt;&lt;openparen&gt;&lt;openparen&gt;lon_value&lt;gt&gt;-0.5&lt;closeparen&gt;&lt;space&gt;and&lt;space&gt;&lt;openparen&gt;lat_value&lt;lt&gt;0.5&lt;closeparen&gt;&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;square&lt;space&gt;=&lt;space&gt;square&lt;space&gt;+&lt;space&gt;&lt;apos&gt;D&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lon_value=lon_value*2&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lat_value=lat_value*2&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#find&lt;space&gt;square&lt;space&gt;sting&lt;space&gt;length&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;length&lt;space&gt;=&lt;space&gt;len&lt;openparen&gt;square&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#as&lt;space&gt;long&lt;space&gt;as&lt;space&gt;string&lt;space&gt;length&lt;space&gt;does&lt;space&gt;not&lt;space&gt;meed&lt;space&gt;criteria&lt;space&gt;for&lt;space&gt;depth&lt;space&gt;-&lt;space&gt;continue&lt;space&gt;calculation&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#as&lt;space&gt;an&lt;space&gt;argument&lt;space&gt;the&lt;space&gt;curent&lt;space&gt;square&lt;space&gt;value&lt;space&gt;is&lt;space&gt;sent&lt;space&gt;to&lt;space&gt;the&lt;space&gt;function.&lt;space&gt;This&lt;space&gt;is&lt;space&gt;added&lt;space&gt;in&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#subsequent&lt;space&gt;calculations&lt;comma&gt;&lt;space&gt;and&lt;space&gt;eventually&lt;space&gt;the&lt;space&gt;number&lt;space&gt;for&lt;space&gt;the&lt;space&gt;length&lt;space&gt;of&lt;space&gt;the&lt;space&gt;string&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#equals&lt;space&gt;the&lt;space&gt;number&lt;space&gt;of&lt;space&gt;the&lt;space&gt;depth&lt;space&gt;variable.&lt;space&gt;That&lt;apos&gt;s&lt;space&gt;when&lt;space&gt;the&lt;space&gt;job&lt;space&gt;is&lt;space&gt;done.&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;&lt;openparen&gt;length&lt;space&gt;&lt;lt&gt;&lt;space&gt;depth&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#Calculation&lt;space&gt;is&lt;space&gt;recursive&lt;space&gt;-&lt;space&gt;continue&lt;space&gt;the&lt;space&gt;good&lt;space&gt;work&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;square&lt;space&gt;=&lt;space&gt;get_recursive_qdgc&lt;openparen&gt;lon_value&lt;comma&gt;lat_value&lt;comma&gt;depth&lt;comma&gt;square&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#return&lt;space&gt;value&lt;space&gt;for&lt;space&gt;square&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;return&lt;space&gt;square&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;#This&lt;space&gt;is&lt;space&gt;where&lt;space&gt;the&lt;space&gt;program&lt;space&gt;is&lt;space&gt;executed&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;def&lt;space&gt;qdgc&lt;openparen&gt;feature&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lon_value&lt;space&gt;=&lt;space&gt;feature.getAttribute&lt;openparen&gt;&lt;apos&gt;lon&lt;apos&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lat_value&lt;space&gt;=&lt;space&gt;feature.getAttribute&lt;openparen&gt;&lt;apos&gt;lat&lt;apos&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;qdgc_level&lt;space&gt;=&lt;space&gt;int&lt;openparen&gt;feature.getAttribute&lt;openparen&gt;&lt;apos&gt;qdgc_level&lt;apos&gt;&lt;closeparen&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lonlatvalues&lt;space&gt;=&lt;space&gt;get_lonlat&lt;openparen&gt;lon_value&lt;comma&gt;lat_value&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;qdgcvalues&lt;space&gt;=&lt;space&gt;get_recursive_qdgc&lt;openparen&gt;lon_value&lt;comma&gt;lat_value&lt;comma&gt;qdgc_level&lt;comma&gt;&lt;quote&gt;&lt;quote&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;resultstring&lt;space&gt;=&lt;space&gt;lonlatvalues&lt;space&gt;+&lt;space&gt;qdgcvalues&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;feature.setAttribute&lt;openparen&gt;&lt;apos&gt;qdgc&lt;apos&gt;&lt;comma&gt;resultstring&lt;closeparen&gt;"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="lonlat2qdgc"/>
+#! <XFORM_PARM PARM_NAME="PYTHONSYMBOL" PARM_VALUE="qdgc"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="57"
 #! TYPE="AttributeFilter"
 #! VERSION="3"
-#! POSITION="65 375"
+#! POSITION="-183 411"
 #! ORDER="5e+014"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
@@ -1566,7 +1977,7 @@
 #! <XFORM_ATTR ATTR_NAME="abbrev_len" IS_USER_CREATED="false" FEAT_INDEX="3" />
 #! <XFORM_ATTR ATTR_NAME="tiny" IS_USER_CREATED="false" FEAT_INDEX="3" />
 #! <XFORM_ATTR ATTR_NAME="homepart" IS_USER_CREATED="false" FEAT_INDEX="3" />
-#! <OUTPUT_FEAT NAME="SYR"/>
+#! <OUTPUT_FEAT NAME="FJI"/>
 #! <FEAT_COLLAPSED COLLAPSED="4"/>
 #! <XFORM_ATTR ATTR_NAME="scalerank" IS_USER_CREATED="false" FEAT_INDEX="4" />
 #! <XFORM_ATTR ATTR_NAME="featurecla" IS_USER_CREATED="false" FEAT_INDEX="4" />
@@ -1631,486 +2042,62 @@
 #! <XFORM_ATTR ATTR_NAME="abbrev_len" IS_USER_CREATED="false" FEAT_INDEX="4" />
 #! <XFORM_ATTR ATTR_NAME="tiny" IS_USER_CREATED="false" FEAT_INDEX="4" />
 #! <XFORM_ATTR ATTR_NAME="homepart" IS_USER_CREATED="false" FEAT_INDEX="4" />
-#! <OUTPUT_FEAT NAME="TZA"/>
-#! <FEAT_COLLAPSED COLLAPSED="5"/>
-#! <XFORM_ATTR ATTR_NAME="scalerank" IS_USER_CREATED="false" FEAT_INDEX="5" />
-#! <XFORM_ATTR ATTR_NAME="featurecla" IS_USER_CREATED="false" FEAT_INDEX="5" />
-#! <XFORM_ATTR ATTR_NAME="labelrank" IS_USER_CREATED="false" FEAT_INDEX="5" />
-#! <XFORM_ATTR ATTR_NAME="sovereignt" IS_USER_CREATED="false" FEAT_INDEX="5" />
-#! <XFORM_ATTR ATTR_NAME="sov_a3" IS_USER_CREATED="false" FEAT_INDEX="5" />
-#! <XFORM_ATTR ATTR_NAME="adm0_dif" IS_USER_CREATED="false" FEAT_INDEX="5" />
-#! <XFORM_ATTR ATTR_NAME="level" IS_USER_CREATED="false" FEAT_INDEX="5" />
-#! <XFORM_ATTR ATTR_NAME="type" IS_USER_CREATED="false" FEAT_INDEX="5" />
-#! <XFORM_ATTR ATTR_NAME="admin" IS_USER_CREATED="false" FEAT_INDEX="5" />
-#! <XFORM_ATTR ATTR_NAME="adm0_a3" IS_USER_CREATED="false" FEAT_INDEX="5" />
-#! <XFORM_ATTR ATTR_NAME="geou_dif" IS_USER_CREATED="false" FEAT_INDEX="5" />
-#! <XFORM_ATTR ATTR_NAME="geounit" IS_USER_CREATED="false" FEAT_INDEX="5" />
-#! <XFORM_ATTR ATTR_NAME="gu_a3" IS_USER_CREATED="false" FEAT_INDEX="5" />
-#! <XFORM_ATTR ATTR_NAME="su_dif" IS_USER_CREATED="false" FEAT_INDEX="5" />
-#! <XFORM_ATTR ATTR_NAME="subunit" IS_USER_CREATED="false" FEAT_INDEX="5" />
-#! <XFORM_ATTR ATTR_NAME="su_a3" IS_USER_CREATED="false" FEAT_INDEX="5" />
-#! <XFORM_ATTR ATTR_NAME="brk_diff" IS_USER_CREATED="false" FEAT_INDEX="5" />
-#! <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="5" />
-#! <XFORM_ATTR ATTR_NAME="name_long" IS_USER_CREATED="false" FEAT_INDEX="5" />
-#! <XFORM_ATTR ATTR_NAME="brk_a3" IS_USER_CREATED="false" FEAT_INDEX="5" />
-#! <XFORM_ATTR ATTR_NAME="brk_name" IS_USER_CREATED="false" FEAT_INDEX="5" />
-#! <XFORM_ATTR ATTR_NAME="brk_group" IS_USER_CREATED="false" FEAT_INDEX="5" />
-#! <XFORM_ATTR ATTR_NAME="abbrev" IS_USER_CREATED="false" FEAT_INDEX="5" />
-#! <XFORM_ATTR ATTR_NAME="postal" IS_USER_CREATED="false" FEAT_INDEX="5" />
-#! <XFORM_ATTR ATTR_NAME="formal_en" IS_USER_CREATED="false" FEAT_INDEX="5" />
-#! <XFORM_ATTR ATTR_NAME="formal_fr" IS_USER_CREATED="false" FEAT_INDEX="5" />
-#! <XFORM_ATTR ATTR_NAME="note_adm0" IS_USER_CREATED="false" FEAT_INDEX="5" />
-#! <XFORM_ATTR ATTR_NAME="note_brk" IS_USER_CREATED="false" FEAT_INDEX="5" />
-#! <XFORM_ATTR ATTR_NAME="name_sort" IS_USER_CREATED="false" FEAT_INDEX="5" />
-#! <XFORM_ATTR ATTR_NAME="name_alt" IS_USER_CREATED="false" FEAT_INDEX="5" />
-#! <XFORM_ATTR ATTR_NAME="mapcolor7" IS_USER_CREATED="false" FEAT_INDEX="5" />
-#! <XFORM_ATTR ATTR_NAME="mapcolor8" IS_USER_CREATED="false" FEAT_INDEX="5" />
-#! <XFORM_ATTR ATTR_NAME="mapcolor9" IS_USER_CREATED="false" FEAT_INDEX="5" />
-#! <XFORM_ATTR ATTR_NAME="mapcolor13" IS_USER_CREATED="false" FEAT_INDEX="5" />
-#! <XFORM_ATTR ATTR_NAME="pop_est" IS_USER_CREATED="false" FEAT_INDEX="5" />
-#! <XFORM_ATTR ATTR_NAME="gdp_md_est" IS_USER_CREATED="false" FEAT_INDEX="5" />
-#! <XFORM_ATTR ATTR_NAME="pop_year" IS_USER_CREATED="false" FEAT_INDEX="5" />
-#! <XFORM_ATTR ATTR_NAME="lastcensus" IS_USER_CREATED="false" FEAT_INDEX="5" />
-#! <XFORM_ATTR ATTR_NAME="gdp_year" IS_USER_CREATED="false" FEAT_INDEX="5" />
-#! <XFORM_ATTR ATTR_NAME="economy" IS_USER_CREATED="false" FEAT_INDEX="5" />
-#! <XFORM_ATTR ATTR_NAME="income_grp" IS_USER_CREATED="false" FEAT_INDEX="5" />
-#! <XFORM_ATTR ATTR_NAME="wikipedia" IS_USER_CREATED="false" FEAT_INDEX="5" />
-#! <XFORM_ATTR ATTR_NAME="fips_10" IS_USER_CREATED="false" FEAT_INDEX="5" />
-#! <XFORM_ATTR ATTR_NAME="iso_a2" IS_USER_CREATED="false" FEAT_INDEX="5" />
-#! <XFORM_ATTR ATTR_NAME="iso_a3" IS_USER_CREATED="false" FEAT_INDEX="5" />
-#! <XFORM_ATTR ATTR_NAME="iso_n3" IS_USER_CREATED="false" FEAT_INDEX="5" />
-#! <XFORM_ATTR ATTR_NAME="un_a3" IS_USER_CREATED="false" FEAT_INDEX="5" />
-#! <XFORM_ATTR ATTR_NAME="wb_a2" IS_USER_CREATED="false" FEAT_INDEX="5" />
-#! <XFORM_ATTR ATTR_NAME="wb_a3" IS_USER_CREATED="false" FEAT_INDEX="5" />
-#! <XFORM_ATTR ATTR_NAME="woe_id" IS_USER_CREATED="false" FEAT_INDEX="5" />
-#! <XFORM_ATTR ATTR_NAME="adm0_a3_is" IS_USER_CREATED="false" FEAT_INDEX="5" />
-#! <XFORM_ATTR ATTR_NAME="adm0_a3_us" IS_USER_CREATED="false" FEAT_INDEX="5" />
-#! <XFORM_ATTR ATTR_NAME="adm0_a3_un" IS_USER_CREATED="false" FEAT_INDEX="5" />
-#! <XFORM_ATTR ATTR_NAME="adm0_a3_wb" IS_USER_CREATED="false" FEAT_INDEX="5" />
-#! <XFORM_ATTR ATTR_NAME="continent" IS_USER_CREATED="false" FEAT_INDEX="5" />
-#! <XFORM_ATTR ATTR_NAME="region_un" IS_USER_CREATED="false" FEAT_INDEX="5" />
-#! <XFORM_ATTR ATTR_NAME="subregion" IS_USER_CREATED="false" FEAT_INDEX="5" />
-#! <XFORM_ATTR ATTR_NAME="region_wb" IS_USER_CREATED="false" FEAT_INDEX="5" />
-#! <XFORM_ATTR ATTR_NAME="name_len" IS_USER_CREATED="false" FEAT_INDEX="5" />
-#! <XFORM_ATTR ATTR_NAME="long_len" IS_USER_CREATED="false" FEAT_INDEX="5" />
-#! <XFORM_ATTR ATTR_NAME="abbrev_len" IS_USER_CREATED="false" FEAT_INDEX="5" />
-#! <XFORM_ATTR ATTR_NAME="tiny" IS_USER_CREATED="false" FEAT_INDEX="5" />
-#! <XFORM_ATTR ATTR_NAME="homepart" IS_USER_CREATED="false" FEAT_INDEX="5" />
 #! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeFilter"/>
 #! <XFORM_PARM PARM_NAME="ATTR_GROUP" PARM_VALUE=""/>
 #! <XFORM_PARM PARM_NAME="ATTR_NAME" PARM_VALUE="iso_a3"/>
-#! <XFORM_PARM PARM_NAME="ATTR_VALUES" PARM_VALUE="&lt;lt&gt;EMPTY&lt;gt&gt;,&lt;lt&gt;MISSING&lt;gt&gt;,&lt;lt&gt;NULL&lt;gt&gt;,&lt;lt&gt;UNFILTERED&lt;gt&gt;,SYR,TZA"/>
+#! <XFORM_PARM PARM_NAME="ATTR_VALUES" PARM_VALUE="&lt;lt&gt;EMPTY&lt;gt&gt;,&lt;lt&gt;MISSING&lt;gt&gt;,&lt;lt&gt;NULL&lt;gt&gt;,&lt;lt&gt;UNFILTERED&lt;gt&gt;,FJI"/>
 #! </TRANSFORMER>
 #! <TRANSFORMER
-#! IDENTIFIER="14"
-#! TYPE="AttributeCreator"
-#! VERSION="5"
-#! POSITION="-835 -1008"
-#! ORDER="5e+014"
-#! PARMS_EDITED="true"
-#! ENABLED="true"
-#! >
-#! <OUTPUT_FEAT NAME="OUTPUT"/>
-#! <FEAT_COLLAPSED COLLAPSED="0"/>
-#! <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="code" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="qdgc" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
-#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
-#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="att_create_qdgc"/>
-#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="&lt;Unused&gt;"/>
-#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
-#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
-#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="qdgc,FME_NULL_VALUE"/>
-#! </TRANSFORMER>
-#! <TRANSFORMER
-#! IDENTIFIER="33"
-#! TYPE="AttributeCreator"
-#! VERSION="5"
-#! POSITION="-828 -1242"
-#! ORDER="5e+014"
-#! PARMS_EDITED="true"
-#! ENABLED="true"
-#! >
-#! <OUTPUT_FEAT NAME="OUTPUT"/>
-#! <FEAT_COLLAPSED COLLAPSED="0"/>
-#! <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="code" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="qdgc" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="qdgc_cellsize" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
-#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
-#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="att_create_qdgc_cellsize"/>
-#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="&lt;Unused&gt;"/>
-#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
-#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
-#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="qdgc_cellsize,0.03125"/>
-#! </TRANSFORMER>
-#! <TRANSFORMER
-#! IDENTIFIER="31"
-#! TYPE="AttributeCreator"
-#! VERSION="5"
-#! POSITION="2191 190"
-#! ORDER="5e+014"
-#! PARMS_EDITED="true"
-#! ENABLED="true"
-#! >
-#! <OUTPUT_FEAT NAME="OUTPUT"/>
-#! <XFORM_ATTR ATTR_NAME="code" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="qdgc" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="qdgc_cellsize" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="qdgc_level" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="lon" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="lat" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="z_vaste" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="areakm2" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="filename" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
-#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
-#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="att_create_qdgc_2"/>
-#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="&lt;Unused&gt;"/>
-#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
-#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
-#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="filename,qdgc_&lt;at&gt;Value&lt;openparen&gt;qdgc_level&lt;closeparen&gt;_&lt;at&gt;Value&lt;openparen&gt;code&lt;closeparen&gt;"/>
-#! </TRANSFORMER>
-#! <TRANSFORMER
-#! IDENTIFIER="41"
-#! TYPE="AttributeRenamer"
-#! VERSION="2"
-#! POSITION="-837 -374"
-#! ORDER="5e+014"
-#! PARMS_EDITED="true"
-#! ENABLED="true"
-#! >
-#! <OUTPUT_FEAT NAME="OUTPUT"/>
-#! <FEAT_COLLAPSED COLLAPSED="0"/>
-#! <XFORM_ATTR ATTR_NAME="scalerank" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="featurecla" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="labelrank" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="sovereignt" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="sov_a3" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="adm0_dif" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="level" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="type" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="admin" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="adm0_a3" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="geou_dif" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="geounit" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="gu_a3" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="su_dif" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="subunit" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="su_a3" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="brk_diff" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="name_long" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="brk_a3" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="brk_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="brk_group" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="abbrev" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="postal" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="formal_en" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="formal_fr" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="note_adm0" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="note_brk" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="name_sort" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="name_alt" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="mapcolor7" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="mapcolor8" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="mapcolor9" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="mapcolor13" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="pop_est" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="gdp_md_est" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="pop_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="lastcensus" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="gdp_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="economy" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="income_grp" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="wikipedia" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="fips_10" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="iso_a2" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="code" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="iso_n3" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="un_a3" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="wb_a2" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="wb_a3" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="woe_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="adm0_a3_is" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="adm0_a3_us" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="adm0_a3_un" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="adm0_a3_wb" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="continent" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="region_un" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="subregion" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="region_wb" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="name_len" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="long_len" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="abbrev_len" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="tiny" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="homepart" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeRenamer"/>
-#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="iso_a3,code,&quot;&quot;"/>
-#! </TRANSFORMER>
-#! <TRANSFORMER
-#! IDENTIFIER="39"
-#! TYPE="StringPadder"
+#! IDENTIFIER="59"
+#! TYPE="Inspector"
 #! VERSION="3"
-#! POSITION="1509 -285"
+#! POSITION="1120 -1047"
 #! ORDER="5e+014"
-#! PARMS_EDITED="true"
+#! PARMS_EDITED="false"
 #! ENABLED="true"
 #! >
-#! <OUTPUT_FEAT NAME="OUTPUT"/>
-#! <XFORM_ATTR ATTR_NAME="code" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="qdgc" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="qdgc_cellsize" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="qdgc_level" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="lon" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="lat" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="z_vaste" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="areakm2" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_PARM PARM_NAME="WIDTH" PARM_VALUE="2"/>
-#! <XFORM_PARM PARM_NAME="SRC_ATTRS" PARM_VALUE="qdgc_level"/>
-#! <XFORM_PARM PARM_NAME="SIDE" PARM_VALUE="Left"/>
-#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="StringPadder"/>
-#! <XFORM_PARM PARM_NAME="PADCHAR" PARM_VALUE="0"/>
+#! <XFORM_PARM PARM_NAME="AREA_COLOR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="THINNER_MAX_NUM_POINTS" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="TACKATTRS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="VECTOR_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="POINTCLOUD_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PEN_COLOR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Inspector_2"/>
+#! <XFORM_PARM PARM_NAME="RASTER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="THINNER_INTERVAL" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="RASTER_VISUALIZATION_OPTION" PARM_VALUE="No Reduction"/>
 #! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
-#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
-#! <XFORM_PARM PARM_NAME="BLANK_ATTRIBUTE" PARM_VALUE="Yes"/>
+#! <XFORM_PARM PARM_NAME="RASTER_NUM_ROWS" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="RASTER_START_COL" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="RASTER_NUM_COLS" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="THINNER_TYPE_DISPLAY" PARM_VALUE="No Thinning"/>
+#! <XFORM_PARM PARM_NAME="RASTER_START_ROW" PARM_VALUE="&lt;Unused&gt;"/>
 #! </TRANSFORMER>
 #! <TRANSFORMER
-#! IDENTIFIER="36"
-#! TYPE="AttributeCreator"
-#! VERSION="5"
-#! POSITION="-811 -1469"
+#! IDENTIFIER="65"
+#! TYPE="Inspector"
+#! VERSION="3"
+#! POSITION="-291 -147"
 #! ORDER="5e+014"
-#! PARMS_EDITED="true"
+#! PARMS_EDITED="false"
 #! ENABLED="true"
 #! >
-#! <OUTPUT_FEAT NAME="OUTPUT"/>
-#! <FEAT_COLLAPSED COLLAPSED="0"/>
-#! <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="code" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="qdgc" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="qdgc_cellsize" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="qdgc_level" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
-#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
-#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="att_create_qdgc_level"/>
-#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="&lt;Unused&gt;"/>
-#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
-#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
-#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="qdgc_level,5"/>
-#! </TRANSFORMER>
-#! <TRANSFORMER
-#! IDENTIFIER="48"
-#! TYPE="StringCaseChanger"
-#! VERSION="5"
-#! POSITION="-831 -783"
-#! ORDER="5e+014"
-#! PARMS_EDITED="true"
-#! ENABLED="true"
-#! >
-#! <OUTPUT_FEAT NAME="OUTPUT"/>
-#! <FEAT_COLLAPSED COLLAPSED="0"/>
-#! <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="code" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="StringCaseChanger"/>
-#! <XFORM_PARM PARM_NAME="ATTRCHOICE" PARM_VALUE="Selected Attributes"/>
-#! <XFORM_PARM PARM_NAME="CHANGE_TYPE" PARM_VALUE="lowercase"/>
-#! <XFORM_PARM PARM_NAME="ATTRLIST" PARM_VALUE="code"/>
+#! <XFORM_PARM PARM_NAME="AREA_COLOR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="THINNER_MAX_NUM_POINTS" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="TACKATTRS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="VECTOR_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="POINTCLOUD_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PEN_COLOR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Inspector_3"/>
+#! <XFORM_PARM PARM_NAME="RASTER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="THINNER_INTERVAL" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="RASTER_VISUALIZATION_OPTION" PARM_VALUE="No Reduction"/>
 #! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
-#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
-#! <XFORM_PARM PARM_NAME="ATTRS_GROUP" PARM_VALUE=""/>
-#! </TRANSFORMER>
-#! <TRANSFORMER
-#! IDENTIFIER="51"
-#! TYPE="AttributeClassifier"
-#! VERSION="1"
-#! POSITION="-840 -1"
-#! ORDER="5e+014"
-#! PARMS_EDITED="true"
-#! ENABLED="true"
-#! >
-#! <OUTPUT_FEAT NAME="PASSED"/>
-#! <FEAT_COLLAPSED COLLAPSED="0"/>
-#! <XFORM_ATTR ATTR_NAME="scalerank" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="featurecla" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="labelrank" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="sovereignt" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="sov_a3" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="adm0_dif" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="level" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="type" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="admin" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="adm0_a3" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="geou_dif" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="geounit" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="gu_a3" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="su_dif" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="subunit" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="su_a3" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="brk_diff" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="name_long" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="brk_a3" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="brk_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="brk_group" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="abbrev" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="postal" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="formal_en" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="formal_fr" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="note_adm0" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="note_brk" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="name_sort" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="name_alt" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="mapcolor7" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="mapcolor8" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="mapcolor9" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="mapcolor13" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="pop_est" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="gdp_md_est" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="pop_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="lastcensus" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="gdp_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="economy" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="income_grp" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="wikipedia" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="fips_10" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="iso_a2" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="iso_a3" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="iso_n3" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="un_a3" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="wb_a2" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="wb_a3" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="woe_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="adm0_a3_is" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="adm0_a3_us" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="adm0_a3_un" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="adm0_a3_wb" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="continent" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="region_un" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="subregion" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="region_wb" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="name_len" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="long_len" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="abbrev_len" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="tiny" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="homepart" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <OUTPUT_FEAT NAME="FAILED"/>
-#! <FEAT_COLLAPSED COLLAPSED="1"/>
-#! <XFORM_ATTR ATTR_NAME="scalerank" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#! <XFORM_ATTR ATTR_NAME="featurecla" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#! <XFORM_ATTR ATTR_NAME="labelrank" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#! <XFORM_ATTR ATTR_NAME="sovereignt" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#! <XFORM_ATTR ATTR_NAME="sov_a3" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#! <XFORM_ATTR ATTR_NAME="adm0_dif" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#! <XFORM_ATTR ATTR_NAME="level" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#! <XFORM_ATTR ATTR_NAME="type" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#! <XFORM_ATTR ATTR_NAME="admin" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#! <XFORM_ATTR ATTR_NAME="adm0_a3" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#! <XFORM_ATTR ATTR_NAME="geou_dif" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#! <XFORM_ATTR ATTR_NAME="geounit" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#! <XFORM_ATTR ATTR_NAME="gu_a3" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#! <XFORM_ATTR ATTR_NAME="su_dif" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#! <XFORM_ATTR ATTR_NAME="subunit" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#! <XFORM_ATTR ATTR_NAME="su_a3" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#! <XFORM_ATTR ATTR_NAME="brk_diff" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#! <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#! <XFORM_ATTR ATTR_NAME="name_long" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#! <XFORM_ATTR ATTR_NAME="brk_a3" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#! <XFORM_ATTR ATTR_NAME="brk_name" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#! <XFORM_ATTR ATTR_NAME="brk_group" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#! <XFORM_ATTR ATTR_NAME="abbrev" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#! <XFORM_ATTR ATTR_NAME="postal" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#! <XFORM_ATTR ATTR_NAME="formal_en" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#! <XFORM_ATTR ATTR_NAME="formal_fr" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#! <XFORM_ATTR ATTR_NAME="note_adm0" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#! <XFORM_ATTR ATTR_NAME="note_brk" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#! <XFORM_ATTR ATTR_NAME="name_sort" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#! <XFORM_ATTR ATTR_NAME="name_alt" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#! <XFORM_ATTR ATTR_NAME="mapcolor7" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#! <XFORM_ATTR ATTR_NAME="mapcolor8" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#! <XFORM_ATTR ATTR_NAME="mapcolor9" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#! <XFORM_ATTR ATTR_NAME="mapcolor13" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#! <XFORM_ATTR ATTR_NAME="pop_est" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#! <XFORM_ATTR ATTR_NAME="gdp_md_est" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#! <XFORM_ATTR ATTR_NAME="pop_year" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#! <XFORM_ATTR ATTR_NAME="lastcensus" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#! <XFORM_ATTR ATTR_NAME="gdp_year" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#! <XFORM_ATTR ATTR_NAME="economy" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#! <XFORM_ATTR ATTR_NAME="income_grp" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#! <XFORM_ATTR ATTR_NAME="wikipedia" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#! <XFORM_ATTR ATTR_NAME="fips_10" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#! <XFORM_ATTR ATTR_NAME="iso_a2" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#! <XFORM_ATTR ATTR_NAME="iso_a3" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#! <XFORM_ATTR ATTR_NAME="iso_n3" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#! <XFORM_ATTR ATTR_NAME="un_a3" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#! <XFORM_ATTR ATTR_NAME="wb_a2" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#! <XFORM_ATTR ATTR_NAME="wb_a3" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#! <XFORM_ATTR ATTR_NAME="woe_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#! <XFORM_ATTR ATTR_NAME="adm0_a3_is" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#! <XFORM_ATTR ATTR_NAME="adm0_a3_us" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#! <XFORM_ATTR ATTR_NAME="adm0_a3_un" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#! <XFORM_ATTR ATTR_NAME="adm0_a3_wb" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#! <XFORM_ATTR ATTR_NAME="continent" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#! <XFORM_ATTR ATTR_NAME="region_un" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#! <XFORM_ATTR ATTR_NAME="subregion" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#! <XFORM_ATTR ATTR_NAME="region_wb" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#! <XFORM_ATTR ATTR_NAME="name_len" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#! <XFORM_ATTR ATTR_NAME="long_len" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#! <XFORM_ATTR ATTR_NAME="abbrev_len" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#! <XFORM_ATTR ATTR_NAME="tiny" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#! <XFORM_ATTR ATTR_NAME="homepart" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#! <XFORM_PARM PARM_NAME="SRC_ATTR" PARM_VALUE="iso_a3"/>
-#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeClassifier"/>
-#! <XFORM_PARM PARM_NAME="CLASS" PARM_VALUE="ASCII"/>
-#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
-#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
-#! </TRANSFORMER>
-#! <TRANSFORMER
-#! IDENTIFIER="53"
-#! TYPE="AttributeRemover"
-#! VERSION="0"
-#! POSITION="149 -189"
-#! ORDER="5e+014"
-#! PARMS_EDITED="true"
-#! ENABLED="true"
-#! >
-#! <OUTPUT_FEAT NAME="OUTPUT"/>
-#! <FEAT_COLLAPSED COLLAPSED="0"/>
-#! <XFORM_ATTR ATTR_NAME="code" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="qdgc" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="qdgc_cellsize" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="qdgc_level" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_PARM PARM_NAME="LIST_ATTRS" PARM_VALUE=""/>
-#! <XFORM_PARM PARM_NAME="REMOVE_ATTRS" PARM_VALUE="name"/>
-#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeRemover_3"/>
-#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
-#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
-#! </TRANSFORMER>
-#! <TRANSFORMER
-#! IDENTIFIER="63"
-#! TYPE="PythonCaller"
-#! VERSION="1"
-#! POSITION="2158 -1081"
-#! ORDER="8"
-#! PARMS_EDITED="true"
-#! ENABLED="true"
-#! >
-#! <OUTPUT_FEAT NAME="OUTPUT"/>
-#! <XFORM_ATTR ATTR_NAME="code" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="qdgc" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="qdgc_cellsize" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="qdgc_level" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="lon" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="lat" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="z_vaste" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="areakm2" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_PARM PARM_NAME="PYTHONSOURCE" PARM_VALUE="#*******************************************************************&lt;lf&gt;#&lt;space&gt;Longitude&lt;solidus&gt;Latitude&lt;space&gt;to&lt;space&gt;Quarter&lt;space&gt;Degree&lt;space&gt;Grid&lt;space&gt;Cell&lt;space&gt;standard&lt;space&gt;conversion&lt;space&gt;&lt;lf&gt;#&lt;space&gt;utility&lt;space&gt;&lt;space&gt;&lt;lf&gt;#&lt;lf&gt;#&lt;space&gt;The&lt;space&gt;utility&lt;space&gt;will&lt;space&gt;accept&lt;space&gt;the&lt;space&gt;path&lt;space&gt;of&lt;space&gt;a&lt;space&gt;.dbf-file&lt;space&gt;as&lt;space&gt;an&lt;space&gt;argument.&lt;space&gt;By&lt;lf&gt;#&lt;space&gt;setting&lt;space&gt;the&lt;space&gt;QDGC&lt;space&gt;level&lt;space&gt;the&lt;space&gt;script&lt;space&gt;will&lt;space&gt;use&lt;space&gt;the&lt;space&gt;LON&lt;solidus&gt;LAT&lt;space&gt;values&lt;space&gt;to&lt;space&gt;&lt;lf&gt;#&lt;space&gt;produce&lt;space&gt;a&lt;space&gt;QDGC&lt;space&gt;string&lt;space&gt;value&lt;space&gt;which&lt;space&gt;is&lt;space&gt;inserted&lt;space&gt;into&lt;space&gt;the&lt;space&gt;QDGC&lt;space&gt;column&lt;lf&gt;#&lt;space&gt;of&lt;space&gt;the&lt;space&gt;.dbf-file.&lt;lf&gt;#&lt;lf&gt;#&lt;space&gt;Delivered&lt;space&gt;as-is.&lt;space&gt;If&lt;space&gt;it&lt;space&gt;works&lt;space&gt;-&lt;space&gt;fine&lt;space&gt;for&lt;space&gt;you.&lt;space&gt;If&lt;space&gt;it&lt;space&gt;fails&lt;space&gt;-&lt;space&gt;too&lt;space&gt;bad.&lt;space&gt;&lt;lf&gt;#&lt;space&gt;No&lt;space&gt;are&lt;space&gt;given&lt;space&gt;guarantees&lt;space&gt;whatsoever.&lt;space&gt;If&lt;space&gt;you&lt;space&gt;use&lt;space&gt;this&lt;space&gt;program&lt;space&gt;for&lt;space&gt;&lt;lf&gt;#&lt;space&gt;illegal&lt;space&gt;purposes&lt;space&gt;-&lt;space&gt;don&lt;apos&gt;t&lt;space&gt;blame&lt;space&gt;me.&lt;lf&gt;#&lt;space&gt;&lt;lf&gt;#&lt;space&gt;License&lt;space&gt;type&lt;space&gt;is&lt;space&gt;Gnu&lt;space&gt;GPL.&lt;space&gt;Copy&lt;comma&gt;&lt;space&gt;distribute&lt;space&gt;and&lt;space&gt;change&lt;space&gt;freely.&lt;space&gt;Keep&lt;lf&gt;#&lt;space&gt;the&lt;space&gt;author&lt;space&gt;in&lt;space&gt;mind&lt;space&gt;for&lt;space&gt;crediting.&lt;space&gt;Come&lt;space&gt;to&lt;space&gt;think&lt;space&gt;of&lt;space&gt;it&lt;comma&gt;&lt;space&gt;use&lt;space&gt;this&lt;space&gt;&lt;lf&gt;#&lt;space&gt;reference:&lt;lf&gt;#&lt;lf&gt;#&lt;space&gt;R.&lt;space&gt;Larsen&lt;comma&gt;&lt;space&gt;T.&lt;space&gt;Holmern&lt;comma&gt;&lt;space&gt;S.&lt;space&gt;D.&lt;space&gt;Prager&lt;comma&gt;&lt;space&gt;H.&lt;space&gt;Maliti&lt;space&gt;and&lt;space&gt;E.&lt;space&gt;Roskaft&lt;space&gt;&lt;lf&gt;#&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;openparen&gt;2009&lt;closeparen&gt;&lt;space&gt;Using&lt;space&gt;the&lt;space&gt;extended&lt;space&gt;quarter&lt;space&gt;degree&lt;space&gt;grid&lt;space&gt;cell&lt;space&gt;system&lt;space&gt;&lt;lf&gt;#&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;to&lt;space&gt;unify&lt;space&gt;mapping&lt;space&gt;and&lt;space&gt;sharing&lt;space&gt;of&lt;space&gt;biodiversity&lt;space&gt;data&lt;comma&gt;&lt;space&gt;African&lt;lf&gt;#&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;Journal&lt;space&gt;of&lt;space&gt;Ecology.&lt;space&gt;Volume&lt;space&gt;47&lt;comma&gt;&lt;space&gt;Issue&lt;space&gt;3&lt;space&gt;&lt;comma&gt;&lt;space&gt;Pages&lt;space&gt;382&lt;space&gt;-&lt;space&gt;392&lt;lf&gt;#&lt;lf&gt;#&lt;space&gt;Author&lt;space&gt;Ragnvald&lt;space&gt;Larsen&lt;comma&gt;&lt;space&gt;Dept&lt;space&gt;of&lt;space&gt;Biology&lt;comma&gt;&lt;space&gt;NTNU&lt;space&gt;&lt;openparen&gt;www.bio.ntnu.no&lt;closeparen&gt;&lt;lf&gt;#&lt;space&gt;ragnvald&lt;openparen&gt;at&lt;closeparen&gt;mindland.com&lt;lf&gt;#&lt;lf&gt;#&lt;space&gt;Version&lt;space&gt;0.6&lt;space&gt;&lt;openparen&gt;01.12.2009&lt;closeparen&gt;&lt;lf&gt;&lt;lf&gt;&lt;lf&gt;#Math&lt;space&gt;is&lt;space&gt;used&lt;space&gt;in&lt;space&gt;this&lt;space&gt;one&lt;lf&gt;import&lt;space&gt;math&lt;lf&gt;import&lt;space&gt;fmeobjects&lt;lf&gt;&lt;lf&gt;&lt;lf&gt;#*******************************************************************&lt;lf&gt;#&lt;space&gt;Numerical&lt;space&gt;representation&lt;space&gt;of&lt;space&gt;lat-lon&lt;lf&gt;#&lt;lf&gt;#&lt;space&gt;Input:&lt;space&gt;Longitude&lt;comma&gt;&lt;space&gt;Latitude&lt;lf&gt;#&lt;space&gt;38.98754324&lt;solidus&gt;-9.87548764&lt;lf&gt;#&lt;lf&gt;#&lt;space&gt;Output:&lt;space&gt;Absolute&lt;space&gt;referense&lt;space&gt;to&lt;space&gt;degree&lt;space&gt;square&lt;lf&gt;#&lt;space&gt;E038S09?&lt;lf&gt;#&lt;lf&gt;def&lt;space&gt;get_lonlat&lt;openparen&gt;lon_value&lt;comma&gt;lat_value&lt;closeparen&gt;:&lt;lf&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#Put&lt;space&gt;character&lt;space&gt;in&lt;space&gt;front&lt;space&gt;of&lt;space&gt;longitudal&lt;space&gt;value&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;lon_value&lt;space&gt;&lt;lt&gt;&lt;space&gt;0:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;square&lt;space&gt;=&lt;space&gt;&lt;apos&gt;W&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;else:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;square&lt;space&gt;=&lt;space&gt;&lt;apos&gt;E&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#Find&lt;space&gt;absolute&lt;space&gt;value&lt;space&gt;for&lt;space&gt;longitude&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lon_string=str&lt;openparen&gt;int&lt;openparen&gt;abs&lt;openparen&gt;lon_value&lt;closeparen&gt;&lt;closeparen&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;lf&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#The&lt;space&gt;longitudal&lt;space&gt;value&lt;space&gt;of&lt;space&gt;the&lt;space&gt;square&lt;space&gt;is&lt;space&gt;printed&lt;space&gt;with&lt;space&gt;three&lt;space&gt;decimals&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;square&lt;space&gt;=&lt;space&gt;square&lt;space&gt;+&lt;space&gt;&lt;openparen&gt;lon_string&lt;closeparen&gt;.zfill&lt;openparen&gt;3&lt;closeparen&gt;&lt;lf&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#Put&lt;space&gt;character&lt;space&gt;in&lt;space&gt;front&lt;space&gt;of&lt;space&gt;latitudal&lt;space&gt;value&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;&lt;space&gt;lat_value&lt;space&gt;&lt;lt&gt;&lt;space&gt;0&lt;space&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;square&lt;space&gt;=&lt;space&gt;square&lt;space&gt;+&lt;space&gt;&lt;apos&gt;S&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;else:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;square&lt;space&gt;=&lt;space&gt;square&lt;space&gt;+&lt;space&gt;&lt;apos&gt;N&lt;apos&gt;&lt;lf&gt;&lt;lf&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#find&lt;space&gt;absolute&lt;space&gt;value&lt;space&gt;for&lt;space&gt;latitude&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lat_string=str&lt;openparen&gt;int&lt;openparen&gt;abs&lt;openparen&gt;lat_value&lt;closeparen&gt;&lt;closeparen&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#find&lt;space&gt;int&lt;space&gt;lat.&lt;space&gt;Remember&lt;space&gt;that&lt;space&gt;latitudes&lt;space&gt;absolute&lt;space&gt;values&lt;space&gt;never&lt;space&gt;excceed&lt;space&gt;90&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;square&lt;space&gt;=&lt;space&gt;square&lt;space&gt;+&lt;space&gt;&lt;openparen&gt;lat_string&lt;closeparen&gt;.zfill&lt;openparen&gt;2&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;return&lt;space&gt;square&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;#*******************************************************************&lt;lf&gt;#&lt;space&gt;RQDGC&lt;space&gt;-&lt;space&gt;recursive&lt;space&gt;quarter&lt;space&gt;degree&lt;space&gt;grid&lt;space&gt;cell&lt;lf&gt;#&lt;lf&gt;#&lt;space&gt;Input:&lt;space&gt;Latitude&lt;comma&gt;&lt;space&gt;Longitude&lt;comma&gt;&lt;space&gt;depth&lt;space&gt;in&lt;space&gt;powers&lt;space&gt;of&lt;space&gt;two&lt;comma&gt;&lt;space&gt;starting&lt;space&gt;string&lt;lf&gt;#&lt;space&gt;-9.87548764&lt;comma&gt;&lt;space&gt;38.98754324&lt;comma&gt;&lt;space&gt;5&lt;comma&gt;&lt;space&gt;&lt;quote&gt;&lt;quote&gt;&lt;lf&gt;#&lt;lf&gt;#&lt;space&gt;Output:&lt;space&gt;DDDBB&lt;lf&gt;#&lt;lf&gt;#&lt;space&gt;Obs!:&lt;space&gt;This&lt;space&gt;function&lt;space&gt;places&lt;space&gt;origo&lt;space&gt;in&lt;space&gt;the&lt;space&gt;cell&lt;space&gt;in&lt;space&gt;the&lt;space&gt;upper&lt;space&gt;left&lt;lf&gt;#&lt;space&gt;in&lt;space&gt;the&lt;space&gt;southern&lt;space&gt;hemisphere&lt;space&gt;and&lt;space&gt;in&lt;space&gt;the&lt;space&gt;lower&lt;space&gt;left&lt;space&gt;corner&lt;lf&gt;#&lt;space&gt;in&lt;space&gt;the&lt;space&gt;norther&lt;space&gt;hemisphere.&lt;space&gt;Is&lt;space&gt;this&lt;space&gt;ok?&lt;lf&gt;def&lt;space&gt;get_recursive_qdgc&lt;openparen&gt;lon_value&lt;comma&gt;lat_value&lt;comma&gt;depth&lt;comma&gt;square&lt;closeparen&gt;:&lt;lf&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#remove&lt;space&gt;all&lt;space&gt;but&lt;space&gt;the&lt;space&gt;decimals&lt;space&gt;&lt;openparen&gt;eg:&lt;space&gt;30.54&lt;space&gt;-&lt;gt&gt;&lt;space&gt;0.54&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#this&lt;space&gt;also&lt;space&gt;takes&lt;space&gt;care&lt;space&gt;of&lt;space&gt;values&lt;space&gt;below&lt;space&gt;zero&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;&lt;space&gt;lon_value&lt;space&gt;&lt;gt&gt;1&lt;space&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lon_value&lt;space&gt;=&lt;space&gt;lon_value&lt;space&gt;-&lt;space&gt;math.floor&lt;openparen&gt;lon_value&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;elif&lt;space&gt;&lt;openparen&gt;lon_value&lt;lt&gt;-1&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lon_value&lt;space&gt;=&lt;space&gt;lon_value&lt;space&gt;+&lt;space&gt;abs&lt;openparen&gt;math.ceil&lt;openparen&gt;lon_value&lt;closeparen&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#remove&lt;space&gt;all&lt;space&gt;but&lt;space&gt;the&lt;space&gt;decimals&lt;space&gt;&lt;openparen&gt;eg:&lt;space&gt;30.54&lt;space&gt;-&lt;gt&gt;&lt;space&gt;0.54&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#this&lt;space&gt;also&lt;space&gt;takes&lt;space&gt;care&lt;space&gt;of&lt;space&gt;values&lt;space&gt;below&lt;space&gt;zero&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;&lt;space&gt;&lt;openparen&gt;lat_value&lt;space&gt;&lt;gt&gt;&lt;space&gt;1&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lat_value&lt;space&gt;=&lt;space&gt;lat_value&lt;space&gt;-&lt;space&gt;math.floor&lt;openparen&gt;lat_value&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;elif&lt;space&gt;&lt;openparen&gt;lat_value&lt;lt&gt;-1&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lat_value&lt;space&gt;=&lt;space&gt;lat_value&lt;space&gt;+&lt;space&gt;abs&lt;openparen&gt;math.ceil&lt;openparen&gt;lat_value&lt;closeparen&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;lf&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#check&lt;space&gt;which&lt;space&gt;of&lt;space&gt;the&lt;space&gt;4&lt;space&gt;squares&lt;space&gt;the&lt;space&gt;value&lt;space&gt;fals&lt;space&gt;within&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#Q1&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;&lt;openparen&gt;&lt;openparen&gt;lon_value&lt;gt&gt;=0&lt;closeparen&gt;&lt;space&gt;and&lt;space&gt;&lt;openparen&gt;lat_value&lt;gt&gt;=0&lt;closeparen&gt;&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#upper&lt;space&gt;left&lt;space&gt;-&lt;space&gt;A&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;&lt;openparen&gt;&lt;openparen&gt;lon_value&lt;space&gt;&lt;lt&gt;0.5&lt;closeparen&gt;&lt;space&gt;and&lt;space&gt;&lt;openparen&gt;lat_value&lt;gt&gt;=0.5&lt;closeparen&gt;&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;square&lt;space&gt;=&lt;space&gt;&lt;space&gt;square&lt;space&gt;+&lt;space&gt;&lt;apos&gt;A&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lon_value=lon_value*2&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lat_value=&lt;openparen&gt;lat_value-0.5&lt;closeparen&gt;*2&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#upper&lt;space&gt;right&lt;space&gt;-&lt;space&gt;B&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;elif&lt;space&gt;&lt;openparen&gt;&lt;openparen&gt;lon_value&lt;gt&gt;=0.5&lt;closeparen&gt;&lt;space&gt;and&lt;space&gt;&lt;openparen&gt;lat_value&lt;gt&gt;=0.5&lt;closeparen&gt;&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;square&lt;space&gt;=&lt;space&gt;square&lt;space&gt;+&lt;space&gt;&lt;apos&gt;B&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lon_value=&lt;openparen&gt;lon_value-0.5&lt;closeparen&gt;*2&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lat_value=&lt;openparen&gt;lat_value-0.5&lt;closeparen&gt;*2&lt;lf&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#lower&lt;space&gt;left&lt;space&gt;-&lt;space&gt;C&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;elif&lt;space&gt;&lt;openparen&gt;&lt;openparen&gt;lon_value&lt;lt&gt;0.5&lt;closeparen&gt;&lt;space&gt;and&lt;space&gt;&lt;openparen&gt;lat_value&lt;lt&gt;0.5&lt;closeparen&gt;&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;square&lt;space&gt;=&lt;space&gt;square&lt;space&gt;+&lt;space&gt;&lt;apos&gt;C&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#both&lt;space&gt;values&lt;space&gt;are&lt;space&gt;doubled&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lat_value=lat_value*2&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lon_value=lon_value*2&lt;lf&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#lower&lt;space&gt;right&lt;space&gt;-&lt;space&gt;D&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;elif&lt;space&gt;&lt;openparen&gt;&lt;openparen&gt;lon_value&lt;gt&gt;=0.5&lt;closeparen&gt;&lt;space&gt;and&lt;space&gt;&lt;openparen&gt;lat_value&lt;lt&gt;0.5&lt;closeparen&gt;&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;square&lt;space&gt;=&lt;space&gt;&lt;space&gt;square&lt;space&gt;+&lt;space&gt;&lt;apos&gt;D&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lon_value=&lt;openparen&gt;lon_value-0.5&lt;closeparen&gt;*2&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lat_value=lat_value*2&lt;lf&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;Q2&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;elif&lt;space&gt;&lt;openparen&gt;&lt;openparen&gt;lon_value&lt;gt&gt;=0&lt;closeparen&gt;&lt;space&gt;and&lt;space&gt;&lt;openparen&gt;lat_value&lt;lt&gt;=0&lt;closeparen&gt;&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;upper&lt;space&gt;left&lt;space&gt;-&lt;space&gt;A&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;&lt;openparen&gt;&lt;openparen&gt;lon_value&lt;space&gt;&lt;lt&gt;0.5&lt;closeparen&gt;&lt;space&gt;and&lt;space&gt;&lt;openparen&gt;lat_value&lt;gt&gt;-0.5&lt;closeparen&gt;&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;square&lt;space&gt;=&lt;space&gt;square&lt;space&gt;+&lt;space&gt;&lt;apos&gt;A&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lon_value=lon_value*2&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lat_value=lat_value*2&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#upper&lt;space&gt;right&lt;space&gt;-&lt;space&gt;B&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;elif&lt;space&gt;&lt;openparen&gt;&lt;openparen&gt;lon_value&lt;gt&gt;=0.5&lt;closeparen&gt;&lt;space&gt;and&lt;space&gt;&lt;openparen&gt;lat_value&lt;gt&gt;-0.5&lt;closeparen&gt;&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;square&lt;space&gt;=&lt;space&gt;square&lt;space&gt;+&lt;space&gt;&lt;apos&gt;B&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lon_value=&lt;openparen&gt;lon_value-0.5&lt;closeparen&gt;*2&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lat_value=lat_value*2&lt;lf&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#lower&lt;space&gt;left&lt;space&gt;-&lt;space&gt;C&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;elif&lt;space&gt;&lt;openparen&gt;&lt;openparen&gt;lon_value&lt;lt&gt;0.5&lt;closeparen&gt;&lt;space&gt;and&lt;space&gt;&lt;openparen&gt;lat_value&lt;lt&gt;=-0.5&lt;closeparen&gt;&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;square&lt;space&gt;=&lt;space&gt;square&lt;space&gt;+&lt;space&gt;&lt;apos&gt;C&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lon_value=lon_value*2&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lat_value=&lt;openparen&gt;lat_value+0.5&lt;closeparen&gt;*2&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#lower&lt;space&gt;right&lt;space&gt;-&lt;space&gt;D&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;elif&lt;space&gt;&lt;openparen&gt;&lt;openparen&gt;lon_value&lt;gt&gt;=0.5&lt;closeparen&gt;&lt;space&gt;and&lt;space&gt;&lt;openparen&gt;lat_value&lt;lt&gt;=-0.5&lt;closeparen&gt;&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;square&lt;space&gt;=&lt;space&gt;square&lt;space&gt;+&lt;space&gt;&lt;apos&gt;D&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lon_value=&lt;openparen&gt;lon_value-0.5&lt;closeparen&gt;*2&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lat_value=&lt;openparen&gt;lat_value+0.5&lt;closeparen&gt;*2&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;Q3&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;elif&lt;space&gt;&lt;openparen&gt;&lt;openparen&gt;lon_value&lt;lt&gt;=0&lt;closeparen&gt;&lt;space&gt;and&lt;space&gt;&lt;openparen&gt;lat_value&lt;lt&gt;=0&lt;closeparen&gt;&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#upper&lt;space&gt;left&lt;space&gt;-&lt;space&gt;A&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;&lt;openparen&gt;&lt;openparen&gt;lon_value&lt;lt&gt;=-0.5&lt;closeparen&gt;&lt;space&gt;and&lt;space&gt;&lt;openparen&gt;lat_value&lt;gt&gt;-0.5&lt;closeparen&gt;&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;square&lt;space&gt;=&lt;space&gt;square&lt;space&gt;+&lt;space&gt;&lt;apos&gt;A&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lon_value=&lt;openparen&gt;lon_value+0.5&lt;closeparen&gt;*2&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lat_value=lat_value*2&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#upper&lt;space&gt;right&lt;space&gt;-&lt;space&gt;B&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;elif&lt;space&gt;&lt;openparen&gt;&lt;openparen&gt;lon_value&lt;gt&gt;-0.5&lt;closeparen&gt;&lt;space&gt;and&lt;space&gt;&lt;openparen&gt;lat_value&lt;gt&gt;-0.5&lt;closeparen&gt;&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;square&lt;space&gt;=&lt;space&gt;square&lt;space&gt;+&lt;space&gt;&lt;apos&gt;B&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lon_value=lon_value*2&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lat_value=lat_value*2&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#lower&lt;space&gt;left&lt;space&gt;-&lt;space&gt;C&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;elif&lt;space&gt;&lt;openparen&gt;&lt;openparen&gt;lon_value&lt;lt&gt;=-0.5&lt;closeparen&gt;&lt;space&gt;and&lt;space&gt;&lt;openparen&gt;lat_value&lt;lt&gt;=-0.5&lt;closeparen&gt;&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;square&lt;space&gt;=&lt;space&gt;square&lt;space&gt;+&lt;space&gt;&lt;apos&gt;C&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lon_value=&lt;openparen&gt;lon_value+0.5&lt;closeparen&gt;*2&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lat_value=&lt;openparen&gt;lat_value+0.5&lt;closeparen&gt;*2&lt;lf&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#lower&lt;space&gt;right&lt;space&gt;-&lt;space&gt;D&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;elif&lt;space&gt;&lt;openparen&gt;&lt;openparen&gt;lon_value&lt;gt&gt;-0.5&lt;closeparen&gt;&lt;space&gt;and&lt;space&gt;&lt;openparen&gt;lat_value&lt;lt&gt;=-0.5&lt;closeparen&gt;&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;square&lt;space&gt;=&lt;space&gt;square&lt;space&gt;+&lt;space&gt;&lt;apos&gt;D&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lon_value=lon_value*2&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lat_value=&lt;openparen&gt;lat_value+0.5&lt;closeparen&gt;*2&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;Q4&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;space&gt;-&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;elif&lt;space&gt;&lt;openparen&gt;&lt;openparen&gt;lon_value&lt;lt&gt;=0&lt;closeparen&gt;&lt;space&gt;and&lt;space&gt;&lt;openparen&gt;lat_value&lt;gt&gt;=0&lt;closeparen&gt;&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#upper&lt;space&gt;left&lt;space&gt;-&lt;space&gt;A&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;&lt;openparen&gt;&lt;openparen&gt;lon_value&lt;space&gt;&lt;lt&gt;=-0.5&lt;closeparen&gt;&lt;space&gt;and&lt;space&gt;&lt;openparen&gt;lat_value&lt;gt&gt;=0.5&lt;closeparen&gt;&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;square&lt;space&gt;=&lt;space&gt;square&lt;space&gt;+&lt;space&gt;&lt;apos&gt;A&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lon_value=&lt;openparen&gt;lon_value+0.5&lt;closeparen&gt;*2&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lat_value=&lt;openparen&gt;lat_value-0.5&lt;closeparen&gt;*2&lt;lf&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#upper&lt;space&gt;right&lt;space&gt;-&lt;space&gt;B&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;elif&lt;space&gt;&lt;openparen&gt;&lt;openparen&gt;lon_value&lt;gt&gt;-0.5&lt;closeparen&gt;&lt;space&gt;and&lt;space&gt;&lt;openparen&gt;lat_value&lt;gt&gt;=0.5&lt;closeparen&gt;&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;square&lt;space&gt;=&lt;space&gt;square&lt;space&gt;+&lt;space&gt;&lt;apos&gt;B&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lon_value=lon_value*2&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lat_value=&lt;openparen&gt;lat_value-0.5&lt;closeparen&gt;*2&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#lower&lt;space&gt;left&lt;space&gt;-&lt;space&gt;C&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;elif&lt;space&gt;&lt;openparen&gt;&lt;openparen&gt;lon_value&lt;lt&gt;=-0.5&lt;closeparen&gt;&lt;space&gt;and&lt;space&gt;&lt;openparen&gt;lat_value&lt;lt&gt;0.5&lt;closeparen&gt;&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;square&lt;space&gt;=&lt;space&gt;square&lt;space&gt;+&lt;space&gt;&lt;apos&gt;C&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lon_value=&lt;openparen&gt;lon_value+0.5&lt;closeparen&gt;*2&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lat_value=&lt;openparen&gt;lat_value&lt;closeparen&gt;*2&lt;lf&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#lower&lt;space&gt;right&lt;space&gt;-&lt;space&gt;D&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;elif&lt;space&gt;&lt;openparen&gt;&lt;openparen&gt;lon_value&lt;gt&gt;-0.5&lt;closeparen&gt;&lt;space&gt;and&lt;space&gt;&lt;openparen&gt;lat_value&lt;lt&gt;0.5&lt;closeparen&gt;&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;square&lt;space&gt;=&lt;space&gt;square&lt;space&gt;+&lt;space&gt;&lt;apos&gt;D&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lon_value=lon_value*2&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lat_value=lat_value*2&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#find&lt;space&gt;square&lt;space&gt;sting&lt;space&gt;length&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;length&lt;space&gt;=&lt;space&gt;len&lt;openparen&gt;square&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#as&lt;space&gt;long&lt;space&gt;as&lt;space&gt;string&lt;space&gt;length&lt;space&gt;does&lt;space&gt;not&lt;space&gt;meed&lt;space&gt;criteria&lt;space&gt;for&lt;space&gt;depth&lt;space&gt;-&lt;space&gt;continue&lt;space&gt;calculation&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#as&lt;space&gt;an&lt;space&gt;argument&lt;space&gt;the&lt;space&gt;curent&lt;space&gt;square&lt;space&gt;value&lt;space&gt;is&lt;space&gt;sent&lt;space&gt;to&lt;space&gt;the&lt;space&gt;function.&lt;space&gt;This&lt;space&gt;is&lt;space&gt;added&lt;space&gt;in&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#subsequent&lt;space&gt;calculations&lt;comma&gt;&lt;space&gt;and&lt;space&gt;eventually&lt;space&gt;the&lt;space&gt;number&lt;space&gt;for&lt;space&gt;the&lt;space&gt;length&lt;space&gt;of&lt;space&gt;the&lt;space&gt;string&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#equals&lt;space&gt;the&lt;space&gt;number&lt;space&gt;of&lt;space&gt;the&lt;space&gt;depth&lt;space&gt;variable.&lt;space&gt;That&lt;apos&gt;s&lt;space&gt;when&lt;space&gt;the&lt;space&gt;job&lt;space&gt;is&lt;space&gt;done.&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;&lt;openparen&gt;length&lt;space&gt;&lt;lt&gt;&lt;space&gt;depth&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#Calculation&lt;space&gt;is&lt;space&gt;recursive&lt;space&gt;-&lt;space&gt;continue&lt;space&gt;the&lt;space&gt;good&lt;space&gt;work&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;square&lt;space&gt;=&lt;space&gt;get_recursive_qdgc&lt;openparen&gt;lon_value&lt;comma&gt;lat_value&lt;comma&gt;depth&lt;comma&gt;square&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#return&lt;space&gt;value&lt;space&gt;for&lt;space&gt;square&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;return&lt;space&gt;square&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;#This&lt;space&gt;is&lt;space&gt;where&lt;space&gt;the&lt;space&gt;program&lt;space&gt;is&lt;space&gt;executed&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;def&lt;space&gt;qdgc&lt;openparen&gt;feature&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lon_value&lt;space&gt;=&lt;space&gt;feature.getAttribute&lt;openparen&gt;&lt;apos&gt;lon&lt;apos&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lat_value&lt;space&gt;=&lt;space&gt;feature.getAttribute&lt;openparen&gt;&lt;apos&gt;lat&lt;apos&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;qdgc_level&lt;space&gt;=&lt;space&gt;int&lt;openparen&gt;feature.getAttribute&lt;openparen&gt;&lt;apos&gt;qdgc_level&lt;apos&gt;&lt;closeparen&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lonlatvalues&lt;space&gt;=&lt;space&gt;get_lonlat&lt;openparen&gt;lon_value&lt;comma&gt;lat_value&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;qdgcvalues&lt;space&gt;=&lt;space&gt;get_recursive_qdgc&lt;openparen&gt;lon_value&lt;comma&gt;lat_value&lt;comma&gt;qdgc_level&lt;comma&gt;&lt;quote&gt;&lt;quote&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;resultstring&lt;space&gt;=&lt;space&gt;lonlatvalues&lt;space&gt;+&lt;space&gt;qdgcvalues&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;feature.setAttribute&lt;openparen&gt;&lt;apos&gt;qdgc&lt;apos&gt;&lt;comma&gt;resultstring&lt;closeparen&gt;"/>
-#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="lonlat2qdgc"/>
-#! <XFORM_PARM PARM_NAME="PYTHONSYMBOL" PARM_VALUE="qdgc"/>
-#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
-#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="RASTER_NUM_ROWS" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="RASTER_START_COL" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="RASTER_NUM_COLS" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="THINNER_TYPE_DISPLAY" PARM_VALUE="No Thinning"/>
+#! <XFORM_PARM PARM_NAME="RASTER_START_ROW" PARM_VALUE="&lt;Unused&gt;"/>
 #! </TRANSFORMER>
 #! </TRANSFORMERS>
 #! <FEAT_LINKS>
@@ -2250,15 +2237,6 @@
 #! EXTRA_POINTS=""
 #! />
 #! <FEAT_LINK
-#! IDENTIFIER="42"
-#! SOURCE_NODE="32"
-#! TARGET_NODE="25"
-#! SOURCE_PORT_DESC="-1"
-#! TARGET_PORT_DESC="fi 0"
-#! ENABLED="true"
-#! EXTRA_POINTS=""
-#! />
-#! <FEAT_LINK
 #! IDENTIFIER="49"
 #! SOURCE_NODE="51"
 #! TARGET_NODE="41"
@@ -2286,24 +2264,6 @@
 #! EXTRA_POINTS=""
 #! />
 #! <FEAT_LINK
-#! IDENTIFIER="60"
-#! SOURCE_NODE="25"
-#! TARGET_NODE="51"
-#! SOURCE_PORT_DESC="fo 5"
-#! TARGET_PORT_DESC="fi 0"
-#! ENABLED="true"
-#! EXTRA_POINTS=""
-#! />
-#! <FEAT_LINK
-#! IDENTIFIER="57"
-#! SOURCE_NODE="25"
-#! TARGET_NODE="51"
-#! SOURCE_PORT_DESC="fo 4"
-#! TARGET_PORT_DESC="fi 0"
-#! ENABLED="true"
-#! EXTRA_POINTS=""
-#! />
-#! <FEAT_LINK
 #! IDENTIFIER="61"
 #! SOURCE_NODE="39"
 #! TARGET_NODE="63"
@@ -2317,6 +2277,42 @@
 #! SOURCE_NODE="63"
 #! TARGET_NODE="31"
 #! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="58"
+#! SOURCE_NODE="57"
+#! TARGET_NODE="51"
+#! SOURCE_PORT_DESC="fo 3"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="60"
+#! SOURCE_NODE="9"
+#! TARGET_NODE="59"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="66"
+#! SOURCE_NODE="51"
+#! TARGET_NODE="65"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="52"
+#! SOURCE_NODE="32"
+#! TARGET_NODE="57"
+#! SOURCE_PORT_DESC="-1"
 #! TARGET_PORT_DESC="fi 0"
 #! ENABLED="true"
 #! EXTRA_POINTS=""
@@ -2654,7 +2650,7 @@ FACTORY_DEF * TestFactory   FACTORY_NAME "Unexpected Input Remover"   INPUT FEAT
 FACTORY_DEF * TeeFactory    FACTORY_NAME "Source -> Generic"    INPUT FEATURE_TYPE *    OUTPUT FEATURE_TYPE *       @Transform(SHAPE,FME_GENERIC,ALIAS_GEOMETRY)
 DEFAULT_MACRO WB_CURRENT_CONTEXT
 # -------------------------------------------------------------------------
-Lookup AttributeFilter_AttributeFilterLut   SYR ok   TZA ok   "" notok   ENCODED
+Lookup AttributeFilter_AttributeFilterLut   FJI ok   "" notok   ENCODED
 
 Tcl2 proc AttributeFilter_setFeatType {} {     global FME_FeatureType;     set ft {AttributeFilter_};     append ft [FME_EncodeText [FME_GetAttribute {"iso_a3"}]];     set FME_FeatureType $ft; }
 FACTORY_DEF * TestFactory    FACTORY_NAME AttributeFilter    INPUT  FEATURE_TYPE ne_110m_admin_0_countries    TEST @Lookup(AttributeFilter_AttributeFilterLut,"iso_a3",ENCODED_ATTR) == "ok"    OUTPUT PASSED FEATURE_TYPE * @Tcl2(AttributeFilter_setFeatType)    OUTPUT FAILED FEATURE_TYPE AttributeFilter_<NULL>
@@ -2667,15 +2663,16 @@ FACTORY_DEF * TestFactory    FACTORY_NAME AttributeFilter_BlankFilter    INPUT F
 FACTORY_DEF * TeeFactory   FACTORY_NAME "AttributeFilter <EMPTY> Output Nuker"   INPUT FEATURE_TYPE AttributeFilter_<EMPTY>
 FACTORY_DEF * TeeFactory   FACTORY_NAME "AttributeFilter <MISSING> Output Nuker"   INPUT FEATURE_TYPE AttributeFilter_<MISSING>
 FACTORY_DEF * TeeFactory   FACTORY_NAME "AttributeFilter <NULL> Output Nuker"   INPUT FEATURE_TYPE AttributeFilter_<NULL>
-FACTORY_DEF * TeeFactory   FACTORY_NAME "AttributeFilter <UNFILTERED> Output Nuker"   INPUT FEATURE_TYPE AttributeFilter_<UNFILTERED>
+FACTORY_DEF * TeeFactory   FACTORY_NAME "AttributeFilter FJI Output Nuker"   INPUT FEATURE_TYPE AttributeFilter_FJI
 # -------------------------------------------------------------------------
 
 Tcl2 proc AttributeClassifier_checker {} {    set result 0;    set attr [FME_GetAttribute {"iso_a3"}];    if {$attr == {} && [FME_IsAttributeNull {"iso_a3"}]}    {    		if ({ascii}=={fmenull}) {    			set result 1;    		};    }    elseif ({ascii}=={fmenull}) {    			set result 0;    }    elseif ({ascii} == {date}) {       catch {         if [regexp {^[0-9]{8}$} $attr] {           set dateToNumber [clock scan $attr -format %Y%m%d];           set numberToDate [clock format $dateToNumber -format %Y%m%d];           if ($numberToDate == $attr) {               set result 1;           };         };       };    } elseif ({ascii} == {nanoption}) {      if {[string equal $attr {-1.#IND}] || [string equal $attr {1.#QNAN}]} {        set result 1;      };    } else {      set result [string is ascii -strict $attr];    };    return $result; }
-FACTORY_DEF * TestFactory    FACTORY_NAME AttributeClassifier    INPUT  FEATURE_TYPE AttributeFilter_SYR    INPUT  FEATURE_TYPE AttributeFilter_TZA    TEST @Tcl2(AttributeClassifier_checker) == 1    OUTPUT PASSED FEATURE_TYPE AttributeClassifier_PASSED
+FACTORY_DEF * TestFactory    FACTORY_NAME AttributeClassifier    INPUT  FEATURE_TYPE AttributeFilter_<UNFILTERED>    TEST @Tcl2(AttributeClassifier_checker) == 1    OUTPUT PASSED FEATURE_TYPE AttributeClassifier_PASSED
 
+FACTORY_DEF * TeeFactory   FACTORY_NAME "AttributeClassifier PASSED Splitter"   INPUT FEATURE_TYPE AttributeClassifier_PASSED   OUTPUT FEATURE_TYPE AttributeClassifier_PASSED_0_t8KIaud6qBk=   OUTPUT FEATURE_TYPE AttributeClassifier_PASSED_1_t8KIaud6qBk=
 # -------------------------------------------------------------------------
 
-FACTORY_DEF * TeeFactory    FACTORY_NAME AttributeRenamer    INPUT  FEATURE_TYPE AttributeClassifier_PASSED    OUTPUT FEATURE_TYPE AttributeRenamer_OUTPUT         @RenameAttributes(ATTR_LIST_DEF_VAL, iso_a3,code,"")
+FACTORY_DEF * TeeFactory    FACTORY_NAME AttributeRenamer    INPUT  FEATURE_TYPE AttributeClassifier_PASSED_0_t8KIaud6qBk=    OUTPUT FEATURE_TYPE AttributeRenamer_OUTPUT         @RenameAttributes(ATTR_LIST_DEF_VAL, iso_a3,code,"")
 
 
 # -------------------------------------------------------------------------
@@ -2690,9 +2687,9 @@ FACTORY_DEF * TeeFactory    FACTORY_NAME StringCaseChanger    INPUT  FEATURE_TYP
 # -------------------------------------------------------------------------
 FACTORY_DEF * AttrSetFactory FACTORY_NAME att_create_qdgc ATTRSET_PROPAGATE_MISSING YES INPUT  FEATURE_TYPE StringCaseChanger_OUTPUT ATTR qdgc FME_NULL_VALUE    OUTPUT OUTPUT FEATURE_TYPE att_create_qdgc_OUTPUT 
 # -------------------------------------------------------------------------
-FACTORY_DEF * AttrSetFactory FACTORY_NAME att_create_qdgc_cellsize ATTRSET_PROPAGATE_MISSING YES INPUT  FEATURE_TYPE att_create_qdgc_OUTPUT ATTR qdgc_cellsize 0.03125    OUTPUT OUTPUT FEATURE_TYPE att_create_qdgc_cellsize_OUTPUT 
+FACTORY_DEF * AttrSetFactory FACTORY_NAME att_create_qdgc_cellsize ATTRSET_PROPAGATE_MISSING YES INPUT  FEATURE_TYPE att_create_qdgc_OUTPUT ATTR qdgc_cellsize 0.25    OUTPUT OUTPUT FEATURE_TYPE att_create_qdgc_cellsize_OUTPUT 
 # -------------------------------------------------------------------------
-FACTORY_DEF * AttrSetFactory FACTORY_NAME att_create_qdgc_level ATTRSET_PROPAGATE_MISSING YES INPUT  FEATURE_TYPE att_create_qdgc_cellsize_OUTPUT ATTR qdgc_level 5    OUTPUT OUTPUT FEATURE_TYPE att_create_qdgc_level_OUTPUT 
+FACTORY_DEF * AttrSetFactory FACTORY_NAME att_create_qdgc_level ATTRSET_PROPAGATE_MISSING YES INPUT  FEATURE_TYPE att_create_qdgc_cellsize_OUTPUT ATTR qdgc_level 2    OUTPUT OUTPUT FEATURE_TYPE att_create_qdgc_level_OUTPUT 
 FACTORY_DEF * TeeFactory   FACTORY_NAME "att_create_qdgc_level OUTPUT Splitter"   INPUT FEATURE_TYPE att_create_qdgc_level_OUTPUT   OUTPUT FEATURE_TYPE att_create_qdgc_level_OUTPUT_0_wMXIyRzdecg=   OUTPUT FEATURE_TYPE att_create_qdgc_level_OUTPUT_1_wMXIyRzdecg=
 # -------------------------------------------------------------------------
 
@@ -2703,8 +2700,54 @@ FACTORY_DEF * TeeFactory    FACTORY_NAME AttributeRemover_3    INPUT  FEATURE_TY
 
 FACTORY_DEF * TeeFactory    FACTORY_NAME BoundsExtractor    INPUT  FEATURE_TYPE AttributeRemover_3_OUTPUT    OUTPUT FEATURE_TYPE BoundsExtractor_OUTPUT         @Bounds(_xmin,_xmax,_ymin,_ymax,_zmin,_zmax,GEOMETRIC)
 
+FACTORY_DEF * TeeFactory   FACTORY_NAME "BoundsExtractor OUTPUT Splitter"   INPUT FEATURE_TYPE BoundsExtractor_OUTPUT   OUTPUT FEATURE_TYPE BoundsExtractor_OUTPUT_0_yXNV+1/Fw0s=   OUTPUT FEATURE_TYPE BoundsExtractor_OUTPUT_1_yXNV+1/Fw0s=
 # -------------------------------------------------------------------------
-FACTORY_DEF * AttrSetFactory FACTORY_NAME get_integer_degrees ATTRSET_PROPAGATE_MISSING YES INPUT  FEATURE_TYPE BoundsExtractor_OUTPUT ATTR _xmin <at>round<openparen><at>Value<openparen>_xmin<closeparen><closeparen> ATTR _xmax <at>round<openparen><at>Value<openparen>_xmax<closeparen><closeparen> ATTR _ymin <at>round<openparen><at>Value<openparen>_ymin<closeparen><closeparen> ATTR _ymax <at>round<openparen><at>Value<openparen>_ymax<closeparen><closeparen>    OUTPUT OUTPUT FEATURE_TYPE get_integer_degrees_OUTPUT 
+
+# Set the directive to add all the meta-attributes to the features.
+# We do this so users see all possible information in the viewed
+# features.
+
+READER_META_ATTRIBUTES fme_feature_type fme_dataset fme_basename
+# Assumption is that the workspace temp dir has been already set and created.  See controldefs.cpp - ControlDefs::writeVisualizerTempDir
+DEFAULT_MACRO WORKSPACE_TEMP_DIR
+INCLUDE [         if { [string length {}] > 0 } {             set catter "" ;             set comma "" ;             foreach attr {} {                 set catter "$catter$comma@Value(\"$attr\")" ;                 set comma ",_," ;             } ;             puts "MACRO CATMAC _@Concatenate($catter)" ;         }         else {             puts "MACRO CATMAC " ;         };         set safeName "[regsub -all {[^a-zA-Z0-9]} {Inspector_2} _]_[expr round(rand() * 1000000)]_[clock clicks  -milliseconds]";         puts "MACRO SAFE_FFS_NAME $safeName";         ]
+# Make the temporary directory that the FFS files will live in.
+FACTORY_DEF * CreationFactory      FACTORY_NAME Inspector_2_DirCreator      OUTPUT FEATURE_TYPE __nukeme__          @Tcl2("catch {file mkdir {$(WORKSPACE_TEMP_DIR)}}")
+FACTORY_DEF * TeeFactory    FACTORY_NAME Inspector_2_DirCreatorCleanerUpper    INPUT FEATURE_TYPE __nukeme__
+# Send raster, point cloud and vector features down different paths to prepare
+# them for viewing
+
+FACTORY_DEF * TestFactory    FACTORY_NAME Inspector_2_FeatureDirector    INPUT  FEATURE_TYPE BoundsExtractor_OUTPUT_1_yXNV+1/Fw0s=    TEST &fme_type == "fme_raster"    OUTPUT FAILED FEATURE_TYPE Inspector_2___NotRasterFeatures___    OUTPUT PASSED FEATURE_TYPE Inspector_2___RasterFeatures___
+FACTORY_DEF * TestFactory    FACTORY_NAME Inspector_2___FeatureDirector1    INPUT FEATURE_TYPE Inspector_2___NotRasterFeatures___    TEST &fme_type == "fme_point_cloud"    OUTPUT FAILED FEATURE_TYPE Inspector_2___VectorFeatures___    OUTPUT PASSED FEATURE_TYPE Inspector_2___PointCloudFeatures___
+# Vector features simply may get their colors overridden
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME Inspector_2_VectorSetterUpper    INPUT FEATURE_TYPE Inspector_2___VectorFeatures___    OUTPUT FEATURE_TYPE __viewme__
+# Point Cloud Features Might Need to be thinned
+
+# Note that we don't call the ThinPointCloud function directly, but rather
+# do it through TCL. This should allow this transformer to be used with a
+# Desktop license, even though ThinPointCloud requires Professional.
+
+Tcl2 proc Inspector_2_05fa7d6e_d620_4bc1_9439_e73fa810af6e11_thinPointCloud {} {    if {[string equal {NO_THINNING} {KEEPNPOINT}]}    {       FME_Execute ThinPointCloud NO_THINNING <Unused>;    }    elseif {[string equal {NO_THINNING} {MAXNUMPOINTS}]}    {       FME_Execute ThinPointCloud NO_THINNING <Unused>;    }    elseif {[string equal {NO_THINNING} {FIRSTNPOINTS}]}    {       FME_Execute ThinPointCloud NO_THINNING <Unused>;    }    elseif {[string equal {NO_THINNING} {LASTNPOINTS}]}    {       FME_Execute ThinPointCloud NO_THINNING <Unused>;    }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME Inspector_2___PointCloudThinner    INPUT FEATURE_TYPE Inspector_2___PointCloudFeatures___    OUTPUT FEATURE_TYPE __viewme__       @Tcl2("Inspector_2_05fa7d6e_d620_4bc1_9439_e73fa810af6e11_thinPointCloud")
+Tcl2 proc Inspector_2_05fa7d6e_d620_4bc1_9439_e73fa810af6e11_prepareRaster {subsetStartRow subsetNumRows subsetStartCol subsetNumCols} {    set useDI [string equal -nocase {$(FME_VIEWER_APP)} {fmedatainspector}];    if {!$useDI} {       FME_Execute ApplyRasterRotation BILINEAR;    };    set doResample [string equal {NoReduction} {Resample}];    set doSubset [string equal {NoReduction} {Subset}];    set doBounds [string equal {NoReduction} {BoundingBoxOnly}];    if {$doBounds}  {       FME_Execute GeometryType fme_polygon;    }    elseif {$doResample || $doSubset} {       set comment {          First, we need to prefix all the attributes. This is done because          we are going to call @RasterProperties, and we want to make sure          it doesn't overwrite any existing attributes.       };       set kAttrPrefix ".";       set allNames [FME_AttributeNames];       foreach oldName $allNames {          set newName $kAttrPrefix;          append newName $oldName;          FME_RenameAttribute $newName $oldName;       };       FME_Execute RasterProperties RASTER;       if {$doResample} {          set oldNumCols [FME_GetAttribute _num_columns];          set oldNumRows [FME_GetAttribute _num_rows];          set oldSpacingX [FME_GetAttribute _spacing_x];          set oldSpacingY [FME_GetAttribute _spacing_y];          set kMinNumCells 32;          set kMaxNumCells 512;          set comment {             We will only resample if both dimensions are greater than the             minimum num cells, and at least one is greater than the maximum.          };          if {$oldNumRows > $kMinNumCells && $oldNumCols > $kMinNumCells && ($oldNumRows > $kMaxNumCells || $oldNumCols > $kMaxNumCells)} {             set newSpacingX 1.0;             set newSpacingY 1.0;             if {$oldNumRows > $oldNumCols} {                set comment {                   If we have more rows than columns, we need to choose a spacing                   that reduces the number of rows to the maximum we've chosen.                };                set newSpacingY [expr 1.0 * $oldNumRows * $oldSpacingY / $kMaxNumCells];                set newSpacingX [expr 1.0 * $newSpacingY / $oldSpacingY * $oldSpacingX];                set comment {                   Now we need to check if doing this will result in the columns                   going below the minimum. If so, choose the spacing such that                   we only go down to the minimum (and not past).                };                set newNumCols [expr $oldNumCols * $oldSpacingX / $newSpacingX];                if {$newNumCols < $kMinNumCells}                {                   set newSpacingX [expr 1.0 * $oldNumCols * $oldSpacingX / $kMinNumCells];                   set newSpacingY [expr 1.0 * $newSpacingX / $oldSpacingX * $oldSpacingY];                };             }             else {                set comment {                   This is identical to the above case, except the roles of                   rows and cols are reversed.                };                set newSpacingX [expr 1.0 * $oldNumCols * $oldSpacingX / $kMaxNumCells];                set newSpacingY [expr 1.0 * $newSpacingX / $oldSpacingX * $oldSpacingY];                set newNumRows [expr $oldNumRows * $oldSpacingY / $newSpacingY];                if {$newNumRows < $kMinNumCells}                {                   set newSpacingY [expr 1.0 * $oldNumRows * $oldSpacingY / $kMinNumCells];                   set newSpacingX [expr 1.0 * $newSpacingY / $oldSpacingY * $oldSpacingX];                };             };             FME_Execute ResampleRaster CELL_SIZE $newSpacingX $newSpacingY NearestNeighbor;          };       }       elseif {$doSubset} {          set comment {             Get the value of some strings that may be attributes or constants.             Note that we pass in the attribute prefix we're using, because if             one does turn out to be an attribute, it won't actually be the exact             name in the string (since we renamed all our attributes above).          };          set rasterNumRows [FME_GetAttribute _num_rows];          set rasterNumCols [FME_GetAttribute _num_columns];          set comment {             Only do subsetting if the specified start position is actually             within the raster.          };          if {$subsetStartRow < $rasterNumRows && $subsetStartCol < $rasterNumCols}          {             set comment {                Now bound the subset to the size of the raster, so that                we don't create padding.             };             if {[expr $subsetStartRow + $subsetNumRows] > $rasterNumRows}             {                set subsetNumRows [expr $rasterNumRows - $subsetStartRow];             };             if {[expr $subsetStartCol + $subsetNumCols] > $rasterNumCols}             {                set subsetNumCols [expr $rasterNumCols - $subsetStartCol];             };             FME_Execute SubsetRaster $subsetStartRow $subsetNumRows $subsetStartCol $subsetNumCols;          };       };       set comment {          Remove all the attributes added by @RasterProperties and remove the          prefix from the real attributes. We assume they all start with an          underscore.       };       FME_Execute RemoveAttributes fme_regexp_match {^_};       foreach oldName $allNames {          set newName $kAttrPrefix;          append newName $oldName;          FME_RenameAttribute $oldName $newName;       };    }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME Inspector_2_RasterSetterUpper    INPUT FEATURE_TYPE Inspector_2___RasterFeatures___    OUTPUT FEATURE_TYPE __viewme__       @Tcl2("Inspector_2_05fa7d6e_d620_4bc1_9439_e73fa810af6e11_prepareRaster {<Unused>} {<Unused>} {<Unused>} {<Unused>}")
+# Now route all the features into the recorder, changing their
+# feature type to the transformer name so that they view nicely
+# Inspector_2_05fa7d6e_d620_4bc1_9439_e73fa810af6e11_VIS_FEAT_TYPE changes the feature types
+# of the features being visualized.
+
+DEFAULT_MACRO Inspector_2_05fa7d6e_d620_4bc1_9439_e73fa810af6e11_VIS_FEAT_TYPE Inspector_2$(CATMAC)
+DEFAULT_MACRO VISUALIZER_FEATURE_FILE $(WORKSPACE_TEMP_DIR)/$(SAFE_FFS_NAME).ffs
+DEFAULT_MACRO VISUALIZER_CREATE_SPATIAL_INDEX NO
+# [PR#45549] The Data Inspector will limit the maximum number of features
+# it reads on WIN32, so we will correspondingly limit the number of
+# features we record here using the MAX_FEATURES_TO_RECORD directive.
+
+FACTORY_DEF * RecorderFactory    FACTORY_NAME Inspector_2_Recorder    INPUT FEATURE_TYPE __viewme__  _wb_termination_feature Yes @FeatureType(TERMINATOR_@Value(_wb_termination_xformer))    INPUT FEATURE_TYPE __viewme__  @FeatureType($(Inspector_2_05fa7d6e_d620_4bc1_9439_e73fa810af6e11_VIS_FEAT_TYPE))    FEATURE_FILE "$(VISUALIZER_FEATURE_FILE)"    CREATE_SPATIAL_INDEX "$(VISUALIZER_CREATE_SPATIAL_INDEX)"    INSPECTOR "$(VISUALIZER_CREATE_SPATIAL_INDEX)"    FSC_SCHEMA code,varchar<openparen>255<closeparen>,qdgc,varchar<openparen>255<closeparen>,qdgc_cellsize,varchar<openparen>255<closeparen>,qdgc_level,varchar<openparen>255<closeparen>,_xmax,varchar<openparen>255<closeparen>,_xmin,varchar<openparen>255<closeparen>,_ymax,varchar<openparen>255<closeparen>,_ymin,varchar<openparen>255<closeparen>,_zmax,varchar<openparen>255<closeparen>,_zmin,varchar<openparen>255<closeparen>    MODE RECORD    RECORD_DIRECTLY_TO_DISK YES    MAX_FEATURES_TO_RECORD WIN32 2000000
+
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME get_integer_degrees ATTRSET_PROPAGATE_MISSING YES INPUT  FEATURE_TYPE BoundsExtractor_OUTPUT_0_yXNV+1/Fw0s= ATTR _xmin <at>round<openparen><at>Value<openparen>_xmin<closeparen><closeparen> ATTR _xmax <at>round<openparen><at>Value<openparen>_xmax<closeparen><closeparen> ATTR _ymin <at>round<openparen><at>Value<openparen>_ymin<closeparen><closeparen> ATTR _ymax <at>round<openparen><at>Value<openparen>_ymax<closeparen><closeparen>    OUTPUT OUTPUT FEATURE_TYPE get_integer_degrees_OUTPUT 
 # -------------------------------------------------------------------------
 
 Tcl2 proc makeboxesnotwar_isValid { minx maxx miny maxy } {    if { [ string is double -strict $minx ] == 0 ||         [ string is double -strict $maxx ] == 0 ||         [ string is double -strict $miny ] == 0 ||         [ string is double -strict $maxy ] == 0 } {          return 0    } else {          return 1;    } }
@@ -2780,23 +2823,68 @@ FACTORY_DEF * TeeFactory    FACTORY_NAME Inspector_VectorSetterUpper    INPUT FE
 # do it through TCL. This should allow this transformer to be used with a
 # Desktop license, even though ThinPointCloud requires Professional.
 
-Tcl2 proc Inspector_fca47b27_73fb_4fc1_9358_3b8ef8850f0739_thinPointCloud {} {    if {[string equal {NO_THINNING} {KEEPNPOINT}]}    {       FME_Execute ThinPointCloud NO_THINNING <Unused>;    }    elseif {[string equal {NO_THINNING} {MAXNUMPOINTS}]}    {       FME_Execute ThinPointCloud NO_THINNING <Unused>;    }    elseif {[string equal {NO_THINNING} {FIRSTNPOINTS}]}    {       FME_Execute ThinPointCloud NO_THINNING <Unused>;    }    elseif {[string equal {NO_THINNING} {LASTNPOINTS}]}    {       FME_Execute ThinPointCloud NO_THINNING <Unused>;    }; }
-FACTORY_DEF * TeeFactory    FACTORY_NAME Inspector___PointCloudThinner    INPUT FEATURE_TYPE Inspector___PointCloudFeatures___    OUTPUT FEATURE_TYPE __viewme__       @Tcl2("Inspector_fca47b27_73fb_4fc1_9358_3b8ef8850f0739_thinPointCloud")
-Tcl2 proc Inspector_fca47b27_73fb_4fc1_9358_3b8ef8850f0739_prepareRaster {subsetStartRow subsetNumRows subsetStartCol subsetNumCols} {    set useDI [string equal -nocase {$(FME_VIEWER_APP)} {fmedatainspector}];    if {!$useDI} {       FME_Execute ApplyRasterRotation BILINEAR;    };    set doResample [string equal {NoReduction} {Resample}];    set doSubset [string equal {NoReduction} {Subset}];    set doBounds [string equal {NoReduction} {BoundingBoxOnly}];    if {$doBounds}  {       FME_Execute GeometryType fme_polygon;    }    elseif {$doResample || $doSubset} {       set comment {          First, we need to prefix all the attributes. This is done because          we are going to call @RasterProperties, and we want to make sure          it doesn't overwrite any existing attributes.       };       set kAttrPrefix ".";       set allNames [FME_AttributeNames];       foreach oldName $allNames {          set newName $kAttrPrefix;          append newName $oldName;          FME_RenameAttribute $newName $oldName;       };       FME_Execute RasterProperties RASTER;       if {$doResample} {          set oldNumCols [FME_GetAttribute _num_columns];          set oldNumRows [FME_GetAttribute _num_rows];          set oldSpacingX [FME_GetAttribute _spacing_x];          set oldSpacingY [FME_GetAttribute _spacing_y];          set kMinNumCells 32;          set kMaxNumCells 512;          set comment {             We will only resample if both dimensions are greater than the             minimum num cells, and at least one is greater than the maximum.          };          if {$oldNumRows > $kMinNumCells && $oldNumCols > $kMinNumCells && ($oldNumRows > $kMaxNumCells || $oldNumCols > $kMaxNumCells)} {             set newSpacingX 1.0;             set newSpacingY 1.0;             if {$oldNumRows > $oldNumCols} {                set comment {                   If we have more rows than columns, we need to choose a spacing                   that reduces the number of rows to the maximum we've chosen.                };                set newSpacingY [expr 1.0 * $oldNumRows * $oldSpacingY / $kMaxNumCells];                set newSpacingX [expr 1.0 * $newSpacingY / $oldSpacingY * $oldSpacingX];                set comment {                   Now we need to check if doing this will result in the columns                   going below the minimum. If so, choose the spacing such that                   we only go down to the minimum (and not past).                };                set newNumCols [expr $oldNumCols * $oldSpacingX / $newSpacingX];                if {$newNumCols < $kMinNumCells}                {                   set newSpacingX [expr 1.0 * $oldNumCols * $oldSpacingX / $kMinNumCells];                   set newSpacingY [expr 1.0 * $newSpacingX / $oldSpacingX * $oldSpacingY];                };             }             else {                set comment {                   This is identical to the above case, except the roles of                   rows and cols are reversed.                };                set newSpacingX [expr 1.0 * $oldNumCols * $oldSpacingX / $kMaxNumCells];                set newSpacingY [expr 1.0 * $newSpacingX / $oldSpacingX * $oldSpacingY];                set newNumRows [expr $oldNumRows * $oldSpacingY / $newSpacingY];                if {$newNumRows < $kMinNumCells}                {                   set newSpacingY [expr 1.0 * $oldNumRows * $oldSpacingY / $kMinNumCells];                   set newSpacingX [expr 1.0 * $newSpacingY / $oldSpacingY * $oldSpacingX];                };             };             FME_Execute ResampleRaster CELL_SIZE $newSpacingX $newSpacingY NearestNeighbor;          };       }       elseif {$doSubset} {          set comment {             Get the value of some strings that may be attributes or constants.             Note that we pass in the attribute prefix we're using, because if             one does turn out to be an attribute, it won't actually be the exact             name in the string (since we renamed all our attributes above).          };          set rasterNumRows [FME_GetAttribute _num_rows];          set rasterNumCols [FME_GetAttribute _num_columns];          set comment {             Only do subsetting if the specified start position is actually             within the raster.          };          if {$subsetStartRow < $rasterNumRows && $subsetStartCol < $rasterNumCols}          {             set comment {                Now bound the subset to the size of the raster, so that                we don't create padding.             };             if {[expr $subsetStartRow + $subsetNumRows] > $rasterNumRows}             {                set subsetNumRows [expr $rasterNumRows - $subsetStartRow];             };             if {[expr $subsetStartCol + $subsetNumCols] > $rasterNumCols}             {                set subsetNumCols [expr $rasterNumCols - $subsetStartCol];             };             FME_Execute SubsetRaster $subsetStartRow $subsetNumRows $subsetStartCol $subsetNumCols;          };       };       set comment {          Remove all the attributes added by @RasterProperties and remove the          prefix from the real attributes. We assume they all start with an          underscore.       };       FME_Execute RemoveAttributes fme_regexp_match {^_};       foreach oldName $allNames {          set newName $kAttrPrefix;          append newName $oldName;          FME_RenameAttribute $oldName $newName;       };    }; }
-FACTORY_DEF * TeeFactory    FACTORY_NAME Inspector_RasterSetterUpper    INPUT FEATURE_TYPE Inspector___RasterFeatures___    OUTPUT FEATURE_TYPE __viewme__       @Tcl2("Inspector_fca47b27_73fb_4fc1_9358_3b8ef8850f0739_prepareRaster {<Unused>} {<Unused>} {<Unused>} {<Unused>}")
+Tcl2 proc Inspector_fca47b27_73fb_4fc1_9358_3b8ef8850f0754_thinPointCloud {} {    if {[string equal {NO_THINNING} {KEEPNPOINT}]}    {       FME_Execute ThinPointCloud NO_THINNING <Unused>;    }    elseif {[string equal {NO_THINNING} {MAXNUMPOINTS}]}    {       FME_Execute ThinPointCloud NO_THINNING <Unused>;    }    elseif {[string equal {NO_THINNING} {FIRSTNPOINTS}]}    {       FME_Execute ThinPointCloud NO_THINNING <Unused>;    }    elseif {[string equal {NO_THINNING} {LASTNPOINTS}]}    {       FME_Execute ThinPointCloud NO_THINNING <Unused>;    }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME Inspector___PointCloudThinner    INPUT FEATURE_TYPE Inspector___PointCloudFeatures___    OUTPUT FEATURE_TYPE __viewme__       @Tcl2("Inspector_fca47b27_73fb_4fc1_9358_3b8ef8850f0754_thinPointCloud")
+Tcl2 proc Inspector_fca47b27_73fb_4fc1_9358_3b8ef8850f0754_prepareRaster {subsetStartRow subsetNumRows subsetStartCol subsetNumCols} {    set useDI [string equal -nocase {$(FME_VIEWER_APP)} {fmedatainspector}];    if {!$useDI} {       FME_Execute ApplyRasterRotation BILINEAR;    };    set doResample [string equal {NoReduction} {Resample}];    set doSubset [string equal {NoReduction} {Subset}];    set doBounds [string equal {NoReduction} {BoundingBoxOnly}];    if {$doBounds}  {       FME_Execute GeometryType fme_polygon;    }    elseif {$doResample || $doSubset} {       set comment {          First, we need to prefix all the attributes. This is done because          we are going to call @RasterProperties, and we want to make sure          it doesn't overwrite any existing attributes.       };       set kAttrPrefix ".";       set allNames [FME_AttributeNames];       foreach oldName $allNames {          set newName $kAttrPrefix;          append newName $oldName;          FME_RenameAttribute $newName $oldName;       };       FME_Execute RasterProperties RASTER;       if {$doResample} {          set oldNumCols [FME_GetAttribute _num_columns];          set oldNumRows [FME_GetAttribute _num_rows];          set oldSpacingX [FME_GetAttribute _spacing_x];          set oldSpacingY [FME_GetAttribute _spacing_y];          set kMinNumCells 32;          set kMaxNumCells 512;          set comment {             We will only resample if both dimensions are greater than the             minimum num cells, and at least one is greater than the maximum.          };          if {$oldNumRows > $kMinNumCells && $oldNumCols > $kMinNumCells && ($oldNumRows > $kMaxNumCells || $oldNumCols > $kMaxNumCells)} {             set newSpacingX 1.0;             set newSpacingY 1.0;             if {$oldNumRows > $oldNumCols} {                set comment {                   If we have more rows than columns, we need to choose a spacing                   that reduces the number of rows to the maximum we've chosen.                };                set newSpacingY [expr 1.0 * $oldNumRows * $oldSpacingY / $kMaxNumCells];                set newSpacingX [expr 1.0 * $newSpacingY / $oldSpacingY * $oldSpacingX];                set comment {                   Now we need to check if doing this will result in the columns                   going below the minimum. If so, choose the spacing such that                   we only go down to the minimum (and not past).                };                set newNumCols [expr $oldNumCols * $oldSpacingX / $newSpacingX];                if {$newNumCols < $kMinNumCells}                {                   set newSpacingX [expr 1.0 * $oldNumCols * $oldSpacingX / $kMinNumCells];                   set newSpacingY [expr 1.0 * $newSpacingX / $oldSpacingX * $oldSpacingY];                };             }             else {                set comment {                   This is identical to the above case, except the roles of                   rows and cols are reversed.                };                set newSpacingX [expr 1.0 * $oldNumCols * $oldSpacingX / $kMaxNumCells];                set newSpacingY [expr 1.0 * $newSpacingX / $oldSpacingX * $oldSpacingY];                set newNumRows [expr $oldNumRows * $oldSpacingY / $newSpacingY];                if {$newNumRows < $kMinNumCells}                {                   set newSpacingY [expr 1.0 * $oldNumRows * $oldSpacingY / $kMinNumCells];                   set newSpacingX [expr 1.0 * $newSpacingY / $oldSpacingY * $oldSpacingX];                };             };             FME_Execute ResampleRaster CELL_SIZE $newSpacingX $newSpacingY NearestNeighbor;          };       }       elseif {$doSubset} {          set comment {             Get the value of some strings that may be attributes or constants.             Note that we pass in the attribute prefix we're using, because if             one does turn out to be an attribute, it won't actually be the exact             name in the string (since we renamed all our attributes above).          };          set rasterNumRows [FME_GetAttribute _num_rows];          set rasterNumCols [FME_GetAttribute _num_columns];          set comment {             Only do subsetting if the specified start position is actually             within the raster.          };          if {$subsetStartRow < $rasterNumRows && $subsetStartCol < $rasterNumCols}          {             set comment {                Now bound the subset to the size of the raster, so that                we don't create padding.             };             if {[expr $subsetStartRow + $subsetNumRows] > $rasterNumRows}             {                set subsetNumRows [expr $rasterNumRows - $subsetStartRow];             };             if {[expr $subsetStartCol + $subsetNumCols] > $rasterNumCols}             {                set subsetNumCols [expr $rasterNumCols - $subsetStartCol];             };             FME_Execute SubsetRaster $subsetStartRow $subsetNumRows $subsetStartCol $subsetNumCols;          };       };       set comment {          Remove all the attributes added by @RasterProperties and remove the          prefix from the real attributes. We assume they all start with an          underscore.       };       FME_Execute RemoveAttributes fme_regexp_match {^_};       foreach oldName $allNames {          set newName $kAttrPrefix;          append newName $oldName;          FME_RenameAttribute $oldName $newName;       };    }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME Inspector_RasterSetterUpper    INPUT FEATURE_TYPE Inspector___RasterFeatures___    OUTPUT FEATURE_TYPE __viewme__       @Tcl2("Inspector_fca47b27_73fb_4fc1_9358_3b8ef8850f0754_prepareRaster {<Unused>} {<Unused>} {<Unused>} {<Unused>}")
 # Now route all the features into the recorder, changing their
 # feature type to the transformer name so that they view nicely
-# Inspector_fca47b27_73fb_4fc1_9358_3b8ef8850f0739_VIS_FEAT_TYPE changes the feature types
+# Inspector_fca47b27_73fb_4fc1_9358_3b8ef8850f0754_VIS_FEAT_TYPE changes the feature types
 # of the features being visualized.
 
-DEFAULT_MACRO Inspector_fca47b27_73fb_4fc1_9358_3b8ef8850f0739_VIS_FEAT_TYPE Inspector$(CATMAC)
+DEFAULT_MACRO Inspector_fca47b27_73fb_4fc1_9358_3b8ef8850f0754_VIS_FEAT_TYPE Inspector$(CATMAC)
 DEFAULT_MACRO VISUALIZER_FEATURE_FILE $(WORKSPACE_TEMP_DIR)/$(SAFE_FFS_NAME).ffs
 DEFAULT_MACRO VISUALIZER_CREATE_SPATIAL_INDEX NO
 # [PR#45549] The Data Inspector will limit the maximum number of features
 # it reads on WIN32, so we will correspondingly limit the number of
 # features we record here using the MAX_FEATURES_TO_RECORD directive.
 
-FACTORY_DEF * RecorderFactory    FACTORY_NAME Inspector_Recorder    INPUT FEATURE_TYPE __viewme__  _wb_termination_feature Yes @FeatureType(TERMINATOR_@Value(_wb_termination_xformer))    INPUT FEATURE_TYPE __viewme__  @FeatureType($(Inspector_fca47b27_73fb_4fc1_9358_3b8ef8850f0739_VIS_FEAT_TYPE))    FEATURE_FILE "$(VISUALIZER_FEATURE_FILE)"    CREATE_SPATIAL_INDEX "$(VISUALIZER_CREATE_SPATIAL_INDEX)"    INSPECTOR "$(VISUALIZER_CREATE_SPATIAL_INDEX)"    FSC_SCHEMA code,varchar<openparen>255<closeparen>,qdgc,varchar<openparen>255<closeparen>,qdgc_cellsize,varchar<openparen>255<closeparen>,qdgc_level,varchar<openparen>255<closeparen>,lon,varchar<openparen>255<closeparen>,lat,varchar<openparen>255<closeparen>,z_vaste,varchar<openparen>255<closeparen>,areakm2,varchar<openparen>255<closeparen>,filename,varchar<openparen>255<closeparen>    MODE RECORD    RECORD_DIRECTLY_TO_DISK YES    MAX_FEATURES_TO_RECORD WIN32 2000000
+FACTORY_DEF * RecorderFactory    FACTORY_NAME Inspector_Recorder    INPUT FEATURE_TYPE __viewme__  _wb_termination_feature Yes @FeatureType(TERMINATOR_@Value(_wb_termination_xformer))    INPUT FEATURE_TYPE __viewme__  @FeatureType($(Inspector_fca47b27_73fb_4fc1_9358_3b8ef8850f0754_VIS_FEAT_TYPE))    FEATURE_FILE "$(VISUALIZER_FEATURE_FILE)"    CREATE_SPATIAL_INDEX "$(VISUALIZER_CREATE_SPATIAL_INDEX)"    INSPECTOR "$(VISUALIZER_CREATE_SPATIAL_INDEX)"    FSC_SCHEMA code,varchar<openparen>255<closeparen>,qdgc,varchar<openparen>255<closeparen>,qdgc_cellsize,varchar<openparen>255<closeparen>,qdgc_level,varchar<openparen>255<closeparen>,lon,varchar<openparen>255<closeparen>,lat,varchar<openparen>255<closeparen>,z_vaste,varchar<openparen>255<closeparen>,areakm2,varchar<openparen>255<closeparen>,filename,varchar<openparen>255<closeparen>    MODE RECORD    RECORD_DIRECTLY_TO_DISK YES    MAX_FEATURES_TO_RECORD WIN32 2000000
+
+# -------------------------------------------------------------------------
+
+# Set the directive to add all the meta-attributes to the features.
+# We do this so users see all possible information in the viewed
+# features.
+
+READER_META_ATTRIBUTES fme_feature_type fme_dataset fme_basename
+# Assumption is that the workspace temp dir has been already set and created.  See controldefs.cpp - ControlDefs::writeVisualizerTempDir
+DEFAULT_MACRO WORKSPACE_TEMP_DIR
+INCLUDE [         if { [string length {}] > 0 } {             set catter "" ;             set comma "" ;             foreach attr {} {                 set catter "$catter$comma@Value(\"$attr\")" ;                 set comma ",_," ;             } ;             puts "MACRO CATMAC _@Concatenate($catter)" ;         }         else {             puts "MACRO CATMAC " ;         };         set safeName "[regsub -all {[^a-zA-Z0-9]} {Inspector_3} _]_[expr round(rand() * 1000000)]_[clock clicks  -milliseconds]";         puts "MACRO SAFE_FFS_NAME $safeName";         ]
+# Make the temporary directory that the FFS files will live in.
+FACTORY_DEF * CreationFactory      FACTORY_NAME Inspector_3_DirCreator      OUTPUT FEATURE_TYPE __nukeme__          @Tcl2("catch {file mkdir {$(WORKSPACE_TEMP_DIR)}}")
+FACTORY_DEF * TeeFactory    FACTORY_NAME Inspector_3_DirCreatorCleanerUpper    INPUT FEATURE_TYPE __nukeme__
+# Send raster, point cloud and vector features down different paths to prepare
+# them for viewing
+
+FACTORY_DEF * TestFactory    FACTORY_NAME Inspector_3_FeatureDirector    INPUT  FEATURE_TYPE AttributeClassifier_PASSED_1_t8KIaud6qBk=    TEST &fme_type == "fme_raster"    OUTPUT FAILED FEATURE_TYPE Inspector_3___NotRasterFeatures___    OUTPUT PASSED FEATURE_TYPE Inspector_3___RasterFeatures___
+FACTORY_DEF * TestFactory    FACTORY_NAME Inspector_3___FeatureDirector1    INPUT FEATURE_TYPE Inspector_3___NotRasterFeatures___    TEST &fme_type == "fme_point_cloud"    OUTPUT FAILED FEATURE_TYPE Inspector_3___VectorFeatures___    OUTPUT PASSED FEATURE_TYPE Inspector_3___PointCloudFeatures___
+# Vector features simply may get their colors overridden
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME Inspector_3_VectorSetterUpper    INPUT FEATURE_TYPE Inspector_3___VectorFeatures___    OUTPUT FEATURE_TYPE __viewme__
+# Point Cloud Features Might Need to be thinned
+
+# Note that we don't call the ThinPointCloud function directly, but rather
+# do it through TCL. This should allow this transformer to be used with a
+# Desktop license, even though ThinPointCloud requires Professional.
+
+Tcl2 proc Inspector_3_2bb9950e_0594_45d7_b65d_708062db2eb68_thinPointCloud {} {    if {[string equal {NO_THINNING} {KEEPNPOINT}]}    {       FME_Execute ThinPointCloud NO_THINNING <Unused>;    }    elseif {[string equal {NO_THINNING} {MAXNUMPOINTS}]}    {       FME_Execute ThinPointCloud NO_THINNING <Unused>;    }    elseif {[string equal {NO_THINNING} {FIRSTNPOINTS}]}    {       FME_Execute ThinPointCloud NO_THINNING <Unused>;    }    elseif {[string equal {NO_THINNING} {LASTNPOINTS}]}    {       FME_Execute ThinPointCloud NO_THINNING <Unused>;    }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME Inspector_3___PointCloudThinner    INPUT FEATURE_TYPE Inspector_3___PointCloudFeatures___    OUTPUT FEATURE_TYPE __viewme__       @Tcl2("Inspector_3_2bb9950e_0594_45d7_b65d_708062db2eb68_thinPointCloud")
+Tcl2 proc Inspector_3_2bb9950e_0594_45d7_b65d_708062db2eb68_prepareRaster {subsetStartRow subsetNumRows subsetStartCol subsetNumCols} {    set useDI [string equal -nocase {$(FME_VIEWER_APP)} {fmedatainspector}];    if {!$useDI} {       FME_Execute ApplyRasterRotation BILINEAR;    };    set doResample [string equal {NoReduction} {Resample}];    set doSubset [string equal {NoReduction} {Subset}];    set doBounds [string equal {NoReduction} {BoundingBoxOnly}];    if {$doBounds}  {       FME_Execute GeometryType fme_polygon;    }    elseif {$doResample || $doSubset} {       set comment {          First, we need to prefix all the attributes. This is done because          we are going to call @RasterProperties, and we want to make sure          it doesn't overwrite any existing attributes.       };       set kAttrPrefix ".";       set allNames [FME_AttributeNames];       foreach oldName $allNames {          set newName $kAttrPrefix;          append newName $oldName;          FME_RenameAttribute $newName $oldName;       };       FME_Execute RasterProperties RASTER;       if {$doResample} {          set oldNumCols [FME_GetAttribute _num_columns];          set oldNumRows [FME_GetAttribute _num_rows];          set oldSpacingX [FME_GetAttribute _spacing_x];          set oldSpacingY [FME_GetAttribute _spacing_y];          set kMinNumCells 32;          set kMaxNumCells 512;          set comment {             We will only resample if both dimensions are greater than the             minimum num cells, and at least one is greater than the maximum.          };          if {$oldNumRows > $kMinNumCells && $oldNumCols > $kMinNumCells && ($oldNumRows > $kMaxNumCells || $oldNumCols > $kMaxNumCells)} {             set newSpacingX 1.0;             set newSpacingY 1.0;             if {$oldNumRows > $oldNumCols} {                set comment {                   If we have more rows than columns, we need to choose a spacing                   that reduces the number of rows to the maximum we've chosen.                };                set newSpacingY [expr 1.0 * $oldNumRows * $oldSpacingY / $kMaxNumCells];                set newSpacingX [expr 1.0 * $newSpacingY / $oldSpacingY * $oldSpacingX];                set comment {                   Now we need to check if doing this will result in the columns                   going below the minimum. If so, choose the spacing such that                   we only go down to the minimum (and not past).                };                set newNumCols [expr $oldNumCols * $oldSpacingX / $newSpacingX];                if {$newNumCols < $kMinNumCells}                {                   set newSpacingX [expr 1.0 * $oldNumCols * $oldSpacingX / $kMinNumCells];                   set newSpacingY [expr 1.0 * $newSpacingX / $oldSpacingX * $oldSpacingY];                };             }             else {                set comment {                   This is identical to the above case, except the roles of                   rows and cols are reversed.                };                set newSpacingX [expr 1.0 * $oldNumCols * $oldSpacingX / $kMaxNumCells];                set newSpacingY [expr 1.0 * $newSpacingX / $oldSpacingX * $oldSpacingY];                set newNumRows [expr $oldNumRows * $oldSpacingY / $newSpacingY];                if {$newNumRows < $kMinNumCells}                {                   set newSpacingY [expr 1.0 * $oldNumRows * $oldSpacingY / $kMinNumCells];                   set newSpacingX [expr 1.0 * $newSpacingY / $oldSpacingY * $oldSpacingX];                };             };             FME_Execute ResampleRaster CELL_SIZE $newSpacingX $newSpacingY NearestNeighbor;          };       }       elseif {$doSubset} {          set comment {             Get the value of some strings that may be attributes or constants.             Note that we pass in the attribute prefix we're using, because if             one does turn out to be an attribute, it won't actually be the exact             name in the string (since we renamed all our attributes above).          };          set rasterNumRows [FME_GetAttribute _num_rows];          set rasterNumCols [FME_GetAttribute _num_columns];          set comment {             Only do subsetting if the specified start position is actually             within the raster.          };          if {$subsetStartRow < $rasterNumRows && $subsetStartCol < $rasterNumCols}          {             set comment {                Now bound the subset to the size of the raster, so that                we don't create padding.             };             if {[expr $subsetStartRow + $subsetNumRows] > $rasterNumRows}             {                set subsetNumRows [expr $rasterNumRows - $subsetStartRow];             };             if {[expr $subsetStartCol + $subsetNumCols] > $rasterNumCols}             {                set subsetNumCols [expr $rasterNumCols - $subsetStartCol];             };             FME_Execute SubsetRaster $subsetStartRow $subsetNumRows $subsetStartCol $subsetNumCols;          };       };       set comment {          Remove all the attributes added by @RasterProperties and remove the          prefix from the real attributes. We assume they all start with an          underscore.       };       FME_Execute RemoveAttributes fme_regexp_match {^_};       foreach oldName $allNames {          set newName $kAttrPrefix;          append newName $oldName;          FME_RenameAttribute $oldName $newName;       };    }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME Inspector_3_RasterSetterUpper    INPUT FEATURE_TYPE Inspector_3___RasterFeatures___    OUTPUT FEATURE_TYPE __viewme__       @Tcl2("Inspector_3_2bb9950e_0594_45d7_b65d_708062db2eb68_prepareRaster {<Unused>} {<Unused>} {<Unused>} {<Unused>}")
+# Now route all the features into the recorder, changing their
+# feature type to the transformer name so that they view nicely
+# Inspector_3_2bb9950e_0594_45d7_b65d_708062db2eb68_VIS_FEAT_TYPE changes the feature types
+# of the features being visualized.
+
+DEFAULT_MACRO Inspector_3_2bb9950e_0594_45d7_b65d_708062db2eb68_VIS_FEAT_TYPE Inspector_3$(CATMAC)
+DEFAULT_MACRO VISUALIZER_FEATURE_FILE $(WORKSPACE_TEMP_DIR)/$(SAFE_FFS_NAME).ffs
+DEFAULT_MACRO VISUALIZER_CREATE_SPATIAL_INDEX NO
+# [PR#45549] The Data Inspector will limit the maximum number of features
+# it reads on WIN32, so we will correspondingly limit the number of
+# features we record here using the MAX_FEATURES_TO_RECORD directive.
+
+FACTORY_DEF * RecorderFactory    FACTORY_NAME Inspector_3_Recorder    INPUT FEATURE_TYPE __viewme__  _wb_termination_feature Yes @FeatureType(TERMINATOR_@Value(_wb_termination_xformer))    INPUT FEATURE_TYPE __viewme__  @FeatureType($(Inspector_3_2bb9950e_0594_45d7_b65d_708062db2eb68_VIS_FEAT_TYPE))    FEATURE_FILE "$(VISUALIZER_FEATURE_FILE)"    CREATE_SPATIAL_INDEX "$(VISUALIZER_CREATE_SPATIAL_INDEX)"    INSPECTOR "$(VISUALIZER_CREATE_SPATIAL_INDEX)"    FSC_SCHEMA scalerank,varchar<openparen>255<closeparen>,featurecla,varchar<openparen>255<closeparen>,labelrank,varchar<openparen>255<closeparen>,sovereignt,varchar<openparen>255<closeparen>,sov_a3,varchar<openparen>255<closeparen>,adm0_dif,varchar<openparen>255<closeparen>,level,varchar<openparen>255<closeparen>,type,varchar<openparen>255<closeparen>,admin,varchar<openparen>255<closeparen>,adm0_a3,varchar<openparen>255<closeparen>,geou_dif,varchar<openparen>255<closeparen>,geounit,varchar<openparen>255<closeparen>,gu_a3,varchar<openparen>255<closeparen>,su_dif,varchar<openparen>255<closeparen>,subunit,varchar<openparen>255<closeparen>,su_a3,varchar<openparen>255<closeparen>,brk_diff,varchar<openparen>255<closeparen>,name,varchar<openparen>255<closeparen>,name_long,varchar<openparen>255<closeparen>,brk_a3,varchar<openparen>255<closeparen>,brk_name,varchar<openparen>255<closeparen>,brk_group,varchar<openparen>255<closeparen>,abbrev,varchar<openparen>255<closeparen>,postal,varchar<openparen>255<closeparen>,formal_en,varchar<openparen>255<closeparen>,formal_fr,varchar<openparen>255<closeparen>,note_adm0,varchar<openparen>255<closeparen>,note_brk,varchar<openparen>255<closeparen>,name_sort,varchar<openparen>255<closeparen>,name_alt,varchar<openparen>255<closeparen>,mapcolor7,varchar<openparen>255<closeparen>,mapcolor8,varchar<openparen>255<closeparen>,mapcolor9,varchar<openparen>255<closeparen>,mapcolor13,varchar<openparen>255<closeparen>,pop_est,varchar<openparen>255<closeparen>,gdp_md_est,varchar<openparen>255<closeparen>,pop_year,varchar<openparen>255<closeparen>,lastcensus,varchar<openparen>255<closeparen>,gdp_year,varchar<openparen>255<closeparen>,economy,varchar<openparen>255<closeparen>,income_grp,varchar<openparen>255<closeparen>,wikipedia,varchar<openparen>255<closeparen>,fips_10,varchar<openparen>255<closeparen>,iso_a2,varchar<openparen>255<closeparen>,iso_a3,varchar<openparen>255<closeparen>,iso_n3,varchar<openparen>255<closeparen>,un_a3,varchar<openparen>255<closeparen>,wb_a2,varchar<openparen>255<closeparen>,wb_a3,varchar<openparen>255<closeparen>,woe_id,varchar<openparen>255<closeparen>,adm0_a3_is,varchar<openparen>255<closeparen>,adm0_a3_us,varchar<openparen>255<closeparen>,adm0_a3_un,varchar<openparen>255<closeparen>,adm0_a3_wb,varchar<openparen>255<closeparen>,continent,varchar<openparen>255<closeparen>,region_un,varchar<openparen>255<closeparen>,subregion,varchar<openparen>255<closeparen>,region_wb,varchar<openparen>255<closeparen>,name_len,varchar<openparen>255<closeparen>,long_len,varchar<openparen>255<closeparen>,abbrev_len,varchar<openparen>255<closeparen>,tiny,varchar<openparen>255<closeparen>,homepart,varchar<openparen>255<closeparen>    MODE RECORD    RECORD_DIRECTLY_TO_DISK YES    MAX_FEATURES_TO_RECORD WIN32 2000000
 
 # -------------------------------------------------------------------------
 
