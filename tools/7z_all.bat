@@ -1,1 +1,0 @@
-for /d %%X in (*) do "c:\Program Files\7-Zip\7z.exe " -mx9 a "%%X.7z" "%%X\"
