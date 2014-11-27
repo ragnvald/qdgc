@@ -15,7 +15,10 @@ A buffer to the closest full degree around the country is
 used.
 
 Associated files:
-
+qdgc_0GIVE_LEVEL_GIVE_CODE.dbf   Attribute file
+qdgc_0GIVE_LEVEL_GIVE_CODE.prj   Projection file
+qdgc_0GIVE_LEVEL_GIVE_CODE.shp   Spatial data file (shapefile)
+qdgc_0GIVE_LEVEL_GIVE_CODE.shx   Index file
 
 
 
@@ -26,14 +29,11 @@ Geodata	GCS_WGS_1984
 		Prime Meridian: 0
 
 ARAEA	Calculated with FME
-		using the ????? projection. You are adviced to
+		FMW is using the AZMEA (ALambert Azimuthal Equal
+    Area Projection) projection). You are adviced to
 		recalculate the areas using a more local
 		projection if the area calculation is important
 		for your work.
-
-		Bonne was chosen because I needed a global
-		projection for generating files based on
-		one source file.
 
 
 Copyright
@@ -48,10 +48,12 @@ Delivered to the user as-is. No guarantees. If you find errors, please tell and 
 
 Thankyou
 --------
+FME - Special thanks this time goes to FME which
+      has provided the Tanzania Conservation Resource
+      Centre with two licenses of FME.
 Tanzania Wildlife Research Institute 
 Dept of Biology, NTNU, Norway
 Norwegian Environment Agency
-FME
 Eivin Røskaft
 Steven Prager
 Howard Frederick
@@ -65,8 +67,8 @@ References
 * http://www.mindland.com/wp/projects/quarter-degree-grid-cells/about-qdgc/
 * http://en.wikipedia.org/wiki/Albers_projection
 * http://en.wikipedia.org/wiki/Bonne_projection
-* http://fme
-* http://wingide.
+* http://www.safe.com
+* http://www.wingware.com/
 
 
 Regards,
