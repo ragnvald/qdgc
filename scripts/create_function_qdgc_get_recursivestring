@@ -4,7 +4,8 @@
 
 CREATE OR REPLACE FUNCTION public.qdgc_get_recursivestring(
 	lon_value double precision,
-	lat_value double precision)
+	lat_value double precision,
+	depth integer)
     RETURNS text
     LANGUAGE 'plpython3u'
     COST 100
@@ -133,8 +134,7 @@ length = len(square)
 
 if (length < depth):
 	#Calculation is recursive - continue the good work
-	square = qdgc_get_recursivestring(lon_value,lat_value,depth,square)
-
+	square = plpy.execute ('select qdgc_get_recursivestring(lon_value,lat_value,depth,square)')
 
 return square    
 $BODY$;
