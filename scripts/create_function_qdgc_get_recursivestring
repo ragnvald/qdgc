@@ -1,6 +1,6 @@
--- FUNCTION: public.qdgc_get_recursivestring(double precision, double precision)
+-- FUNCTION: public.qdgc_get_recursivestring(double precision, double precision, integer, text)
 
--- DROP FUNCTION public.qdgc_get_recursivestring(double precision, double precision);
+DROP FUNCTION public.qdgc_get_recursivestring(double precision, double precision, integer, text);
 
 CREATE OR REPLACE FUNCTION public.qdgc_get_recursivestring(
 	lon_value double precision,
@@ -133,10 +133,15 @@ elif ((lon_value<=0) and (lat_value>=0)):
 stringlength = len(square)
 
 if (stringlength < depthlevel):
-	--square = plpy.execute ('select qdgc_get_recursivestring(lon_value,lat_value,depthlevel,square)')
-
-return square    
+	r_lon_value = lon_value
+	r_lat_value = lat_value
+	
+	return qdgc_get_recursivestring(r_lon_value,r_lat_value,depthlevel,square)
+	
+else
+	return square    
+	
 $BODY$;
 
-ALTER FUNCTION public.qdgc_get_recursivestring(double precision, double precision,  integer, text)
+ALTER FUNCTION public.qdgc_get_recursivestring(double precision, double precision, integer, text)
     OWNER TO postgres;
