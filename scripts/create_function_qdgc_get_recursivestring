@@ -1,22 +1,8 @@
-/*
-#*******************************************************************
-# RQDGC - recursive quarter degree grid cell
-#
-# Input: Latitude, Longitude, depth in powers of two, starting string
-# -9.87548764, 38.98754324, 5, ""
-#
-# Output: DDDBB
-#
-# Obs!: This function places origo in the cell in the upper left
-# in the southern hemisphere and in the lower left corner
-# in the norther hemisphere. 
-*/
+-- FUNCTION: public.qdgc_get_recursivestring(double precision, double precision)
 
--- FUNCTION: public.qdgc_getrecursive_string lonlat(double precision, double precision)
+-- DROP FUNCTION public.qdgc_get_recursivestring(double precision, double precision);
 
--- DROP FUNCTION public.qdgc_getrecursive_string(double precision, double precision);
-
-CREATE OR REPLACE FUNCTION public.qdgc_getrecursive_string(
+CREATE OR REPLACE FUNCTION public.qdgc_get_recursivestring(
 	lon_value double precision,
 	lat_value double precision)
     RETURNS text
@@ -25,51 +11,37 @@ CREATE OR REPLACE FUNCTION public.qdgc_getrecursive_string(
     VOLATILE PARALLEL UNSAFE
 AS $BODY$
 
---remove all but the decimals (eg: 30.54 -> 0.54)
---this also takes care of values below zero
-if  lon_value >1 :
+if  lon_value >1:
 	lon_value = lon_value - math.floor(lon_value)
 elif (lon_value<-1):
 	lon_value = lon_value + abs(math.ceil(lon_value))
 
---remove all but the decimals (eg: 30.54 -> 0.54)
---this also takes care of values below zero
-if  (lat_value > 1):
+if  lat_value >1:
 	lat_value = lat_value - math.floor(lat_value)
 elif (lat_value<-1):
 	lat_value = lat_value + abs(math.ceil(lat_value))
 
-
---check which of the 4 squares the value fals within
---Q1 - - - - - - - - - - - - - - - - - - - - - - - - - -
 if ((lon_value>=0) and (lat_value>=0)):
 
-	--upper left - A
 	if ((lon_value <0.5) and (lat_value>=0.5)):
 		square =  square + 'A'
 
 		lon_value=lon_value*2
 		lat_value=(lat_value-0.5)*2
-	
-	
-	--upper right - B
+
 	elif ((lon_value>=0.5) and (lat_value>=0.5)):
 		square = square + 'B'
 
 		lon_value=(lon_value-0.5)*2
 		lat_value=(lat_value-0.5)*2
 
-		
-	--lower left - C
 	elif ((lon_value<0.5) and (lat_value<0.5)):
 		square = square + 'C'
 
-		--both values are doubled
 		lat_value=lat_value*2
 		lon_value=lon_value*2
 
 		
-	--lower right - D
 	elif ((lon_value>=0.5) and (lat_value<0.5)):
 		square =  square + 'D'
 
@@ -77,63 +49,52 @@ if ((lon_value>=0) and (lat_value>=0)):
 		lat_value=lat_value*2
 
 
--- Q2 - - - - - - - - - - - - - - - - - - - - - - - - - -
 elif ((lon_value>=0) and (lat_value<=0)):
 
-	--upper left - A
 	if ((lon_value <0.5) and (lat_value>-0.5)):
 		square = square + 'A'
 
 		lon_value=lon_value*2
 		lat_value=lat_value*2
 		
-	--upper right - B
 	elif ((lon_value>=0.5) and (lat_value>-0.5)):
 		square = square + 'B'
 
 		lon_value=(lon_value-0.5)*2
 		lat_value=lat_value*2
 
-	--lower left - C
 	elif ((lon_value<0.5) and (lat_value<=-0.5)):
 		square = square + 'C'
 
 		lon_value=lon_value*2
 		lat_value=(lat_value+0.5)*2
 		
-	--lower right - D
 	elif ((lon_value>=0.5) and (lat_value<=-0.5)):
 		square = square + 'D'
 
 		lon_value=(lon_value-0.5)*2
 		lat_value=(lat_value+0.5)*2
 		
-
--- Q3 - - - - - - - - - - - - - - - - - - - - - - - - - -
 elif ((lon_value<=0) and (lat_value<=0)):
 
-	--upper left - A
 	if ((lon_value<=-0.5) and (lat_value>-0.5)):
 		square = square + 'A'
 
 		lon_value=(lon_value+0.5)*2
 		lat_value=lat_value*2
 		
-	--upper right - B
 	elif ((lon_value>-0.5) and (lat_value>-0.5)):
 		square = square + 'B'
 
 		lon_value=lon_value*2
 		lat_value=lat_value*2
 		
-	--lower left - C
 	elif ((lon_value<=-0.5) and (lat_value<=-0.5)):
 		square = square + 'C'
 
 		lon_value=(lon_value+0.5)*2
 		lat_value=(lat_value+0.5)*2
 
-	--lower right - D
 	elif ((lon_value>-0.5) and (lat_value<=-0.5)):
 		square = square + 'D'
 
@@ -141,53 +102,42 @@ elif ((lon_value<=0) and (lat_value<=0)):
 		lat_value=(lat_value+0.5)*2
 
 
--- Q4 - - - - - - - - - - - - - - - - - - - - - - - - - -
 elif ((lon_value<=0) and (lat_value>=0)):
 
-	--upper left - A
 	if ((lon_value <=-0.5) and (lat_value>=0.5)):
 		square = square + 'A'
 
 		lon_value=(lon_value+0.5)*2
 		lat_value=(lat_value-0.5)*2
 
-	--upper right - B
 	elif ((lon_value>-0.5) and (lat_value>=0.5)):
 		square = square + 'B'
 
 		lon_value=lon_value*2
 		lat_value=(lat_value-0.5)*2
-		
-	--lower left - C
+
 	elif ((lon_value<=-0.5) and (lat_value<0.5)):
 		square = square + 'C'
 
 		lon_value=(lon_value+0.5)*2
 		lat_value=(lat_value)*2
 
-	--lower right - D
 	elif ((lon_value>-0.5) and (lat_value<0.5)):
 		square = square + 'D'
 
 		lon_value=lon_value*2
 		lat_value=lat_value*2
 
-
---find square sting length
 length = len(square)
 
-/*#as long as string length does not meed criteria for depth - continue calculation
-#as an argument the curent square value is sent to the function. This is added in
-#subsequent calculations, and eventually the number for the length of the string
-#equals the number of the depth variable. That's when the job is done.*/
 
 if (length < depth):
 	#Calculation is recursive - continue the good work
-	square = qdgc_getrecursive_string(lon_value,lat_value,depth,square)
+	square = qdgc_get_recursivestring(lon_value,lat_value,depth,square)
 
-#return value for square
+
 return square    
 $BODY$;
 
-ALTER FUNCTION public.qdgc_getrecursive_string(double precision, double precision)
+ALTER FUNCTION public.qdgc_get_recursivestring(double precision, double precision)
     OWNER TO postgres;
