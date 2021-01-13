@@ -1,4 +1,7 @@
-/* query requirements are PostGIS 3.1 */
+/* query requirements:
+    * PostGIS 3.1 
+    * Existing table with countries in table named tbl_countries
+*/
 drop table if exists tbl_qdgc;
 create table  tbl_qdgc (qdgc varchar(20), country varchar(50),qdgc_level int, qdgc_cellsize decimal, longitude decimal, latitude decimal, areakm2 decimal, geom geometry);
 
