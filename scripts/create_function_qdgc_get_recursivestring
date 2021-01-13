@@ -5,7 +5,8 @@
 CREATE OR REPLACE FUNCTION public.qdgc_get_recursivestring(
 	lon_value double precision,
 	lat_value double precision,
-	depth integer)
+	depthlevel integer,
+	square text)
     RETURNS text
     LANGUAGE 'plpython3u'
     COST 100
@@ -132,12 +133,11 @@ elif ((lon_value<=0) and (lat_value>=0)):
 length = len(square)
 
 
-if (length < depth):
-	#Calculation is recursive - continue the good work
-	square = plpy.execute ('select qdgc_get_recursivestring(lon_value,lat_value,depth,square)')
+if (length < depthlevel):
+	--square = plpy.execute ('select qdgc_get_recursivestring(lon_value,lat_value,depthlevel,square)')
 
 return square    
 $BODY$;
 
-ALTER FUNCTION public.qdgc_get_recursivestring(double precision, double precision)
+ALTER FUNCTION public.qdgc_get_recursivestring(double precision, double precision, integer, text)
     OWNER TO postgres;
