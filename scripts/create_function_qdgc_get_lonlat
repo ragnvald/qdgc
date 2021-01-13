@@ -10,17 +10,16 @@ CREATE OR REPLACE FUNCTION public.qdgc_get_lonlat(
     COST 100
     VOLATILE PARALLEL UNSAFE
 AS $BODY$
-
--- Put character in front of longitudal value
+"""Put character in front of longitudal value"""
 if lon_value < 0:
 	square = 'W'
 else:
 	square = 'E'
             
--- Find absolute value for longitude
+"""Find absolute value for longitude"""
 lon_string=str(int(abs(lon_value)))
 
--- The longitudal value of the square is printed with three decimals
+"""The longitudal value of the square is printed with three decimals"""
 square = square + (lon_string).zfill(3)
 
 """Put character in front of latitudal value"""
@@ -29,10 +28,10 @@ if  lat_value < 0 :
 else:
 	square = square + 'N'
 
--- Find absolute value for latitude
+"""find absolute value for latitude"""
 lat_string=str(int(abs(lat_value)))
 
--- Find int lat. Remember that latitudes absolute values never excceed 90
+"""find int lat. Remember that latitudes absolute values never excceed 90"""
 square = square + (lat_string).zfill(2)
     
 return square
