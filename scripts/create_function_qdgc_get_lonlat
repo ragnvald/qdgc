@@ -5,7 +5,7 @@
 CREATE OR REPLACE FUNCTION public.qdgc_get_lonlat(
 	lon_value double precision,
 	lat_value double precision)
-    RETURNS character varying[]
+    RETURNS text
     LANGUAGE 'plpython3u'
     COST 100
     VOLATILE PARALLEL UNSAFE
