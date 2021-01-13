@@ -130,14 +130,13 @@ elif ((lon_value<=0) and (lat_value>=0)):
 		lon_value=lon_value*2
 		lat_value=lat_value*2
 
-length = len(square)
+stringlength = len(square)
 
-
-if (length < depthlevel):
+if (stringlength < depthlevel):
 	--square = plpy.execute ('select qdgc_get_recursivestring(lon_value,lat_value,depthlevel,square)')
 
 return square    
 $BODY$;
 
-ALTER FUNCTION public.qdgc_get_recursivestring(double precision, double precision, integer, text)
+ALTER FUNCTION public.qdgc_get_recursivestring(double precision, double precision,  integer, text)
     OWNER TO postgres;
