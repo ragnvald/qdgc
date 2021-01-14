@@ -1,8 +1,8 @@
--- FUNCTION: public.qdgc_get_lonlat(double precision, double precision)
+-- FUNCTION: public.qdgc_getlonlat(double precision, double precision)
 
--- DROP FUNCTION public.qdgc_get_lonlat(double precision, double precision);
+-- DROP FUNCTION public.qdgc_getlonlat(double precision, double precision);
 
-CREATE OR REPLACE FUNCTION public.qdgc_get_lonlat(
+CREATE OR REPLACE FUNCTION public.qdgc_getlonlat(
 	lon_value double precision,
 	lat_value double precision)
     RETURNS text
@@ -37,5 +37,5 @@ square = square + (lat_string).zfill(2)
 return square
 $BODY$;
 
-ALTER FUNCTION public.qdgc_get_lonlat(double precision, double precision)
+ALTER FUNCTION public.qdgc_getlonlat(double precision, double precision)
     OWNER TO postgres;
