@@ -1,11 +1,11 @@
 -- FUNCTION: public.qdgc_get_recursivestring(double precision, double precision, integer, text)
 
--- DROP FUNCTION public.qdgc_get_recursivestring(double precision, double precision, integer, text);
+-- DROP FUNCTION public.qdgc_getrecursivestring(double precision, double precision, integer, text);
 
-CREATE OR REPLACE FUNCTION public.qdgc_get_recursivestring(lon_value double precision, 
-	lat_value double precision, 
-	depthlevel integer, 
-	square text)
+CREATE OR REPLACE FUNCTION public.qdgc_getrecursivestring(lon_value double precision, 
+														   lat_value double precision, 
+														   depthlevel integer, 
+														   square text)
 RETURNS setof text
 LANGUAGE plpgsql
 as $$
@@ -132,7 +132,7 @@ begin
 		lon_value_passon = lon_value;
 		lat_value_passon = lat_value;
 
-		return query select * from qdgc_get_recursivestring(lon_value,lat_value,depthlevel,square);
+		return query select * from qdgc_getrecursivestring(lon_value,lat_value,depthlevel,square);
 
 	else	
 		return next square;
@@ -140,5 +140,3 @@ begin
     end if;
 	
 end $$;
-
-select * from qdgc_get_recursivestring(6.7,9.4,3,'');
