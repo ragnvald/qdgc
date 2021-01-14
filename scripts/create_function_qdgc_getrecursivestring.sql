@@ -3,9 +3,9 @@
 -- DROP FUNCTION public.qdgc_get_recursivestring(double precision, double precision, integer, text);
 
 CREATE OR REPLACE FUNCTION public.qdgc_get_recursivestring(lon_value double precision, 
-														   lat_value double precision, 
-														   depthlevel integer, 
-														   square text)
+	lat_value double precision, 
+	depthlevel integer, 
+	square text)
 RETURNS setof text
 LANGUAGE plpgsql
 as $$
