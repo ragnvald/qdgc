@@ -1,5 +1,5 @@
-QDGC level GIVE_LEVEL - GIVE_NAME (GIVE_CODE)
-- - - - - - - - - - - - - - - - - - - - - - - - - - - -
+QDGC tables delivered in geopackage file(s)
+- - - - - - - - - - - - - - - - - - - - - -
                                       
 QDGC represents a way of making (almost) equal area squares covering a
 specific area to represent specific qualities of the area covered. The 
@@ -21,8 +21,7 @@ Within each geopackage file you will find a number of tables with these names:
 -tbl_qdgc_03
 -tbl_qdgc_04
 -tbl_qdgc_05
--
-etc
+-etc
 
 Metadata
 --------
@@ -31,14 +30,8 @@ Geodata	GCS_WGS_1984
 		Prime Meridian: 0
 
 ARAEA	Calculated with PostgIS fungtion st_area:
-
-	(st_area(st_transform(geom, 102008))/1000000)
-		FME is using the AZMEA (ALambert Azimuthal Equal
-    Area Projection) for area calculations. You are 
-    adviced to recalculate the areas using a more local
-		projection if the area calculation is important
-		for your work.
-
+(st_area(st_transform(geom, 102008))/1000000)
+FME is using the AZMEA (Lamberts Azimuthal Equal Area Projection)
 
 Copyright
 ---------
@@ -54,10 +47,7 @@ and I will try to fix it.
 
 Thankyou
 --------
-FME - Special thanks this time goes to FME which
-      has provided the Tanzania Conservation Resource
-      Centre with two licenses of FME under their Grant
-      Program Application.
+
 Tanzania Wildlife Research Institute 
 Dept of Biology, NTNU, Norway
 Norwegian Environment Agency
@@ -66,6 +56,7 @@ Steven Prager
 Howard Frederick
 Julian Blanc
 Honori Maliti
+Paul Ramsey
 
                           
 References
@@ -74,13 +65,12 @@ References
 * http://www.mindland.com/wp/projects/quarter-degree-grid-cells/about-qdgc/
 * http://en.wikipedia.org/wiki/Lambert_azimuthal_equal-area_projection
 * http://www.safe.com
-* http://www.wingware.com/
 
 
 Regards,
 
 Ragnvald Larsen
-Trondheim 5th of December, 2014
+Trondheim 16th of January, 2021
 
 ragnvald@mindland.com
 www.mindland.com
