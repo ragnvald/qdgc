@@ -1,11 +1,11 @@
--- FUNCTION: public.qdgc_get_qdgc(double precision, double precision, integer)
+-- FUNCTION: public.qdgc_fillqdgc(text, integer, integer)
 
--- DROP FUNCTION public.qdgc_get_qdgc(double precision, double precision, integer);
+-- DROP FUNCTION public.qdgc_fillqdgc(text, integer, integer);
 
-CREATE OR REPLACE FUNCTION public.qqdgc_fillqdgc(
+CREATE OR REPLACE FUNCTION public.qdgc_fillqdgc(
 	area_input text,
-	qdgc_level int,
-	purge int)
+	qdgc_level integer,
+	purge integer)
     RETURNS SETOF text 
     LANGUAGE 'plpgsql'
     COST 100
@@ -35,7 +35,7 @@ begin
 	) 
 	
 	insert into tbl_qdgc 
-	select qdgc_getqdgc(ST_X(ST_Centroid(geom)),ST_Y(ST_Centroid(geom)),3),area_reference, counter,(1/(2^counter)), ST_X(ST_Centroid(geom)) as lon,ST_Y(ST_Centroid(geom)) as lat,(st_area(st_transform(geom, 9820))/1000000), geom from grid;
+	select qdgc_getqdgc(ST_X(ST_Centroid(geom)),ST_Y(ST_Centroid(geom)),qdgc_level),area_reference, counter,(1/(2^counter)), ST_X(ST_Centroid(geom)) as lon,ST_Y(ST_Centroid(geom)) as lat,(st_area(st_transform(geom, 102008))/1000000), geom from grid;
 
 	
    end loop;
