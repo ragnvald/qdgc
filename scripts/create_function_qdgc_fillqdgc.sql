@@ -32,12 +32,13 @@ begin
 			/* creating the grid */
 			select (st_squaregrid((1/(2^counter)), st_transform(geom,4326))).* ,name as area_reference
 			from tbl_countries where name = area_input
-		) 
+			) 
 
-		insert into tbl_qdgc 
-		select qdgc_getqdgc(ST_X(ST_Centroid(geom)),ST_Y(ST_Centroid(geom)),counter),area_reference, counter,(1/(2^counter)), ST_X(ST_Centroid(geom)),ST_Y(ST_Centroid(geom)),(st_area(st_transform(geom, 102008))/1000000), geom from grid;
+			insert into tbl_qdgc 
+			select qdgc_getqdgc(ST_X(ST_Centroid(geom)),ST_Y(ST_Centroid(geom)),counter),area_reference, counter,(1/(2^counter)), ST_X(ST_Centroid(geom)),ST_Y(ST_Centroid(geom)),(st_area(st_transform(geom, 102008))/1000000), geom from grid;
 	
-   	end loop;
+   		end loop;
 	
-end
+	end
+	
 $BODY$;
