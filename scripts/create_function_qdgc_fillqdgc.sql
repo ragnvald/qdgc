@@ -28,17 +28,16 @@ begin
    	/* Establishing counter which defindes the depth of the grid cell creation. Here from 1 (1/2 degree) to 5 (1/32 degree) */
    	for counter in 1..qdgc_level loop
 	
-	with grid as (
-		/* creating the grid */
-  		select (st_squaregrid((1/(2^counter)), st_transform(geom,4326))).* ,name as area_reference
-  		from tbl_countries where name = area_input
-	) 
-	
-	insert into tbl_qdgc 
-	select qdgc_getqdgc(ST_X(ST_Centroid(geom)),ST_Y(ST_Centroid(geom)),counter),area_reference, counter,(1/(2^counter)), ST_X(ST_Centroid(geom)) as lon,ST_Y(ST_Centroid(geom)) as lat,(st_area(st_transform(geom, 102008))/1000000), geom from grid;
+		with grid as (
+			/* creating the grid */
+			select (st_squaregrid((1/(2^counter)), st_transform(geom,4326))).* ,name as area_reference
+			from tbl_countries where name = area_input
+		) 
 
+		insert into tbl_qdgc 
+		select qdgc_getqdgc(ST_X(ST_Centroid(geom)),ST_Y(ST_Centroid(geom)),counter),area_reference, counter,(1/(2^counter)), round(ST_X(ST_Centroid(geom)),5) as lon,round(ST_Y(ST_Centroid(geom)),5) as lat,round((st_area(st_transform(geom, 102008))/1000000),5), geom from grid;
 	
-   end loop;
+   	end loop;
 	
 end
 $BODY$;
