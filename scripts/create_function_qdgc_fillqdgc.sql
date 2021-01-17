@@ -35,7 +35,7 @@ begin
 		) 
 
 		insert into tbl_qdgc 
-		select qdgc_getqdgc(ST_X(ST_Centroid(geom)),ST_Y(ST_Centroid(geom)),counter),area_reference, counter,(1/(2^counter)), round(ST_X(ST_Centroid(geom)),5) as lon,round(ST_Y(ST_Centroid(geom)),5) as lat,round((st_area(st_transform(geom, 102008))/1000000),5), geom from grid;
+		select qdgc_getqdgc(ST_X(ST_Centroid(geom)),ST_Y(ST_Centroid(geom)),counter),area_reference, counter,(1/(2^counter)), ST_X(ST_Centroid(geom)),ST_Y(ST_Centroid(geom)),(st_area(st_transform(geom, 102008))/1000000), geom from grid;
 	
    	end loop;
 	
