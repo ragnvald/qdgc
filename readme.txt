@@ -8,12 +8,6 @@ the equator we have 360 longitudinal lines , and from the north to the
 south pole we have 180 latitudinal lines. Together this gives us 64800
 segments or tiles covering earth.
 
-The geopackage file(s) provided are named by country and zipped. Examples are:
--qdgc_zambia.zip
--qdgc_tanzania.zip
--qdgc_ghana.zip
--etc
-
 Within each geopackage file you will find a number of tables with these names:
 
 -tbl_qdgc_01
@@ -46,7 +40,7 @@ Area was calculated with PostgIS function st_area:
 
 Licensing
 ---------
-Creative Commons Attribution 4.0 Intrernational
+Creative Commons Attribution 4.0 International
 
 
 Conditions
