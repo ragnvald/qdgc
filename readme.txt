@@ -29,7 +29,8 @@ Geodata	GCS_WGS_1984
 	Datum: D_WGS_1984
 	Prime Meridian: 0
 
-Area was calculated with PostgIS function st_area: (st_area(st_transform(geom, 9820))/1000000)
+Areas are calculated with different versions of Albers Equal Area Conic using the PostGIS function st_area. For the African continent I have used Africa Albers Equal Area Conic which will look like this:
+- st_area(st_transform(geom, 102022))/1000000)
 
 
 Licensing
