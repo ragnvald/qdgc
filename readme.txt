@@ -1,12 +1,7 @@
 QDGC tables delivered in geopackage file(s)
 - - - - - - - - - - - - - - - - - - - - - -
                                       
-QDGC represents a way of making (almost) equal area squares covering a
-specific area to represent specific qualities of the area covered. The 
-squares themselves are based on the degree squares covering earth. Around
-the equator we have 360 longitudinal lines , and from the north to the
-south pole we have 180 latitudinal lines. Together this gives us 64800
-segments or tiles covering earth.
+QDGC represents a way of making (almost) equal area squares covering a specific area to represent specific qualities of the area covered. The squares themselves are based on the degree squares covering earth. Around the equator we have 360 longitudinal lines , and from the north to the south pole we have 180 latitudinal lines. Together this gives us 64800 segments or tiles covering earth.
 
 Within each geopackage file you will find a number of tables with these names:
 
@@ -34,8 +29,7 @@ Geodata	GCS_WGS_1984
 	Datum: D_WGS_1984
 	Prime Meridian: 0
 
-Area was calculated with PostgIS function st_area:
-- (st_area(st_transform(geom, 102008))/1000000)
+Area was calculated with PostgIS function st_area: (st_area(st_transform(geom, 9820))/1000000)
 
 
 Licensing
@@ -45,22 +39,16 @@ Creative Commons Attribution 4.0 International
 
 Conditions
 ----------
-Delivered to the user as-is. No guarantees. If you find errors, please tell
-and I will try to fix it.
+Delivered to the user as-is. No guarantees. If you find errors, please tell me and I will try to fix it.
 
 
 Thankyou
 --------
-
-Tanzania Wildlife Research Institute 
-Dept of Biology, NTNU, Norway
-Norwegian Environment Agency
-Eivin Røskaft
-Steven Prager
-Howard Frederick
-Julian Blanc
-Honori Maliti
-Paul Ramsey
+The work has over the years been supported and receicved advice and moral support from many organisations and stakeholders. Here are some of them:
+- Tanzania Wildlife Research Institute 
+- Dept of Biology, NTNU, Norway
+- Norwegian Environment Agency
+- Eivin Røskaft, Steven Prager, Howard Frederick, Julian Blanc, Honori Maliti, Paul Ramsey
 
                           
 References
