@@ -23,15 +23,16 @@ Within each geopackage file you will find a number of tables with these names:
 -tbl_qdgc_05
 -etc
 
+
 Metadata
 --------
 Geodata	GCS_WGS_1984
 		Datum: D_WGS_1984
 		Prime Meridian: 0
 
-ARAEA	Calculated with PostgIS fungtion st_area:
-(st_area(st_transform(geom, 102008))/1000000)
-FME is using the AZMEA (Lamberts Azimuthal Equal Area Projection)
+Area was calculated with PostgIS function st_area:
+- (st_area(st_transform(geom, 102008))/1000000)
+
 
 Licensing
 ---------
