@@ -23,12 +23,22 @@ Within each geopackage file you will find a number of tables with these names:
 -tbl_qdgc_05
 -etc
 
+The attributes for each table are:
+
+qdgc			Unique Quarter Degree Grid Cell reference string
+area_reference		Country
+level_qdgc		QDGC level
+cellsize degrees	decimal degree for the longitudal and latitudal length of the cell
+lon_center		Longitude center of the cell
+lat_center		Latitudal center of the cell
+area_km2		Calculated area for the cell
+geom			Geometry
 
 Metadata
 --------
 Geodata	GCS_WGS_1984
-		Datum: D_WGS_1984
-		Prime Meridian: 0
+	Datum: D_WGS_1984
+	Prime Meridian: 0
 
 Area was calculated with PostgIS function st_area:
 - (st_area(st_transform(geom, 102008))/1000000)
