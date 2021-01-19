@@ -33,10 +33,9 @@ ARAEA	Calculated with PostgIS fungtion st_area:
 (st_area(st_transform(geom, 102008))/1000000)
 FME is using the AZMEA (Lamberts Azimuthal Equal Area Projection)
 
-Copyright
+Licensing
 ---------
-GNU GPL License is the closest one. Free of charge, free to use, free to
-change and free to distribute.
+Creative Commons Attribution 4.0 Intrernational
 
 
 Conditions
