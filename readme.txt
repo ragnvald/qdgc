@@ -1,6 +1,5 @@
-QDGC tables delivered in geopackage file(s)
+QDGC tables delivered in geopackage file
 - - - - - - - - - - - - - - - - - - - - - -
-                                      
 QDGC represents a way of making (almost) equal area squares covering a specific area to represent specific qualities of the area covered. The squares themselves are based on the degree squares covering earth. Around the equator we have 360 longitudinal lines , and from the north to the south pole we have 180 latitudinal lines. Together this gives us 64800 segments or tiles covering earth.
 
 Within each geopackage file you will find a number of tables with these names:
@@ -32,16 +31,13 @@ Geodata	GCS_WGS_1984
 Areas are calculated with different versions of Albers Equal Area Conic using the PostGIS function st_area. For the African continent I have used Africa Albers Equal Area Conic which will look like this:
 - st_area(st_transform(geom, 102022))/1000000)
 
-
 Licensing
 ---------
 Creative Commons Attribution 4.0 International
 
-
 Conditions
 ----------
 Delivered to the user as-is. No guarantees. If you find errors, please tell me and I will try to fix it.
-
 
 Thankyou
 --------
@@ -50,7 +46,6 @@ The work has over the years been supported and receicved advice and moral suppor
 - Dept of Biology, NTNU, Norway
 - Norwegian Environment Agency
 - Eivin Røskaft, Steven Prager, Howard Frederick, Julian Blanc, Honori Maliti, Paul Ramsey
-
                           
 References
 ----------
@@ -59,8 +54,6 @@ References
 * http://en.wikipedia.org/wiki/Lambert_azimuthal_equal-area_projection
 * http://www.safe.com
 
-
-Regards,
 
 Ragnvald Larsen
 Trondheim 16th of January, 2021
