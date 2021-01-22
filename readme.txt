@@ -37,7 +37,7 @@ Creative Commons Attribution 4.0 International
 
 Conditions
 ----------
-Delivered to the user as-is. No guarantees. If you find errors, please tell me and I will try to fix it.
+Delivered to the user as-is. No guarantees. If you find errors, please tell me and I will try to fix it. Suggestions for improvements can be adressed to the github repository: https://github.com/ragnvald/qdgc
 
 Thankyou
 --------
@@ -56,7 +56,7 @@ References
 
 
 Ragnvald Larsen
-Trondheim 16th of January, 2021
+Trondheim 21th of January, 2021
 
 ragnvald@mindland.com
 www.mindland.com
