@@ -12,7 +12,6 @@ Within each geopackage file you will find a number of tables with these names:
 
 The attributes for each table are:
 qdgc  Unique Quarter Degree Grid Cell reference string
-area_reference  Country
 level_qdgc  QDGC level
 cellsize  degrees decimal degree for the longitudal and latitudal length of the cell
 lon_center  Longitude center of the cell
@@ -33,7 +32,7 @@ Conditions
 ----------
 Delivered to the user as-is. No guarantees. If you find errors, please tell me and I will try to fix it. Suggestions for improvements can be addressed to the github repository: https://github.com/ragnvald/qdgc
 
-Thankyou
+Thankyou!
 --------
 The work has over the years been supported and received advice and moral support from many organisations and stakeholders. Here are some of them:
 - Tanzania Wildlife Research Institute
