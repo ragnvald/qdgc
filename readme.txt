@@ -35,7 +35,7 @@ Delivered to the user as-is. No guarantees. If you find errors, please tell me a
 Thankyou!
 --------
 The work has over the years been supported and received advice and moral support from many organisations and stakeholders. Here are some of them:
-- Tanzania Wildlife Research Institute
+- TAWIRI (http://tawiri.or.tz/)
 - Dept of Biology, NTNU, Norway
 - Norwegian Environment Agency
 - Eivin Røskaft, Steven Prager, Howard Frederick, Julian Blanc, Honori Maliti, Paul Ramsey
