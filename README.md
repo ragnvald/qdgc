@@ -14,6 +14,16 @@ Run the following scripts in a PostGIS database version 3.1 or above from th equ
 - create_function_qdgc_getrecursivestring.sql
 - create_function_qdgc_fillqdgc.sql
 
+The script to create qdgc for a country relies on a table named tbl_countries. This table should have a name column which is being used for selecting the approprate country polygon. The next thing you do is to run this in the query tool:
+
+- select qdgc_fillqdgc('Uganda',5,1)
+
+5 is the maximum QDGC level you want to produce. 1 means the produced table tbl_qdgc will be emptied before you run it. If you want to do several consequtive queries the next queries will have to carry the argument 0.
+
+- select qdgc_fillqdgc('Uganda',5,1)
+- select qdgc_fillqdgc('Tanzania',5,0)
+- select qdgc_fillqdgc('Kenya',5,0)
+
 Why did I code these tools? Information on the distribution of animal populations is essential for conservation planning and management. Unfortunately, shared coordinate-level data may have the potential to compromise sensitive species and generalized data are often shared instead to facilitate knowledge discovery and communication regarding species distributions. Sharing of generalized data is, unfortunately, often ad hoc and lacks scalable conventions that permit consistent sharing at larger scales and varying resolutions. 
 
 One common convention in African applications is the Quarter Degree Grid Cells (QDGC) system. However, the current standard does not support unique references across the Equator and Prime Meridian. We present a method for extending QDGC nomenclature to support unique references at a continental scale for Africa. 
