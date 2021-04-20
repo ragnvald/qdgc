@@ -14,7 +14,7 @@ Run the following scripts in a PostGIS database version 3.1 or above from th equ
 - create_function_qdgc_getrecursivestring.sql
 - create_function_qdgc_fillqdgc.sql
 
-The script to create qdgc for a country relies on a table named tbl_countries. This table should have a name column which is being used for selecting the approprate country polygon. The next thing you do is to run this in the query tool:
+The script to create qdgc for a country relies on a table named tbl_countries. This table should have a name column ("name") which is being used for selecting the approprate country polygon. The next thing you do is to run this in the query tool:
 
 - select qdgc_fillqdgc('Uganda',5,1)
 
