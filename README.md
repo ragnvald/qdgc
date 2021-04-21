@@ -8,13 +8,13 @@ You will find tools and relevant templates in the following folders:
 - **scripts** to produce PostGreSQL/PostGIS functions to create grids
 - **templates** Folder containing different templates.
 
-Run the following scripts in a PostGIS database version 3.1 or above from th equery tool after initiating a default postgis database named qdgc:
+Run the following scripts in a PostGIS database version 3.1 or above from the query tool after initiating a default postgis database named qdgc:
 - create_function_qdgc_getqdgc.sql
 - create_function_qdgc_getlonlat.sql
 - create_function_qdgc_getrecursivestring.sql
 - create_function_qdgc_fillqdgc.sql
 
-The script to create qdgc for a country relies on a table named tbl_countries. This table should have a name column ("name") which is being used for selecting the approprate country polygon. The next thing you do is to run this in the query tool:
+The script to create qdgc for a country relies on a table named tbl_countries. This table should have a name column ("name") which is being used for selecting the approprate country polygon. You could also use a different collection of objects like protected areas, regions or similar. In the current implementation it is necessary to keep the name tbl_countries for the table name. The next thing you do is to run this in the query tool:
 
 - select qdgc_fillqdgc('Uganda',5,1)
 
