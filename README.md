@@ -3,10 +3,9 @@ QDGC
 
 This project supports the production and distribution of QDGC files. It provides a setup which allows for swift production of spatial data within a PostGIS database. It also provides tools to pull data off from the online database and into a geopackage file for distribution.
 
-You will find tools and relevant templates in the following folders:
+You will find tools and relevant templates in the following folder:
 
 - **scripts** to produce PostGreSQL/PostGIS functions to create grids
-- **templates** Folder containing different templates.
 
 Run the following scripts in a PostGIS database version 3.1 or above from the query tool after initiating a default postgis database named qdgc:
 - create_function_qdgc_getqdgc.sql
