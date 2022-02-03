@@ -7,7 +7,7 @@ You will find tools and relevant templates in the following folder:
 
 - **scripts** to produce PostGreSQL/PostGIS functions to create grids
 
-Run the following scripts in a PostGIS database version 3.1 or above from the query tool after initiating a default postgis database named qdgc:
+Run the following scripts in a PostGIS database version 3.1 or above from the query tool after initiating a default PostGIS database named qdgc:
 - create_function_qdgc_getqdgc.sql
 - create_function_qdgc_getlonlat.sql
 - create_function_qdgc_getrecursivestring.sql
