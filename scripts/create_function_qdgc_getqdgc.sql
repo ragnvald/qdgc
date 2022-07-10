@@ -1,8 +1,8 @@
--- FUNCTION: public.qdgc_get_qdgc(double precision, double precision, integer)
+-- FUNCTION: public.qdgc_getqdgc(double precision, double precision, integer)
 
--- DROP FUNCTION public.qdgc_get_qdgc(double precision, double precision, integer);
+-- DROP FUNCTION public.qdgc_getqdgc(double precision, double precision, integer);
 
-CREATE OR REPLACE FUNCTION public.qdgc_get_qdgc(
+CREATE OR REPLACE FUNCTION public.qdgc_getqdgc(
 	lon_value double precision,
 	lat_value double precision,
 	depthlevel integer)
