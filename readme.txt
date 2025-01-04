@@ -8,6 +8,7 @@ Within each geopackage file you will find a number of tables with these names:
 -tbl_qdgc_03
 -tbl_qdgc_04
 -tbl_qdgc_05
+-tbl_qdgc_06
 -etc
 
 The attributes for each table are:
