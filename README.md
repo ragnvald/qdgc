@@ -7,6 +7,7 @@ This repository now contains three project variants in one branch.
 - `qdgc_pg/` - Postgres/SQL implementation and scripts
 - `qdgc_fme/` - FME workflow and packaging scripts
 - `qdgc_python/` - Python/ESRI-oriented tools
+- `qdgc_python/qdgc_py/` - reusable Python library package (`qdgc-py`)
 
 ## Notes
 

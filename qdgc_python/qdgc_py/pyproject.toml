@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qdgc-py"
+version = "0.1.0"
+description = "Extended Quarter Degree Grid Cell (QDGC) encoding utilities"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "GPL-3.0-or-later" }
+authors = [
+  { name = "Ragnvald Larsen" }
+]
+keywords = ["qdgc", "geocode", "gis", "biodiversity"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+  "Intended Audience :: Science/Research",
+  "Topic :: Scientific/Engineering :: GIS"
+]
+
+[project.urls]
+Homepage = "https://github.com/ragnvald/qdgc"
+Repository = "https://github.com/ragnvald/qdgc"
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0"
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

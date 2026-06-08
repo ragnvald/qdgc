@@ -8,6 +8,13 @@ This project supports the production and distribution of QDGC files. You will fi
 - **tools** (Python scripts to produce shapefiles in the quarter_degree_grid_cells folder.)
 - **templates** Folder containing different templates.
 
+## qdgc_py library
+
+A reusable Python package scaffold is available in **qdgc_py/**.
+
+This is the modern API-oriented path for integrating QDGC into other systems.
+See **qdgc_py/README.md** for install and usage.
+
 
 
 **quarter_degree_grid_cells**
