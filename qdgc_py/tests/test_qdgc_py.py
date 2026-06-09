@@ -5,7 +5,20 @@ from pathlib import Path
 
 import pytest
 
-from qdgc_py import decode_bounds, decode_centroid, encode, encode_many
+from qdgc_py import (
+    bbox_to_cells,
+    cell_to_boundary,
+    cell_to_children,
+    cell_to_parent,
+    decode_bounds,
+    decode_centroid,
+    encode,
+    encode_many,
+    estimate_cell_count,
+    is_valid_cell,
+    level_degrees,
+    polygon_to_cells,
+)
 
 
 def _load_legacy_module():
@@ -58,3 +71,93 @@ def test_decode_centroid_in_bounds():
 def test_invalid_code_raises():
     with pytest.raises(ValueError):
         decode_bounds("not-a-qdgc")
+
+
+def test_cell_to_boundary_contains_encoded_point():
+    lon, lat, level = 12.34, 56.78, 5
+    code = encode(lon, lat, level)
+    boundary_latlon = cell_to_boundary(code)
+    lats = [p[0] for p in boundary_latlon]
+    lons = [p[1] for p in boundary_latlon]
+
+    assert boundary_latlon[0] == boundary_latlon[-1]
+    assert min(lons) <= lon <= max(lons)
+    assert min(lats) <= lat <= max(lats)
+
+
+def test_polygon_to_cells_box_expected_count_level2():
+    exterior = [
+        (10.0, 20.0),
+        (12.0, 20.0),
+        (12.0, 22.0),
+        (10.0, 22.0),
+        (10.0, 20.0),
+    ]
+    cells = polygon_to_cells(exterior, 2, predicate="centroid")
+    assert len(cells) == 64
+
+
+def test_bbox_to_cells_expected_count_level2():
+    cells = bbox_to_cells(10.0, 20.0, 12.0, 22.0, 2)
+    assert len(cells) == 64
+
+
+def test_parent_children_consistency():
+    code = encode(10.1, -2.2, 4)
+    parent = cell_to_parent(code, 2)
+    children = cell_to_children(parent, 4)
+
+    assert code in children
+    assert len(children) == 16
+    assert cell_to_parent(code) == code[:-1]
+
+
+def test_antimeridian_polygon_and_bbox_fill():
+    exterior = [
+        (179.0, -1.0),
+        (-179.0, -1.0),
+        (-179.0, 1.0),
+        (179.0, 1.0),
+        (179.0, -1.0),
+    ]
+    poly_cells = polygon_to_cells(exterior, 2, predicate="centroid")
+    bbox_cells = bbox_to_cells(179.0, -1.0, -179.0, 1.0, 2)
+
+    assert len(poly_cells) == 64
+    assert len(bbox_cells) == 64
+    assert poly_cells == bbox_cells
+
+
+def test_polar_fill_does_not_error_and_is_deterministic():
+    exterior = [
+        (-1.0, 89.0),
+        (1.0, 89.0),
+        (1.0, 90.0),
+        (-1.0, 90.0),
+        (-1.0, 89.0),
+    ]
+    cells = polygon_to_cells(exterior, 2, predicate="centroid")
+    assert len(cells) == 32
+    assert cells == sorted(cells)
+
+
+def test_estimate_cell_count_within_five_percent():
+    exterior = [
+        (10.0, 20.0),
+        (12.0, 20.0),
+        (12.0, 22.0),
+        (10.0, 22.0),
+        (10.0, 20.0),
+    ]
+    actual = len(polygon_to_cells(exterior, 6, predicate="centroid"))
+    estimate = estimate_cell_count(exterior, 6)
+
+    assert actual > 0
+    assert abs(estimate - actual) / actual <= 0.05
+
+
+def test_is_valid_cell_and_level_degrees():
+    code = encode(-45.5, 12.75, 3)
+    assert is_valid_cell(code)
+    assert not is_valid_cell("E999N99ZZ")
+    assert level_degrees(3) == 0.125
