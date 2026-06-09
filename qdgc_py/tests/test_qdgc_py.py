@@ -10,7 +10,7 @@ from qdgc_py import decode_bounds, decode_centroid, encode, encode_many
 
 def _load_legacy_module():
     repo_root = Path(__file__).resolve().parents[2]
-    legacy_path = repo_root / "tools" / "qdgc_lib.py"
+    legacy_path = repo_root / "qdgc_py_legacy" / "tools" / "qdgc_lib.py"
     spec = importlib.util.spec_from_file_location("legacy_qdgc_lib", legacy_path)
     assert spec is not None and spec.loader is not None
     module = importlib.util.module_from_spec(spec)
