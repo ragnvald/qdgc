@@ -53,4 +53,15 @@ format and when to add one.
 - Impact: No code change. Second external announcement of the package (after
   LinkedIn).
 
+## 2026-07-16 — Recorded MESA vendoring contract
+- What: Documented that MESA 5 consumes qdgc_py as a hand-vendored, pip-free copy
+  (frozen PyInstaller build), and the constraints that places on releases —
+  captured in `learning.md` and `CLAUDE.md`. Also fixed MESA's
+  `code/qdgc_py/VENDORED.md` (it still claimed qdgc-py "is not published on PyPI").
+- Why: Manual re-vendoring means upstream changes must stay compatible or they
+  silently break MESA's frozen build and generated grids.
+- Impact: Docs only, no code change. Firm constraints going forward: zero runtime
+  deps in `core.py`, public API stable at 0.1.0, and flag any release beyond
+  0.1.0 for deliberate re-vendoring.
+
 <!-- Add new entries above this line, newest first. -->
