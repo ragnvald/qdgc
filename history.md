@@ -29,4 +29,13 @@ format and when to add one.
 - Impact: Licensing only, no code/API change. Supersedes the GPL-3.0 choice from
   the earlier entry today.
 
+## 2026-07-16 — Milestone: qdgc-py 0.1.0 published to PyPI
+- What: First public release. Tag `v0.1.0` triggered the release workflow, which
+  ran green end to end (tests, build, twine check, Trusted Publishing upload).
+  `pip install qdgc-py` now works for everyone.
+- Why: Deliver the H3-style goal — QDGC as an open, installable library.
+- Impact: Package is public at https://pypi.org/project/qdgc-py/ under
+  Apache-2.0. Version `0.1.0` is now permanently reserved on PyPI. Future
+  releases follow the same bump-version -> tag -> push flow.
+
 <!-- Add new entries above this line, newest first. -->
