@@ -38,4 +38,11 @@ format and when to add one.
   Apache-2.0. Version `0.1.0` is now permanently reserved on PyPI. Future
   releases follow the same bump-version -> tag -> push flow.
 
+## 2026-07-16 — Announced qdgc-py on LinkedIn
+- What: Ragnvald published a LinkedIn post announcing the qdgc-py library,
+  tying it back to the 2009 extended-QDGC paper. Post: https://lnkd.in/p/eZCbfgGP
+- Why: Public launch / outreach for the library to the GIS and biodiversity
+  community.
+- Impact: No code change. First external announcement of the package.
+
 <!-- Add new entries above this line, newest first. -->
