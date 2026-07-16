@@ -45,4 +45,12 @@ format and when to add one.
   community.
 - Impact: No code change. First external announcement of the package.
 
+## 2026-07-16 — Added qdgc-py note to the ResearchGate article
+- What: Posted a short update on the 2009 paper's ResearchGate page pointing to
+  the qdgc-py library (used the ~300-char short form due to the field limit).
+- Why: Connect the published method to its open-source implementation for
+  researchers arriving via the paper.
+- Impact: No code change. Second external announcement of the package (after
+  LinkedIn).
+
 <!-- Add new entries above this line, newest first. -->
