@@ -13,3 +13,8 @@ This repository now contains three project variants in one branch.
 
 - Historical branch content was consolidated into folders.
 - Work on shared changes in one place and keep variant-specific changes in the matching folder.
+
+## Development
+
+This project is developed by Ragnvald Larsen with the assistance of AI coding
+tools. All commits are authored and reviewed by the maintainer.

@@ -12,7 +12,21 @@ QDGC is a hierarchical lon/lat square grid in EPSG:4326:
 - each level splits each cell into 4 quadrants
 - side length in degrees is `1.0 / (2 ** level)`
 
-## Quickstart
+## Install
+
+Once published to PyPI:
+
+```bash
+pip install qdgc-py
+```
+
+The distribution name is `qdgc-py`; the import name is `qdgc_py`:
+
+```python
+import qdgc_py
+```
+
+## Quickstart (from source)
 
 From `qdgc/qdgc_py`:
 
@@ -144,6 +158,43 @@ https://doi.org/10.1111/j.1365-2028.2008.00997.x
 - Current package version is defined in `pyproject.toml` (`project.version`).
 - Bump the version when behavior or public API changes.
 - Tag releases in git using the same version (for example `v0.1.1`).
+
+### Publishing to PyPI
+
+Releases publish automatically via GitHub Actions using PyPI Trusted Publishing
+(OIDC) - no API tokens or stored secrets. See
+`.github/workflows/qdgc_py-release.yml`.
+
+One-time setup on [pypi.org](https://pypi.org) (project -> Publishing -> add a
+trusted publisher):
+
+| Field           | Value                 |
+|-----------------|-----------------------|
+| Owner           | `ragnvald`            |
+| Repository      | `qdgc`                |
+| Workflow name   | `qdgc_py-release.yml` |
+| Environment     | `pypi`                |
+
+To cut a release:
+
+```bash
+# 1. bump project.version in qdgc_py/pyproject.toml (e.g. 0.1.1)
+# 2. tag and push
+git tag v0.1.1
+git push origin v0.1.1
+```
+
+The workflow runs the tests, builds the sdist and wheel, validates metadata with
+`twine check`, and uploads to PyPI.
+
+Manual fallback (from `qdgc_py/`, requires a PyPI API token):
+
+```bash
+pip install build twine
+python -m build
+twine check dist/*
+twine upload dist/*
+```
 
 ## Next steps
 
