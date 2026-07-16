@@ -50,7 +50,10 @@ the arbiter — unless the disagreement is legacy-compatibility (see below).
    must be flagged loudly — never a silent change.
 2. **`qdgc_py` stays dependency-light.** Pure stdlib for core geometry (no
    shapely/numpy in the required path). Optional extras are fine behind
-   `[project.optional-dependencies]`.
+   `[project.optional-dependencies]`. **`core.py` must have zero runtime
+   dependencies** — a downstream consumer (MESA) vendors it verbatim into a
+   frozen build; see the vendoring contract in `learning.md` before touching the
+   public API or adding an import to the core.
 3. **Every public function is tested.** Add cases to
    `qdgc_py/tests/test_qdgc_py.py`. Cover the happy path, a boundary/edge case,
    and legacy-compat where relevant.

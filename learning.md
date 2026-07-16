@@ -36,6 +36,31 @@ is a knowledge base, not a changelog — for the timeline see `history.md`.
 - Keep three things in sync if the license ever changes: root `LICENSE`,
   `pyproject.toml` `license` field, and the `License ::` trove classifier.
 
+## Downstream consumer: MESA vendors qdgc_py (contract)
+
+MESA (a desktop geospatial app) uses this library, but **not via pip**. It carries a
+verbatim vendored copy of `__init__.py` + `core.py` at `code/qdgc_py/` (copied from
+`src/qdgc_py/`), imported as `import qdgc_py`, and bundled into a frozen PyInstaller
+build. MESA 5 stays on the vendored copy; a pip migration (like `h3==4.2.2`) is a future
+release, not v5. Updates reach MESA only by manual re-vendoring, so upstream changes
+must honor this contract:
+
+- **Zero runtime dependencies in the core.** `core.py` must stay pure stdlib — no
+  transitive deps. Adding a runtime import breaks the vendoring contract and the frozen
+  build. (This hardens the existing "dependency-light" rule into a firm one.)
+- **Public API backward-compatible with 0.1.0.** Hand re-vendoring makes silent
+  signature/behavior drift costly. The surface MESA actually calls:
+  - `polygon_to_cells(exterior, level, holes=..., predicate="intersects")`
+  - `cell_to_polygon(code)`
+  - `estimate_cell_count(None, level, bbox=(minx, miny, maxx, maxy))`
+  - `__version__`
+- **Treat as a stable contract** the `(lon, lat)` coordinate convention, the `predicate`
+  semantics, and the QDGC code/quadrant encoding. Changing any of these changes MESA's
+  generated grids — it is a major, loudly-flagged change, not a silent one.
+- **Flag any release beyond 0.1.0.** MESA re-vendors deliberately (bumping the version
+  note in its `code/qdgc_py/VENDORED.md`), never automatically. New releases should be
+  announced so downstream vendoring is intentional.
+
 ## Architecture notes
 
 - Core geometry in `qdgc_py` is **pure stdlib** (own point-in-polygon,
