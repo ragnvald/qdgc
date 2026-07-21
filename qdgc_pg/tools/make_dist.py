@@ -25,11 +25,48 @@ def fail(message: str) -> None:
     raise SystemExit(f"make_dist: {message}")
 
 
+# PGXN Meta Spec v1.0.0 <https://pgxn.org/meta/spec.txt>. PGXN validates the
+# upload with a Perl module we cannot run here, so this catches the structural
+# mistakes that would otherwise be rejected only after a manual upload.
+REQUIRED_FIELDS = ("name", "version", "abstract", "maintainer", "license",
+                   "provides", "meta-spec")
+
+# The subset of spec licence strings worth allowing here; the full list is
+# longer, but silently accepting a typo is the failure mode to avoid.
+KNOWN_LICENSES = {"apache_2_0", "apache_1_1", "bsd", "mit", "postgresql",
+                  "gpl_2", "gpl_3", "lgpl_2_1", "lgpl_3_0", "unrestricted"}
+
+
+def validate_meta(meta: dict) -> None:
+    missing = [f for f in REQUIRED_FIELDS if f not in meta]
+    if missing:
+        fail(f"META.json is missing required field(s): {', '.join(missing)}")
+
+    if meta["license"] not in KNOWN_LICENSES:
+        fail(f"META.json license '{meta['license']}' is not a recognised PGXN "
+             f"licence string (expected one of: {', '.join(sorted(KNOWN_LICENSES))})")
+
+    if not isinstance(meta["provides"], dict) or not meta["provides"]:
+        fail("META.json 'provides' must be a non-empty object")
+
+    for ext, spec in meta["provides"].items():
+        for key in ("file", "version"):
+            if key not in spec:
+                fail(f"META.json provides.{ext} is missing '{key}'")
+
+    if meta.get("meta-spec", {}).get("version") != "1.0.0":
+        fail("META.json meta-spec.version must be '1.0.0'")
+
+
 def main() -> int:
     meta_path = ROOT / "META.json"
     if not meta_path.is_file():
         fail("META.json not found")
-    meta = json.loads(meta_path.read_text(encoding="utf-8"))
+    try:
+        meta = json.loads(meta_path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as exc:
+        fail(f"META.json is not valid JSON: {exc}")
+    validate_meta(meta)
     version = meta["version"]
     name = meta["name"]
 
