@@ -3,6 +3,46 @@
 Reverse-chronological log of meaningful changes. See `CLAUDE.md` for the entry
 format and when to add one.
 
+## 2026-07-21 — Prepare qdgc_pg for PGXN publication
+- What: Added `META.json` declaring the distribution `qdgc` (providing both
+  extensions), `tools/make_dist.py` to build the release archive, a copy of the
+  Apache-2.0 `LICENSE` inside `qdgc_pg/`, and `.github/workflows/qdgc_pg-ci.yml`
+  running the suite and the fill comparison across PostgreSQL 13–17 with
+  PostGIS after a real `make install`. Removed the `REGRESS` line from the
+  Makefile and a stale Python `.gitignore`. Updated the root `README.md` to
+  present `qdgc-py` and `qdgc` as the two installable packages.
+- Why: Publish the extension the way `qdgc-py` is published on PyPI. PGXN is
+  the canonical registry and the direct analogue. The `REGRESS` line named five
+  test files that did not exist, with no `expected/*.out` anywhere, so
+  `make installcheck` would have failed for the first user who tried it. The
+  distribution also carried no licence text, because the archive is built from
+  `qdgc_pg/` alone.
+- Impact: No behaviour or API change. `make_dist.py` refuses to build unless the
+  version agrees across `META.json`, both `.control` files and the generated SQL
+  filenames, and refuses a dirty tree. The "PostgreSQL 13+" floor in `META.json`
+  follows from `trusted = true` but is **not yet verified** — everything so far
+  has been tested only on PostgreSQL 17.10 / PostGIS 3.6.4. CI must run green
+  before the archive is uploaded.
+
+## 2026-07-21 — Make qdgc_pg area fills exactly match qdgc_py
+- What: `qdgc_polygon_to_cells` now applies the half-open envelope rule and
+  descends per geometry part, unioning the codes. Added `tools/compare_fill.py`
+  (parity plus benchmark over six AOI shapes) and `tools/pgexec.py`. Corrected a
+  performance overclaim in the README.
+- Why: Two independent divergences from `qdgc_py`. Cells lying wholly outside
+  the AOI but sharing an edge were returned, because `ST_Intersects` counts a
+  zero-area touch while `qdgc_py` excludes them at candidate generation via
+  `ceil(...) - 1`. And multi-part geometries were filled from one shared
+  envelope, while `geocode_manage.qdgc_from_union` splits a MultiPolygon and
+  fills each part against its own envelope — 258 extra cells at level 7 on a
+  two-square test.
+- Impact: Fill output changes: fewer cells, now identical to `qdgc_py` on every
+  shape tested. Anyone who generated cells with the pre-fix code should
+  regenerate. The previously documented area-fill divergence is withdrawn; only
+  the cell-count estimate still differs by design. Benchmarks show the quadtree
+  descent is ~9x faster than full-envelope `ST_SquareGrid` on a sparse AOI but
+  ~2x slower when the AOI nearly fills its envelope.
+
 ## 2026-07-21 — Rebuild qdgc_pg as a PostgreSQL extension; split out delivery
 - What: Replaced the four standalone `create_function_*.sql` scripts with a pair
   of packaged extensions in `qdgc_pg/` — `qdgc` (pure SQL, zero dependencies,

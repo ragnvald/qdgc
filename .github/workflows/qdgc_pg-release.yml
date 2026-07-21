@@ -1,0 +1,92 @@
+name: qdgc_pg release
+
+# Tag a release as qdgc_pg-vX.Y.Z to build the PGXN archive and attach it to a
+# GitHub Release. PGXN itself has no upload API -- the archive still has to be
+# uploaded by hand at https://manager.pgxn.org/upload -- so this workflow's job
+# is to produce a verified, reproducible artifact to upload.
+
+on:
+  push:
+    tags:
+      - "qdgc_pg-v*"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Check the tag matches META.json
+        if: startsWith(github.ref, 'refs/tags/')
+        working-directory: qdgc_pg
+        run: |
+          set -eu
+          meta=$(python -c "import json;print(json.load(open('META.json'))['version'])")
+          tag="${GITHUB_REF_NAME#qdgc_pg-v}"
+          echo "META.json=$meta tag=$tag"
+          if [ "$meta" != "$tag" ]; then
+            echo "::error::tag $GITHUB_REF_NAME does not match META.json version $meta"
+            exit 1
+          fi
+
+      - name: Verify the generated SQL is in sync with sql/install
+        working-directory: qdgc_pg
+        run: |
+          set -eu
+          python tools/build_sql.py
+          git diff --exit-code -- 'qdgc--*.sql' 'qdgc_postgis--*.sql'
+
+      - name: Build the distribution archive
+        working-directory: qdgc_pg
+        run: python tools/make_dist.py
+
+      - name: Validate the archive
+        working-directory: qdgc_pg
+        run: |
+          python - <<'PY'
+          import json, pathlib, zipfile
+          meta = json.load(open("META.json"))
+          version, name = meta["version"], meta["name"]
+          path = pathlib.Path("dist") / f"{name}-{version}.zip"
+          names = set(zipfile.ZipFile(path).namelist())
+          prefix = f"{name}-{version}/"
+          required = [prefix + "META.json", prefix + "LICENSE", prefix + "README.md"]
+          required += [prefix + p["file"] for p in meta["provides"].values()]
+          missing = [r for r in required if r not in names]
+          if missing:
+              raise SystemExit(f"archive is missing: {missing}")
+          print(f"{path} OK, {len(names)} entries")
+          PY
+
+      - name: Upload the archive as a workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: qdgc-pgxn-archive
+          path: qdgc_pg/dist/*.zip
+          if-no-files-found: error
+
+      - name: Attach the archive to the GitHub Release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: qdgc_pg/dist/*.zip
+          body: |
+            PostgreSQL extensions `qdgc` and `qdgc_postgis`.
+
+            Install from PGXN once published:
+
+                pgxn install qdgc
+
+            Or download the archive below and run `make install`.

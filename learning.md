@@ -142,6 +142,44 @@ tests entirely.
 - **SRID 0 must be stamped, not assumed.** Passing a SRID-0 geometry straight
   into `ST_Intersects` against a 4326 geometry raises a mixed-SRID error;
   `ST_SetSRID(geom, 4326)` first.
+- **`ST_Dump` returns an EMPTY `path` array for a single Polygon.** So
+  `(ST_Dump(g)).path[1]` is NULL for the most common input, and any join keyed
+  on it silently matches nothing. Use `row_number() OVER ()` to number parts.
+- **`array_agg` over zero rows returns NULL, and `NULL <> ARRAY[...]` is NULL,
+  not true.** A test written as `IF result <> expected THEN RAISE` therefore
+  passes silently when the query returns nothing — which is exactly the failure
+  it was meant to catch. Always test `IS NULL` explicitly first. This hid the
+  `ST_Dump` bug above through a full test run.
+
+## Multi-part fills must be per part, not per collection
+
+`geocode_manage.qdgc_from_union` splits a MultiPolygon and calls
+`qdgc_py.polygon_to_cells` once per part, unioning the code sets. **Each part
+therefore gets its own half-open envelope.** Filling a MultiPolygon against one
+shared envelope keeps cells hugging an inner part's upper edge — 258 extra
+cells at level 7 on a two-square test, all along the first square's edge.
+
+This matters because a real AOI (a union of buffered assets) is usually
+multi-part, and the error is invisible on any single-polygon test.
+
+## PGXN packaging notes
+
+- The distribution is `qdgc` and provides **both** extensions; one PGXN
+  distribution can declare several in `provides`.
+- PGXN takes an **uploaded archive**, not a repository, so living in a monorepo
+  subdirectory is fine. `git archive --prefix=qdgc-<version>/ HEAD:qdgc_pg`
+  produces exactly what is wanted and cannot include untracked files.
+- **The archive carries no licence unless one is inside `qdgc_pg/`.** The root
+  `LICENSE` is not in the build context. `META.json` declaring `apache_2_0` is
+  metadata, not a licence grant.
+- The version must agree in **four** places: `META.json`, `qdgc.control`,
+  `qdgc_postgis.control` and the generated `qdgc--<version>.sql` filenames.
+  `tools/make_dist.py` refuses to build otherwise.
+- **Do not ship a `REGRESS` line you cannot satisfy.** PGXN users run
+  `make installcheck`; naming test files that do not exist, with no
+  `expected/*.out`, is worse than having no test target at all.
+- Account approval on PGXN Manager is **manual** and includes a free-text "why
+  do you want an account?" field. Register early; the wait is the long pole.
 
 ## Cross-variant parity: how it is enforced
 
