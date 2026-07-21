@@ -78,7 +78,9 @@ BEGIN
     -- A box covering exactly four degree squares.
     aoi := ST_MakeEnvelope(0, 0, 2, 2, 4326);
     SELECT array_agg(c ORDER BY c) INTO cells FROM qdgc_polygon_to_cells(aoi, 0) c;
-    IF cells <> ARRAY['E000N00', 'E000N01', 'E001N00', 'E001N01'] THEN
+    -- array_agg over zero rows returns NULL, and NULL <> ARRAY[...] is NULL,
+    -- not true -- so an empty fill would slip through a bare inequality test.
+    IF cells IS NULL OR cells <> ARRAY['E000N00', 'E000N01', 'E001N00', 'E001N01'] THEN
         RAISE EXCEPTION 'degree-square fill wrong: %', cells;
     END IF;
 
@@ -145,6 +147,46 @@ BEGIN
     END IF;
 
     RAISE NOTICE 'half-open envelope and interior-touch handling OK';
+END;
+$$;
+
+-- Multi-part geometries are filled per part, each with its own envelope, then
+-- unioned -- matching how qdgc_py is driven (a MultiPolygon is split and
+-- polygon_to_cells called once per part). Using a single envelope for the whole
+-- collection would keep cells hugging an inner part's upper edge.
+DO $$
+DECLARE
+    multi geometry;
+    n     bigint;
+BEGIN
+    multi := ST_GeomFromText(
+        'MULTIPOLYGON(((30 2, 30.5 2, 30.5 2.5, 30 2.5, 30 2)),'
+        || '((31 3, 31.5 3, 31.5 3.5, 31 3.5, 31 3)))', 4326);
+
+    SELECT count(*) INTO n FROM qdgc_polygon_to_cells(multi, 3);
+    IF n <> 32 THEN
+        RAISE EXCEPTION 'expected 16 cells per part = 32, got % (per-part envelope not applied)', n;
+    END IF;
+
+    -- Nothing may sit beyond either part's upper edges.
+    IF EXISTS (
+        SELECT 1 FROM qdgc_polygon_to_cells(multi, 3) c, LATERAL qdgc_cell_to_bounds(c) b
+        WHERE (b.min_lon >= 30.5 AND b.min_lon < 31)
+           OR (b.min_lat >= 2.5 AND b.min_lat < 3)
+           OR b.min_lon >= 31.5 OR b.min_lat >= 3.5
+    ) THEN
+        RAISE EXCEPTION 'a cell beyond a part upper edge was returned';
+    END IF;
+
+    -- A single polygon must still work: ST_Dump gives it an empty path array,
+    -- so keying parts on path[1] would silently return nothing.
+    SELECT count(*) INTO n
+    FROM qdgc_polygon_to_cells(ST_MakeEnvelope(30, 2, 30.5, 2.5, 4326), 3);
+    IF n <> 16 THEN
+        RAISE EXCEPTION 'single-polygon fill broke: expected 16, got %', n;
+    END IF;
+
+    RAISE NOTICE 'multi-part per-envelope fill OK';
 END;
 $$;
 
