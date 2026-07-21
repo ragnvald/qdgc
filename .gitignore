@@ -1,2 +1,6 @@
 # macOS
 .DS_Store
+
+# Local credentials -- never commit. Only the explanatory README is tracked.
+secrets/*
+!secrets/README.md
