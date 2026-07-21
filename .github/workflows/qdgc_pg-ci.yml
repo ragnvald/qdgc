@@ -1,0 +1,124 @@
+name: qdgc_pg CI
+
+on:
+  push:
+    paths:
+      - "qdgc_pg/**"
+      - "qdgc_py/src/qdgc_py/core.py"
+      - ".github/workflows/qdgc_pg-ci.yml"
+  pull_request:
+    paths:
+      - "qdgc_pg/**"
+      - "qdgc_py/src/qdgc_py/core.py"
+      - ".github/workflows/qdgc_pg-ci.yml"
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        # trusted = true in the control file requires PostgreSQL 13 or newer.
+        pg: [13, 14, 15, 16, 17]
+
+    name: PostgreSQL ${{ matrix.pg }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install PostgreSQL ${{ matrix.pg }} and PostGIS from PGDG
+        run: |
+          set -eux
+          # The runner ships its own PostgreSQL; remove it so the cluster we
+          # install below is the only one listening on 5432.
+          sudo systemctl stop postgresql || true
+          sudo apt-get purge -y 'postgresql-*' || true
+
+          sudo install -d /usr/share/postgresql-common/pgdg
+          sudo curl -o /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc \
+            --fail https://www.postgresql.org/media/keys/ACCC4CF8.asc
+          echo "deb [signed-by=/usr/share/postgresql-common/pgdg/apt.postgresql.org.asc] \
+            https://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" \
+            | sudo tee /etc/apt/sources.list.d/pgdg.list
+          sudo apt-get update
+          sudo apt-get install -y \
+            postgresql-${{ matrix.pg }} \
+            postgresql-${{ matrix.pg }}-postgis-3 \
+            postgresql-server-dev-${{ matrix.pg }}
+
+          sudo pg_ctlcluster ${{ matrix.pg }} main start || true
+          echo "/usr/lib/postgresql/${{ matrix.pg }}/bin" >> "$GITHUB_PATH"
+
+      - name: Report versions
+        run: |
+          pg_config --version
+          sudo -u postgres psql -tAc "select version()"
+          sudo -u postgres psql -tAc "select default_version from pg_available_extensions where name='postgis'"
+
+      - name: Install the extensions
+        working-directory: qdgc_pg
+        run: |
+          set -eux
+          sudo make install PG_CONFIG=/usr/lib/postgresql/${{ matrix.pg }}/bin/pg_config
+          ls -l "$(pg_config --sharedir)/extension" | grep qdgc
+
+      - name: Verify the generated SQL is in sync with sql/install
+        working-directory: qdgc_pg
+        run: |
+          set -eux
+          python tools/build_sql.py
+          git diff --exit-code -- 'qdgc--*.sql' 'qdgc_postgis--*.sql'
+
+      - name: CREATE EXTENSION smoke test
+        run: |
+          set -eux
+          sudo -u postgres createdb qdgc_ext
+          sudo -u postgres psql -d qdgc_ext -c "CREATE EXTENSION postgis;"
+          sudo -u postgres psql -d qdgc_ext -c "CREATE EXTENSION qdgc;"
+          sudo -u postgres psql -d qdgc_ext -c "CREATE EXTENSION qdgc_postgis;"
+          sudo -u postgres psql -d qdgc_ext -tAc "SELECT qdgc_version();"
+          sudo -u postgres psql -d qdgc_ext -tAc "SELECT qdgc_encode(0, 0, 1);"
+          # Both must be droppable and re-creatable, which catches a bad
+          # dependency declaration in the control files.
+          sudo -u postgres psql -d qdgc_ext -c "DROP EXTENSION qdgc_postgis;"
+          sudo -u postgres psql -d qdgc_ext -c "DROP EXTENSION qdgc;"
+          sudo -u postgres psql -d qdgc_ext -c "CREATE EXTENSION qdgc_postgis CASCADE;"
+
+      - name: Prepare the test database
+        run: |
+          set -eux
+          sudo -u postgres psql <<'SQL'
+          CREATE ROLE qdgc_test LOGIN PASSWORD 'qdgc_test';
+          SQL
+          sudo -u postgres createdb -O qdgc_test qdgc_test
+          sudo -u postgres psql -d qdgc_test -c "CREATE EXTENSION postgis;"
+
+      - name: Regenerate the parity fixture from qdgc_py
+        working-directory: qdgc_pg
+        run: python tools/gen_parity_fixture.py
+
+      - name: Run the test suite
+        working-directory: qdgc_pg
+        env:
+          PGHOST: 127.0.0.1
+          PGPORT: "5432"
+          PGDATABASE: qdgc_test
+          PGUSER: qdgc_test
+          PGPASSWORD: qdgc_test
+        run: python tools/run_tests.py --local
+
+      - name: Compare area fills against qdgc_py
+        working-directory: qdgc_pg
+        env:
+          PGHOST: 127.0.0.1
+          PGPORT: "5432"
+          PGDATABASE: qdgc_test
+          PGUSER: qdgc_test
+          PGPASSWORD: qdgc_test
+        run: python tools/compare_fill.py

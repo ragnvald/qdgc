@@ -6,7 +6,16 @@
 -- throwaway schema; the SQL under test is byte-identical either way.
 \set ON_ERROR_STOP on
 
-CREATE EXTENSION IF NOT EXISTS postgis;
+-- Only attempt to create PostGIS when it is genuinely missing. CREATE EXTENSION
+-- needs privileges the test role may not have, and on a shared server PostGIS
+-- is normally already installed by someone else.
+DO $$
+BEGIN
+    IF NOT EXISTS (SELECT 1 FROM pg_extension WHERE extname = 'postgis') THEN
+        CREATE EXTENSION postgis;
+    END IF;
+END;
+$$;
 
 DROP SCHEMA IF EXISTS qdgc_test CASCADE;
 CREATE SCHEMA qdgc_test;

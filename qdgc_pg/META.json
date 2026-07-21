@@ -1,0 +1,59 @@
+{
+   "name": "qdgc",
+   "abstract": "Extended Quarter Degree Grid Cell (QDGC) codes for PostgreSQL",
+   "description": "Encode, decode and navigate Extended Quarter Degree Grid Cell codes inside the database. The core extension is pure SQL with no dependencies and is trusted, so it installs on managed platforms that will not accept a compiled extension; a companion extension adds PostGIS geometry and geography bindings, including a pruning quadtree area fill. Encoding is bit-for-bit identical to the qdgc-py reference implementation, enforced by a generated parity fixture.",
+   "version": "0.1.0",
+   "maintainer": [
+      "Ragnvald Larsen <ragnvald@mindland.com>"
+   ],
+   "license": "apache_2_0",
+   "provides": {
+      "qdgc": {
+         "file": "qdgc--0.1.0.sql",
+         "docfile": "README.md",
+         "version": "0.1.0",
+         "abstract": "QDGC encoding, decoding, hierarchy and level metrics in pure SQL"
+      },
+      "qdgc_postgis": {
+         "file": "qdgc_postgis--0.1.0.sql",
+         "docfile": "README.md",
+         "version": "0.1.0",
+         "abstract": "PostGIS geometry and geography bindings for QDGC"
+      }
+   },
+   "prereqs": {
+      "runtime": {
+         "requires": {
+            "PostgreSQL": "13.0.0"
+         },
+         "recommends": {
+            "postgis": "3.0.0"
+         }
+      }
+   },
+   "resources": {
+      "homepage": "https://github.com/ragnvald/qdgc",
+      "bugtracker": {
+         "web": "https://github.com/ragnvald/qdgc/issues"
+      },
+      "repository": {
+         "url": "https://github.com/ragnvald/qdgc.git",
+         "web": "https://github.com/ragnvald/qdgc",
+         "type": "git"
+      }
+   },
+   "generated_by": "Ragnvald Larsen",
+   "meta-spec": {
+      "version": "1.0.0",
+      "url": "https://pgxn.org/meta/spec.txt"
+   },
+   "tags": [
+      "qdgc",
+      "dggs",
+      "grid",
+      "gis",
+      "postgis",
+      "biodiversity",
+      "spatial index"
+   ]
+}

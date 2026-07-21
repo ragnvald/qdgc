@@ -1,6 +1,9 @@
 # macOS
 .DS_Store
 
+# Built release archives
+qdgc_pg/dist/
+
 # Local credentials -- never commit. Only the explanatory README is tracked.
 secrets/*
 !secrets/README.md

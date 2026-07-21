@@ -23,6 +23,14 @@ by hand-written expectations — see [Testing](#testing).
 Install
 -------
 
+From [PGXN](https://pgxn.org/dist/qdgc/):
+
+```bash
+pgxn install qdgc
+```
+
+Or from a checkout:
+
 ```bash
 make install
 psql -d yourdb -c "CREATE EXTENSION qdgc;"
@@ -32,6 +40,10 @@ psql -d yourdb -c "CREATE EXTENSION qdgc_postgis;"   # needs PostGIS
 There is nothing to compile. `make install` only copies the `.control` files
 and the generated `qdgc--0.1.0.sql` / `qdgc_postgis--0.1.0.sql` into the
 server's extension directory.
+
+Requires PostgreSQL 13 or newer — `trusted = true` in the control file is a
+PostgreSQL 13 feature. `qdgc_postgis` additionally requires PostGIS. CI runs the
+full suite against PostgreSQL 13 through 17.
 
 Both extensions are relocatable, but the functions call each other by
 unqualified name, so install them into a schema that is on your `search_path`
@@ -212,6 +224,29 @@ coastline, a river corridor — and loses roughly 2x when the AOI nearly fills
 its envelope, because it pays log-depth work per cell that a flat grid does
 not. Real areas of interest are sparse, which is the case it is tuned for. Run
 `python tools/compare_fill.py` to reproduce.
+
+Releasing to PGXN
+-----------------
+
+The distribution is named `qdgc` and provides both extensions. The archive is
+built from this directory with a versioned prefix, so living in a monorepo is
+not a problem — PGXN takes an uploaded archive rather than reading the repo.
+
+```bash
+python tools/build_sql.py     # regenerate versioned install scripts
+python tools/run_tests.py     # must pass
+git commit ...                # make_dist refuses a dirty tree
+python tools/make_dist.py     # -> dist/qdgc-<version>.zip
+```
+
+`make_dist.py` checks that the version in `META.json`, both `.control` files
+and the generated SQL filenames all agree, and builds the archive with
+`git archive` so only tracked files are included. Upload the result at
+<https://manager.pgxn.org/upload>.
+
+Bumping the version means editing `META.json`, both `.control` files and
+`VERSION` in `tools/build_sql.py`, then regenerating. Encoding output is stable
+within a major version; any change to a produced code is a major bump.
 
 Relationship to the rest of the repository
 ------------------------------------------

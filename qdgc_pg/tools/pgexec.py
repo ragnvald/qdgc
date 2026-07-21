@@ -41,16 +41,22 @@ def _find_psql() -> str:
 
 class Executor:
     def __init__(self) -> None:
+        # secrets/postgis.env wins when present, otherwise fall back to the
+        # standard libpq environment variables so this works unchanged in CI.
         pg = read_env_file(SECRETS / "postgis.env")
         remote = read_env_file(SECRETS / "remote.env")
-        if not pg.get("PGDATABASE"):
-            raise SystemExit("secrets/postgis.env is missing or has no PGDATABASE")
 
-        self.dbname = pg["PGDATABASE"]
-        self.user = pg.get("PGUSER", "postgres")
-        self.host = pg.get("PGHOST", "127.0.0.1")
-        self.port = pg.get("PGPORT", "5432")
-        self.password = pg.get("PGPASSWORD", "")
+        def setting(key: str, default: str = "") -> str:
+            return pg.get(key) or os.environ.get(key, default)
+
+        self.dbname = setting("PGDATABASE")
+        if not self.dbname:
+            raise SystemExit("no database given: set PGDATABASE in secrets/postgis.env "
+                             "or in the environment")
+        self.user = setting("PGUSER", "postgres")
+        self.host = setting("PGHOST", "127.0.0.1")
+        self.port = setting("PGPORT", "5432")
+        self.password = setting("PGPASSWORD")
         self.remote_host = remote.get("REMOTE_HOST")
         self.remote_user = remote.get("REMOTE_USER")
         key = SECRETS / "id_alienmind"
