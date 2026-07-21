@@ -167,18 +167,51 @@ Test files assert with `RAISE EXCEPTION`, so there are no expected-output files
 to drift. `tools/run_tests.py` loads `sql/install/**.sql` into a throwaway
 schema, which needs no write access to the server's extension directory.
 
-Known divergences from `qdgc_py`
---------------------------------
+Agreement with `qdgc_py`
+------------------------
 
-Encoding, decoding and hierarchy are exact. Two things are deliberately not:
+Encoding, decoding and hierarchy are bit-for-bit exact, enforced by the parity
+fixture. **Area fills are also exact**: `tools/compare_fill.py` checks
+`qdgc_polygon_to_cells` against `qdgc_py.polygon_to_cells` over six shapes —
+an aligned box, a diagonal edge, a 240-vertex blob, a polygon with a hole, a
+re-entrant notch and a sparse diagonal band — and the selected cell sets are
+identical at every level tested.
 
-- **Area fill boundaries.** `qdgc_polygon_to_cells` uses GEOS predicates while
-  `qdgc_py.polygon_to_cells` uses its own pure-stdlib point-in-polygon with an
-  epsilon. Cells that merely *touch* the AOI edge can therefore be classified
-  differently. Interior cells always agree.
+Getting there required matching two rules that pull in opposite directions:
+
+- The AOI envelope is **half-open on its upper edges** (`qdgc_py` derives
+  candidates with `ceil(...) - 1`), so a cell lying outside the AOI but sharing
+  an edge with it is excluded — even though `ST_Intersects` reports a
+  zero-area touch as an intersection.
+- A cell touching an **interior** edge *is* included, because `qdgc_py` counts
+  a point lying on a segment as inside.
+
+Both are covered by regression tests in `test/sql/04_postgis.sql`.
+
+One difference remains, deliberately:
+
 - **Cell count estimates.** `qdgc_estimate_cell_count` measures polygon area on
   the WGS84 spheroid; `qdgc_py` uses an equirectangular approximation. Both are
   estimates used as guards, and both are capped by the exact envelope count.
+
+Performance
+-----------
+
+Measured on PostgreSQL 17.10 / PostGIS 3.6.4, comparing the quadtree descent
+against the legacy full-envelope `ST_SquareGrid` + `ST_Intersects`:
+
+| AOI | Fill vs envelope | Level 9 speedup |
+|---|---|---|
+| Thin diagonal band | sparse | **8.5x** |
+| Convoluted blob | moderate | 1.3x |
+| Triangle | half | 1.2x |
+| Aligned box | dense | 0.5x |
+
+The descent wins when the AOI is sparse within its bounding box — a country, a
+coastline, a river corridor — and loses roughly 2x when the AOI nearly fills
+its envelope, because it pays log-depth work per cell that a flat grid does
+not. Real areas of interest are sparse, which is the case it is tuned for. Run
+`python tools/compare_fill.py` to reproduce.
 
 Relationship to the rest of the repository
 ------------------------------------------

@@ -86,7 +86,13 @@ BEGIN
         SELECT s.code, s.x0, s.y0, s.x1, s.y1, 0 AS lvl,
                ST_Contains(g, ST_MakeEnvelope(s.x0, s.y0, s.x1, s.y1, 4326)) AS contained
         FROM seed s
-        WHERE ST_Intersects(g, ST_MakeEnvelope(s.x0, s.y0, s.x1, s.y1, 4326))
+        -- The AOI envelope is half-open on its upper edges, matching
+        -- qdgc_py.core.bbox_to_cells (which uses ceil(...) - 1). Without this a
+        -- cell lying wholly outside the AOI but sharing an edge with it would
+        -- be kept, because ST_Intersects counts a zero-area touch. Safe to
+        -- prune on: a child can never re-enter the envelope its parent left.
+        WHERE s.x0 < maxx AND s.x1 > minx AND s.y0 < maxy AND s.y1 > miny
+          AND ST_Intersects(g, ST_MakeEnvelope(s.x0, s.y0, s.x1, s.y1, 4326))
 
         UNION ALL
 
@@ -109,6 +115,11 @@ BEGIN
         CROSS JOIN (VALUES ('A', 0, 1), ('B', 1, 1),
                            ('C', 0, 0), ('D', 1, 0)) AS q(letter, east, north)
         WHERE t.lvl < level
+          -- Same half-open envelope rule as the seed, applied to the child.
+          AND (CASE WHEN q.east = 1 THEN (t.x0 + t.x1) / 2.0 ELSE t.x0 END) < maxx
+          AND (CASE WHEN q.east = 1 THEN t.x1 ELSE (t.x0 + t.x1) / 2.0 END) > minx
+          AND (CASE WHEN q.north = 1 THEN (t.y0 + t.y1) / 2.0 ELSE t.y0 END) < maxy
+          AND (CASE WHEN q.north = 1 THEN t.y1 ELSE (t.y0 + t.y1) / 2.0 END) > miny
           AND (t.contained OR ST_Intersects(g, ST_MakeEnvelope(
                   CASE WHEN q.east = 1 THEN (t.x0 + t.x1) / 2.0 ELSE t.x0 END,
                   CASE WHEN q.north = 1 THEN (t.y0 + t.y1) / 2.0 ELSE t.y0 END,

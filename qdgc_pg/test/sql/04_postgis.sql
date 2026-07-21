@@ -110,6 +110,44 @@ BEGIN
 END;
 $$;
 
+-- Half-open envelope. A cell lying wholly outside the AOI but sharing an edge
+-- with it must NOT be returned, because ST_Intersects counts a zero-area touch
+-- while qdgc_py excludes it at candidate generation. A cell touching an
+-- *interior* edge must still be returned, because qdgc_py counts a point on a
+-- segment as inside. These two pull in opposite directions; both are checked.
+DO $$
+DECLARE
+    aoi    geometry;
+    notch  geometry;
+    n      bigint;
+    inside text;
+BEGIN
+    -- Upper edges fall exactly on level 3 cell lines (0.125 degrees).
+    aoi := ST_MakeEnvelope(30, 2, 30.5, 2.5, 4326);
+    SELECT count(*) INTO n FROM qdgc_polygon_to_cells(aoi, 3);
+    IF n <> 16 THEN
+        RAISE EXCEPTION 'expected 16 cells inside the AOI, got % (edge-touching cells leaked in)', n;
+    END IF;
+    IF EXISTS (
+        SELECT 1 FROM qdgc_polygon_to_cells(aoi, 3) c, LATERAL qdgc_cell_to_bounds(c) b
+        WHERE b.min_lon >= 30.5 OR b.min_lat >= 2.5
+    ) THEN
+        RAISE EXCEPTION 'a cell beyond the AOI upper edge was returned';
+    END IF;
+
+    -- Re-entrant notch: x in (30.25, 30.5), y in (2.5, 3.0) is cut out. A cell
+    -- lying inside that cut still touches the polygon along its edges.
+    notch := ST_GeomFromText(
+        'POLYGON((30 2, 31 2, 31 3, 30.5 3, 30.5 2.5, 30.25 2.5, 30.25 3, 30 3, 30 2))', 4326);
+    inside := qdgc_encode(30.3, 2.55, 3);
+    IF NOT EXISTS (SELECT 1 FROM qdgc_polygon_to_cells(notch, 3) c WHERE c = inside) THEN
+        RAISE EXCEPTION 'cell % touching an interior edge was dropped', inside;
+    END IF;
+
+    RAISE NOTICE 'half-open envelope and interior-touch handling OK';
+END;
+$$;
+
 -- Predicates.
 DO $$
 DECLARE
