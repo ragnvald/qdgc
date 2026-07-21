@@ -7,3 +7,7 @@ qdgc_pg/dist/
 # Local credentials -- never commit. Only the explanatory README is tracked.
 secrets/*
 !secrets/README.md
+
+# Python bytecode from the qdgc_pg tooling
+__pycache__/
+*.py[cod]
