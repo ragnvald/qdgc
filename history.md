@@ -3,6 +3,38 @@
 Reverse-chronological log of meaningful changes. See `CLAUDE.md` for the entry
 format and when to add one.
 
+## 2026-07-21 — Rebuild qdgc_pg as a PostgreSQL extension; split out delivery
+- What: Replaced the four standalone `create_function_*.sql` scripts with a pair
+  of packaged extensions in `qdgc_pg/` — `qdgc` (pure SQL, zero dependencies,
+  `trusted = true`) and `qdgc_postgis` (geometry/geography bindings) — at version
+  0.1.0, mirroring the `h3` / `h3_postgis` split. Added ~20 documented functions
+  covering encode, decode, hierarchy, level metrics, bbox fills and area fills;
+  a PGXS `Makefile`; `tools/build_sql.py` to concatenate numbered sources into
+  versioned install scripts; `tools/gen_parity_fixture.py` to generate test
+  vectors from `qdgc_py.core`; and `tools/run_tests.py`, which can run the suite
+  locally or over SSH against a remote host. Moved the country-GeoPackage
+  production pipeline (`run_qdgc_*`, the FME workspace, the shipped readme) and
+  the superseded plpython3u functions to a new `qdgc_delivery/`.
+- Why: The old scripts could not be used from a server. `qdgc_getlonlat` was
+  written in `plpython3u`, an untrusted language needing superuser and
+  unavailable on most managed PostgreSQL; `qdgc_fillqdgc` hardcoded the table
+  names `tbl_countries`/`tbl_qdgc`, dropped and recreated its output table, and
+  returned nothing despite `RETURNS SETOF text`. There was no decode path at all.
+  MESA's server imports backup packages into PostGIS and must be able to
+  establish a QDGC geocode on demand, which needs composable functions.
+- Impact: New capability, no change to any QDGC code ever produced — encoding is
+  bit-for-bit identical to `qdgc_py`, verified by 22 053 encode vectors and 6 581
+  decode cells generated from `core.py` and run against PostgreSQL 17.10 /
+  PostGIS 3.6.4. Areas are now measured with `geography` instead of the
+  hardcoded ESRI Africa Albers SRID 102022, which was wrong everywhere outside
+  Africa and absent from stock PostGIS. `qdgc_polygon_to_cells` is a pruning
+  quadtree descent rather than a full-envelope `ST_SquareGrid`. Callers of the
+  old `qdgc_fillqdgc` should move to `qdgc_polygon_to_cells`; the legacy
+  functions remain in `qdgc_delivery/legacy/` for reproducibility only.
+  Known, documented divergences from `qdgc_py`: GEOS-vs-epsilon classification
+  of cells that merely touch an AOI edge, and spheroidal-vs-equirectangular
+  polygon area in the cell-count estimate.
+
 ## 2026-07-16 — Add working framework (CLAUDE.md, history.md, learning.md)
 - What: Added `CLAUDE.md` as the repo's working framework, plus this
   `history.md` and `learning.md`.
