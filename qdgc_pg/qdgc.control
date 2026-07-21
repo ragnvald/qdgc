@@ -1,0 +1,6 @@
+# qdgc extension control file
+comment = 'Extended Quarter Degree Grid Cell (QDGC) codes'
+default_version = '0.1.0'
+module_pathname = ''
+relocatable = true
+trusted = true

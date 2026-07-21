@@ -1,0 +1,6 @@
+# qdgc_postgis extension control file
+comment = 'PostGIS geometry and geography bindings for QDGC'
+default_version = '0.1.0'
+module_pathname = ''
+relocatable = true
+requires = 'qdgc,postgis'
